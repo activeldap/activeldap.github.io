@@ -1,0 +1,913 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../activeldap.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../favicon.ico" />
+    <link rel="icon" href="../../../favicon.png" />
+    <title>
+  Module: ActiveLdap::Persistence
+  
+    &mdash; activeldap
+  
+ - ActiveLdap</title>
+
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+<div class="header">
+  <div class="title">
+    <a href="../../../ja/">
+      <span class="title">
+  Module: ActiveLdap::Persistence
+  
+    &mdash; activeldap
+  
+</span>
+      <span class="title-separator">-</span>
+      <span class="title-project">ActiveLdap</span>
+    </a>
+  </div>
+  <ul class="other-languages">
+    <li id="other-language-english" lang="en" xml:lang="en"><a href="../../../activeldap/en/ActiveLdap/Persistence.html">English</a></li>
+  </ul>
+  <ul class="menu">
+    <li><a href="../../../ja/#activeldap-about">ActiveLdap</a></li>
+    <li><a href="../../../ja/#activeldap-fabrication-about">ActiveLdap Fabrication</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="main">
+
+
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../alphabetical_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span>
+     &raquo; 
+    <span class="title">Persistence</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ActiveLdap::Persistence
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/active_ldap/persistence.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">- (Object) <strong>create</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_or_update-instance_method" title="#create_or_update (instance method)">- (Object) <strong>create_or_update</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy-instance_method" title="#destroy (instance method)">- (Object) <strong>destroy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>destroy.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_entry%3F-instance_method" title="#new_entry? (instance method)">- (Boolean) <strong>new_entry?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>new_entry?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#persisted%3F-instance_method" title="#persisted? (instance method)">- (Boolean) <strong>persisted?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return whether the entry is saved entry or not.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reload-instance_method" title="#reload (instance method)">- (Object) <strong>reload</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save-instance_method" title="#save (instance method)">- (Object) <strong>save</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>save.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save%21-instance_method" title="#save! (instance method)">- (Object) <strong>save!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Object) <strong>update</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="create-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
+  <span class='id identifier rubyid_prepare_data_for_saving'>prepare_data_for_saving</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_ldap_data'>ldap_data</span><span class='op'>|</span>
+    <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_collect_all_attributes'>collect_all_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_add_entry'>add_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
+    <span class='ivar'>@new_entry</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='kw'>true</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_or_update-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create_or_update</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_or_update'>create_or_update</span>
+  <span class='id identifier rubyid_new_entry?'>new_entry?</span> <span class='op'>?</span> <span class='id identifier rubyid_create'>create</span> <span class='op'>:</span> <span class='id identifier rubyid_update'>update</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>delete</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_persisted?'>persisted?</span>
+    <span class='id identifier rubyid_default_options'>default_options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:connection</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_connection'>connection</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_delete_entry'>delete_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_default_options'>default_options</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@new_entry</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='id identifier rubyid_freeze'>freeze</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="destroy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>destroy</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>destroy</p>
+
+<p>Delete this entry from LDAP</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='comment'># TODO: support deleting relations
+</span>  <span class='id identifier rubyid_delete'>delete</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_entry?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>new_entry?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>new_entry?</p>
+
+<p>Return whether the entry is new entry in LDAP or not</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 6</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_entry?'>new_entry?</span>
+  <span class='ivar'>@new_entry</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="persisted?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>persisted?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return whether the entry is saved entry or not.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_persisted?'>persisted?</span>
+  <span class='kw'>not</span> <span class='id identifier rubyid_new_entry?'>new_entry?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reload-instance_method">
+  
+    - (<tt>Object</tt>) <strong>reload</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 84</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reload'>reload</span>
+  <span class='id identifier rubyid_clear_association_cache'>clear_association_cache</span>
+  <span class='id identifier rubyid__'>_</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid__dn'>_dn</span><span class='comma'>,</span> <span class='id identifier rubyid__attributes'>_attributes</span><span class='op'>|</span>
+    <span class='id identifier rubyid_dn'>dn</span> <span class='op'>==</span> <span class='id identifier rubyid__dn'>_dn</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>EntryNotFound</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Can't find DN '%s' to reload</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_dn'>dn</span>
+  <span class='kw'>end</span>
+
+  <span class='ivar'>@ldap_data</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_classes'>classes</span> <span class='op'>=</span> <span class='id identifier rubyid_extract_object_class!'>extract_object_class!</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_classes'>classes</span> <span class='op'>=</span> <span class='id identifier rubyid_classes'>classes</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_attributes'>attributes</span>
+  <span class='ivar'>@new_entry</span> <span class='op'>=</span> <span class='kw'>false</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="save-instance_method">
+  
+    - (<tt>Object</tt>) <strong>save</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>save</p>
+
+<p>Save and validate this object into LDAP either adding or replacing
+attributes TODO: Relative DN support</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='op'>*</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_create_or_update'>create_or_update</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="save!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>save!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_save!'>save!</span><span class='lparen'>(</span><span class='op'>*</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_create_or_update'>create_or_update</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>EntryNotSaved</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>entry %s can't be saved</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_dn'>dn</span>
+  <span class='kw'>end</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/persistence.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
+  <span class='id identifier rubyid_prepare_data_for_saving'>prepare_data_for_saving</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_ldap_data'>ldap_data</span><span class='op'>|</span>
+    <span class='id identifier rubyid_new_dn_value'>new_dn_value</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_collect_modified_attributes'>collect_modified_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_ldap_data'>ldap_data</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_modify_entry'>modify_entry</span><span class='lparen'>(</span><span class='ivar'>@original_dn</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_new_dn_value'>new_dn_value</span>
+      <span class='id identifier rubyid_old_dn_base'>old_dn_base</span> <span class='op'>=</span> <span class='const'>DN</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='ivar'>@original_dn</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_parent'>parent</span>
+      <span class='id identifier rubyid_new_dn_base'>new_dn_base</span> <span class='op'>=</span> <span class='id identifier rubyid_dn'>dn</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span><span class='period'>.</span><span class='id identifier rubyid_parent'>parent</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_old_dn_base'>old_dn_base</span> <span class='op'>==</span> <span class='id identifier rubyid_new_dn_base'>new_dn_base</span>
+        <span class='id identifier rubyid_new_superior'>new_superior</span> <span class='op'>=</span> <span class='kw'>nil</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_new_superior'>new_superior</span> <span class='op'>=</span> <span class='id identifier rubyid_new_dn_base'>new_dn_base</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_modify_rdn_entry'>modify_rdn_entry</span><span class='lparen'>(</span><span class='ivar'>@original_dn</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dn_attribute'>dn_attribute</span><span class='rbrace'>}</span><span class='tstring_content'>=</span><span class='embexpr_beg'>#{</span><span class='const'>DN</span><span class='period'>.</span><span class='id identifier rubyid_escape_value'>escape_value</span><span class='lparen'>(</span><span class='id identifier rubyid_new_dn_value'>new_dn_value</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                       <span class='kw'>true</span><span class='comma'>,</span>
+                       <span class='id identifier rubyid_new_superior'>new_superior</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='kw'>true</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Aug 29 17:57:37 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7 (ruby-1.9.3).
+</div>
+
+  
+      </div>
+
+      <div class="sidebar">
+        <h2>プロジェクトについて</h2>
+	<ul>
+	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">プロジェクトページ</a></li>
+	  <li>
+	    <a href="http://rubyforge.org/mailman/listinfo/activeldap-discuss-ja">メーリングリスト</a>
+	  </li>
+	  <li>
+	    <a href="http://github.com/activeldap/">GitHubページ</a>
+	  </li>
+	  <li>
+	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCodeページ</a>
+	  </li>
+	</ul>
+
+        <h2>ActiveLdapについて</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../activeldap/ja/">リファレンス</a>
+          </li>
+	  <li class="menu-tutorial">
+	    <a href="../../../activeldap/ja/file.tutorial.html">チュートリアル</a>
+	  </li>
+	  <li class="menu-rails">
+	    <a href="../../../activeldap/ja/file.rails.html">Rails</a>
+	  </li>
+	  <li class="menu-install">
+	    <a href="../../../index.html.ja#activeldap-install">インストール</a>
+	  </li>
+	  <li class="menu-development">
+	    <a href="../../../activeldap/ja/file.development.html">開発者向け情報</a>
+	  </li>
+	</ul>
+
+        <h2>ActiveLdap Fabricationについて</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../activeldap-fabrication/ja/">リファレンス</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <p id="sponsor-rubyforge">
+        <a href="http://rubyforge.org/projects/ruby-activeldap/">
+          <img src="../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdapプロジェクトはRubyForge.orgにホスティングしてもらっています。" />
+        </a>
+      </p>
+      <p id="sponsor-github">
+        <a href="http://github.com/activeldap/">
+          <img src="../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdapプロジェクトはGitHubにホスティングしてもらっています。" />
+        </a>
+      </p>
+      <p id="sponsor-tango">
+	<a href="http://tango.freedesktop.org/">
+          <img width="120" height="53" border="0" alt="Tango Desktop Projectのアイコンを利用しています。" src="../../../tango-logo.png" />
+        </a>
+      </p>
+    </div>
+
+</body>
+</html>

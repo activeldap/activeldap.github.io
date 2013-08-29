@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../../activeldap.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../favicon.ico" />
+    <link rel="icon" href="../../../../favicon.png" />
+    <title>
+  Module: ActiveLdap::Attributes::Normalizable
+  
+    &mdash; activeldap
+  
+ - ActiveLdap</title>
+
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+<div class="header">
+  <div class="title">
+    <a href="../../../../">
+      <span class="title">
+  Module: ActiveLdap::Attributes::Normalizable
+  
+    &mdash; activeldap
+  
+</span>
+      <span class="title-separator">-</span>
+      <span class="title-project">ActiveLdap</span>
+    </a>
+  </div>
+  <ul class="other-languages">
+    <li id="other-language-japanese" lang="ja" xml:lang="ja"><a href="../../../../activeldap/ja/ActiveLdap/Attributes/Normalizable.html">日本語</a></li>
+  </ul>
+  <ul class="menu">
+    <li><a href="../../../../#activeldap-about">ActiveLdap</a></li>
+    <li><a href="../../../../#activeldap-fabrication-about">ActiveLdap Fabrication</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="main">
+
+
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../alphabetical_index.html">Index (N)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Attributes.html" title="ActiveLdap::Attributes (module)">Attributes</a></span></span>
+     &raquo; 
+    <span class="title">Normalizable</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ActiveLdap::Attributes::Normalizable
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../EntryAttribute.html" title="ActiveLdap::EntryAttribute (class)">EntryAttribute</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/active_ldap/attributes.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#normalize_attribute-instance_method" title="#normalize_attribute (instance method)">- (Object) <strong>normalize_attribute</strong>(name, value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enforce typing: Hashes are for subtypes Arrays are for multiple entries.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#normalize_attribute_name-instance_method" title="#normalize_attribute_name (instance method)">- (Object) <strong>normalize_attribute_name</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#normalize_attribute_options-instance_method" title="#normalize_attribute_options (instance method)">- (Object) <strong>normalize_attribute_options</strong>(attr, value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>normalize_attribute_options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unnormalize_attribute-instance_method" title="#unnormalize_attribute (instance method)">- (Object) <strong>unnormalize_attribute</strong>(name, values, result = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unnormalize_attribute_options-instance_method" title="#unnormalize_attribute_options (instance method)">- (Object) <strong>unnormalize_attribute_options</strong>(value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>unnormalize_attribute_options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unnormalize_attributes-instance_method" title="#unnormalize_attributes (instance method)">- (Object) <strong>unnormalize_attributes</strong>(attributes) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="normalize_attribute-instance_method">
+  
+    - (<tt>Object</tt>) <strong>normalize_attribute</strong>(name, value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enforce typing: Hashes are for subtypes Arrays are for multiple entries</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/attributes.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_normalize_attribute'>normalize_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>The first argument, name, must not be nil. </span><span class='tstring_end'>'</span></span> \
+                          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Please report this as a bug!</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_normalize_attribute_name'>normalize_attribute_name</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_attribute'>attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_normalize_value'>normalize_value</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="normalize_attribute_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>normalize_attribute_name</strong>(name) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/attributes.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_normalize_attribute_name'>normalize_attribute_name</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="normalize_attribute_options-instance_method">
+  
+    - (<tt>Object</tt>) <strong>normalize_attribute_options</strong>(attr, value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>normalize_attribute_options</p>
+
+<p>Makes the Hashized value from the full attribute name e.g.
+userCertificate;binary =&gt; "some_bin"</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_becomes'>becomes</span> <span class='id identifier rubyid_userCertificate'>userCertificate</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>binary</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>some_bin</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+114
+115
+116
+117
+118
+119
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/attributes.rb', line 114</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_normalize_attribute_options'>normalize_attribute_options</span><span class='lparen'>(</span><span class='id identifier rubyid_attr'>attr</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='lbracket'>[</span><span class='id identifier rubyid_attr'>attr</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rbracket'>]</span> <span class='kw'>unless</span> <span class='id identifier rubyid_attr'>attr</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>;</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_ret_attr'>ret_attr</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_attr'>attr</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>;</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_ret_attr'>ret_attr</span><span class='comma'>,</span>
+   <span class='lbracket'>[</span><span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='id identifier rubyid_option'>option</span><span class='op'>|</span> <span class='lbrace'>{</span><span class='id identifier rubyid_option'>option</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_result'>result</span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unnormalize_attribute-instance_method">
+  
+    - (<tt>Object</tt>) <strong>unnormalize_attribute</strong>(name, values, result = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/attributes.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unnormalize_attribute'>unnormalize_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_values'>values</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_suffix'>suffix</span><span class='comma'>,</span> <span class='id identifier rubyid_real_value'>real_value</span> <span class='op'>=</span> <span class='id identifier rubyid_unnormalize_attribute_options'>unnormalize_attribute_options</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_new_name'>new_name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>+</span> <span class='id identifier rubyid_suffix'>suffix</span>
+        <span class='id identifier rubyid_unnormalize_attribute'>unnormalize_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_new_name'>new_name</span><span class='comma'>,</span> <span class='id identifier rubyid_real_value'>real_value</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>DN</span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+        <span class='kw'>else</span>
+          <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unnormalize_attribute_options-instance_method">
+  
+    - (<tt>Object</tt>) <strong>unnormalize_attribute_options</strong>(value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>unnormalize_attribute_options</p>
+
+<p>Unnormalizes all of the subtypes from a given set of nested hashes and
+returns the attribute suffix and the final true value</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/attributes.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unnormalize_attribute_options'>unnormalize_attribute_options</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_ret_val'>ret_val</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Hash</span>
+    <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>;</span><span class='tstring_end'>'</span></span> <span class='op'>+</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_ret_val'>ret_val</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span><span class='lbracket'>[</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_ret_val'>ret_val</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Hash</span>
+      <span class='id identifier rubyid_sub_options'>sub_options</span><span class='comma'>,</span> <span class='id identifier rubyid_ret_val'>ret_val</span> <span class='op'>=</span> <span class='id identifier rubyid_unnormalize_attribute_options'>unnormalize_attribute_options</span><span class='lparen'>(</span><span class='id identifier rubyid_ret_val'>ret_val</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_options'>options</span> <span class='op'>+=</span> <span class='id identifier rubyid_sub_options'>sub_options</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_ret_val'>ret_val</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_ret_val'>ret_val</span><span class='rbracket'>]</span> <span class='kw'>unless</span> <span class='id identifier rubyid_ret_val'>ret_val</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Array</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='id identifier rubyid_ret_val'>ret_val</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unnormalize_attributes-instance_method">
+  
+    - (<tt>Object</tt>) <strong>unnormalize_attributes</strong>(attributes) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79
+80
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/attributes.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unnormalize_attributes'>unnormalize_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_values'>values</span><span class='op'>|</span>
+    <span class='id identifier rubyid_unnormalize_attribute'>unnormalize_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_values'>values</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer"></div>
+
+  
+      </div>
+
+      <div class="sidebar">
+        <h2>About Project</h2>
+	<ul>
+	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li>
+	    <a href="http://rubyforge.org/mailman/listinfo/ruby-activeldap-discuss">Mailinglist</a>
+	  </li>
+	  <li>
+	    <a href="http://github.com/activeldap/">GitHub page</a>
+	  </li>
+	  <li>
+	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
+	  </li>
+	</ul>
+
+        <h2>About ActiveLdap</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../../activeldap/en/">Reference</a>
+          </li>
+	  <li class="menu-tutorial">
+	    <a href="../../../../activeldap/en/file.tutorial.html">Tutorial</a>
+	  </li>
+	  <li class="menu-rails">
+	    <a href="../../../../activeldap/en/file.rails.html">Rails</a>
+	  </li>
+	  <li class="menu-install">
+	    <a href="../../../../#activeldap-install">Install</a>
+	  </li>
+	  <li class="menu-development">
+	    <a href="../../../../activeldap/en/file.development.html">Development</a>
+	  </li>
+	</ul>
+
+        <h2>About ActiveLdap Fabrication</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../../activeldap-fabrication/en/">Reference</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <p id="sponsor-rubyforge">
+        <a href="http://rubyforge.org/projects/ruby-activeldap/">
+          <img src="../../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
+        </a>
+      </p>
+      <p id="sponsor-github">
+        <a href="https://github.com/activeldap/">
+          <img src="../../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
+        </a>
+      </p>
+      <p id="sponsor-tango">
+	<a href="http://tango.freedesktop.org/">
+          <img width="120" height="53" border="0" alt="Tango Desktop Project's icons are used." src="../../../../tango-logo.png" />
+        </a>
+      </p>
+      <p id="sponsor-famfamfam">
+	<a href="http://www.famfamfam.com/">
+          <img width="120" height="18" border="0" alt="famfamfam.com's flags are used." src="../../../../famfamfam-logo.png" />
+        </a>
+      </p>
+    </div>
+
+</body>
+</html>

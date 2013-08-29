@@ -1,0 +1,816 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../../activeldap.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../favicon.ico" />
+    <link rel="icon" href="../../../../favicon.png" />
+    <title>
+  Module: ActiveLdap::Configuration::ClassMethods
+  
+    &mdash; activeldap
+  
+ - ActiveLdap</title>
+
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+<div class="header">
+  <div class="title">
+    <a href="../../../../">
+      <span class="title">
+  Module: ActiveLdap::Configuration::ClassMethods
+  
+    &mdash; activeldap
+  
+</span>
+      <span class="title-separator">-</span>
+      <span class="title-project">ActiveLdap</span>
+    </a>
+  </div>
+  <ul class="other-languages">
+    <li id="other-language-japanese" lang="ja" xml:lang="ja"><a href="../../../../activeldap/ja/ActiveLdap/Configuration/ClassMethods.html">日本語</a></li>
+  </ul>
+  <ul class="menu">
+    <li><a href="../../../../#activeldap-about">ActiveLdap</a></li>
+    <li><a href="../../../../#activeldap-fabrication-about">ActiveLdap Fabrication</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="main">
+
+
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../alphabetical_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Configuration.html" title="ActiveLdap::Configuration (module)">Configuration</a></span></span>
+     &raquo; 
+    <span class="title">ClassMethods</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ActiveLdap::Configuration::ClassMethods
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/active_ldap/configuration.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="CONNECTION_CONFIGURATION_KEYS-constant" class="">CONNECTION_CONFIGURATION_KEYS =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='comma'>,</span> <span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:adapter</span><span class='rbracket'>]</span></pre></dd>
+      
+        <dt id="defined_configurations-classvariable" class="">@@defined_configurations =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span><span class='rbrace'>}</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#configuration-instance_method" title="#configuration (instance method)">- (Object) <strong>configuration</strong>(key = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default_configuration-instance_method" title="#default_configuration (instance method)">- (Object) <strong>default_configuration</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#define_configuration-instance_method" title="#define_configuration (instance method)">- (Object) <strong>define_configuration</strong>(key, config) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#defined_configurations-instance_method" title="#defined_configurations (instance method)">- (Object) <strong>defined_configurations</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ensure_configuration-instance_method" title="#ensure_configuration (instance method)">- (Object) <strong>ensure_configuration</strong>(config = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#merge_configuration-instance_method" title="#merge_configuration (instance method)">- (Object) <strong>merge_configuration</strong>(user_configuration, target = self) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#prepare_configuration-instance_method" title="#prepare_configuration (instance method)">- (Object) <strong>prepare_configuration</strong>(configuration) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_configuration_by_configuration-instance_method" title="#remove_configuration_by_configuration (instance method)">- (Object) <strong>remove_configuration_by_configuration</strong>(config) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_connection_related_configuration-instance_method" title="#remove_connection_related_configuration (instance method)">- (Object) <strong>remove_connection_related_configuration</strong>(config) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>configuration</strong>(key = nil) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='cvar'>@@defined_configurations</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span> <span class='op'>||</span> <span class='id identifier rubyid_active_connection_name'>active_connection_name</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="default_configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>default_configuration</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_default_configuration'>default_configuration</span>
+  <span class='const'>DEFAULT_CONFIG</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="define_configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>define_configuration</strong>(key, config) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_define_configuration'>define_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
+  <span class='cvar'>@@defined_configurations</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_config'>config</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="defined_configurations-instance_method">
+  
+    - (<tt>Object</tt>) <strong>defined_configurations</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_defined_configurations'>defined_configurations</span>
+  <span class='cvar'>@@defined_configurations</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ensure_configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ensure_configuration</strong>(config = nil) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ensure_configuration'>ensure_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='const'>LDAP_ENV</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'>LDAP_ENV</span>
+    <span class='kw'>elsif</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='const'>Rails</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_env'>env</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Symbol</span><span class='rparen'>)</span> <span class='kw'>or</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid__config'>_config</span> <span class='op'>=</span> <span class='id identifier rubyid_configurations'>configurations</span><span class='lbracket'>[</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid__config'>_config</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConnectionError</span><span class='comma'>,</span>
+            <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s connection is not configured</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_config'>config</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='id identifier rubyid__config'>_config</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_config'>config</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="merge_configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>merge_configuration</strong>(user_configuration, target = self) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_merge_configuration'>merge_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_user_configuration'>user_configuration</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='op'>=</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_configuration'>configuration</span> <span class='op'>=</span> <span class='id identifier rubyid_default_configuration'>default_configuration</span>
+  <span class='id identifier rubyid_prepare_configuration'>prepare_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_user_configuration'>user_configuration</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_key'>key</span>
+    <span class='kw'>when</span> <span class='symbol'>:base</span>
+      <span class='comment'># Scrub before inserting
+</span>      <span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_base'>base</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>['}{#]</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:scope</span><span class='comma'>,</span> <span class='symbol'>:ldap_scope</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_key'>key</span> <span class='op'>==</span> <span class='symbol'>:ldap_scope</span>
+        <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:ldap_scope configuration option is deprecated. </span><span class='tstring_end'>&quot;</span></span> \
+                    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Use :scope instead.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='const'>ActiveSupport</span><span class='op'>::</span><span class='const'>Deprecation</span><span class='period'>.</span><span class='id identifier rubyid_warn'>warn</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_scope'>scope</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
+      <span class='id identifier rubyid_configuration'>configuration</span><span class='lbracket'>[</span><span class='symbol'>:scope</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_configuration'>configuration</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_configuration'>configuration</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="prepare_configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>prepare_configuration</strong>(configuration) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 124</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_prepare_configuration'>prepare_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_configuration'>configuration</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_configuration'>configuration</span> <span class='op'>=</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_symbolize_keys'>symbolize_keys</span>
+  <span class='id identifier rubyid_uri'>uri</span> <span class='op'>=</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:uri</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_configuration'>configuration</span> <span class='kw'>unless</span> <span class='id identifier rubyid_uri'>uri</span>
+
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_uri'>uri</span> <span class='op'>=</span> <span class='const'>URI</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_uri'>uri</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>URI</span><span class='op'>::</span><span class='const'>InvalidURIError</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigurationError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid URI: %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_uri'>uri</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>URI</span><span class='op'>::</span><span class='const'>LDAP</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigurationError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>not a LDAP URI: %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:port</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='lbracket'>[</span><span class='symbol'>:host</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='kw'>if</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span>
+  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='lbracket'>[</span><span class='symbol'>:bind_dn</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_dn'>dn</span> <span class='kw'>if</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_dn'>dn</span>
+  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='lbracket'>[</span><span class='symbol'>:scope</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_scope'>scope</span> <span class='kw'>if</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_scope'>scope</span>
+  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='symbol'>:ssl</span> <span class='kw'>if</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>URI</span><span class='op'>::</span><span class='const'>LDAPS</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_configuration'>configuration</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_configuration_by_configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>remove_configuration_by_configuration</strong>(config) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 91</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove_configuration_by_configuration'>remove_configuration_by_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
+  <span class='cvar'>@@defined_configurations</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='id identifier rubyid_config'>config</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_connection_related_configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>remove_connection_related_configuration</strong>(config) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99
+100</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove_connection_related_configuration'>remove_connection_related_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+    <span class='const'>CONNECTION_CONFIGURATION_KEYS</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+	<span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer"></div>
+
+  
+      </div>
+
+      <div class="sidebar">
+        <h2>About Project</h2>
+	<ul>
+	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li>
+	    <a href="http://rubyforge.org/mailman/listinfo/ruby-activeldap-discuss">Mailinglist</a>
+	  </li>
+	  <li>
+	    <a href="http://github.com/activeldap/">GitHub page</a>
+	  </li>
+	  <li>
+	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
+	  </li>
+	</ul>
+
+        <h2>About ActiveLdap</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../../activeldap/en/">Reference</a>
+          </li>
+	  <li class="menu-tutorial">
+	    <a href="../../../../activeldap/en/file.tutorial.html">Tutorial</a>
+	  </li>
+	  <li class="menu-rails">
+	    <a href="../../../../activeldap/en/file.rails.html">Rails</a>
+	  </li>
+	  <li class="menu-install">
+	    <a href="../../../../#activeldap-install">Install</a>
+	  </li>
+	  <li class="menu-development">
+	    <a href="../../../../activeldap/en/file.development.html">Development</a>
+	  </li>
+	</ul>
+
+        <h2>About ActiveLdap Fabrication</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../../activeldap-fabrication/en/">Reference</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <p id="sponsor-rubyforge">
+        <a href="http://rubyforge.org/projects/ruby-activeldap/">
+          <img src="../../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
+        </a>
+      </p>
+      <p id="sponsor-github">
+        <a href="https://github.com/activeldap/">
+          <img src="../../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
+        </a>
+      </p>
+      <p id="sponsor-tango">
+	<a href="http://tango.freedesktop.org/">
+          <img width="120" height="53" border="0" alt="Tango Desktop Project's icons are used." src="../../../../tango-logo.png" />
+        </a>
+      </p>
+      <p id="sponsor-famfamfam">
+	<a href="http://www.famfamfam.com/">
+          <img width="120" height="18" border="0" alt="famfamfam.com's flags are used." src="../../../../famfamfam-logo.png" />
+        </a>
+      </p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,965 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+    <link rel="stylesheet" href="../../activeldap.css" type="text/css" />
+    <link rel="shortcut icon" href="../../favicon.ico" />
+    <link rel="icon" href="../../favicon.png" />
+    <title>
+  File: tutorial
+  
+    &mdash; activeldap
+  
+ - ActiveLdap</title>
+
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+<div class="header">
+  <div class="title">
+    <a href="../../">
+      <span class="title">
+  File: tutorial
+  
+    &mdash; activeldap
+  
+</span>
+      <span class="title-separator">-</span>
+      <span class="title-project">ActiveLdap</span>
+    </a>
+  </div>
+  <ul class="other-languages">
+    <li id="other-language-japanese" lang="ja" xml:lang="ja"><a href="../../activeldap/ja/file.tutorial.html">日本語</a></li>
+  </ul>
+  <ul class="menu">
+    <li><a href="../../#activeldap-about">ActiveLdap</a></li>
+    <li><a href="../../#activeldap-fabrication-about">ActiveLdap Fabrication</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="main">
+
+
+    <div id="header">
+      <div id="menu">
+  
+    <a href="alphabetical_index.html">Index</a> &raquo; 
+    <span class="title">File: tutorial</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>Tutorial</h1>
+<h2>Introduction</h2>
+<p>ActiveLdap is a novel way of interacting with <span class="caps">LDAP</span>.  Most interaction with
+<span class="caps">LDAP</span> is done using clunky LDIFs, web interfaces, or with painful APIs that
+required a thick reference manual nearby. ActiveLdap aims to fix that.
+Inspired by <a href="http://activerecord.rubyonrails.org">ActiveRecord</a>, ActiveLdap provides an
+object oriented interface to <span class="caps">LDAP</span> entries.</p>
+<p>The target audience is system administrators and <span class="caps">LDAP</span> users everywhere that
+need quick, clean access to <span class="caps">LDAP</span> in Ruby.</p>
+<h3>What&#8217;s <span class="caps">LDAP</span>?</h3>
+<p><span class="caps">LDAP</span> stands for &#8220;Lightweight Directory Access Protocol.&#8221; Basically this means
+that it is the protocol used for accessing <span class="caps">LDAP</span> servers.  <span class="caps">LDAP</span> servers
+lightweight directories.  An <span class="caps">LDAP</span> server can contain anything from a simple
+digital phonebook to user accounts for computer systems.  More and more
+frequently, it is being used for the latter.  My examples in this text will
+assume some familiarity with using <span class="caps">LDAP</span> as a centralized authentication and
+authorization server for Unix systems. (Unfortunately, I&#8217;ve yet to try this
+against Microsoft&#8217;s ActiveDirectory, despite what the name implies.)</p>
+<p>Further reading:</p>
+<ul>
+	<li><a href="http://www.faqs.org/rfcs/rfc1777.html">RFC1777</a> &#8211; Lightweight Directory Access Protocol</li>
+	<li><a href="http://www.openldap.org">OpenLDAP</a></li>
+</ul>
+<h3>So why use ActiveLdap?</h3>
+<p>Using <span class="caps">LDAP</span> directly (even with the excellent Ruby/<span class="caps">LDAP</span>), leaves you bound to
+the world of the predefined <span class="caps">LDAP</span> <span class="caps">API</span>.  While this <span class="caps">API</span> is important for many
+reasons, having to extract code out of <span class="caps">LDAP</span> search blocks and create huge
+arrays of <span class="caps">LDAP</span>.mod entries make code harder to read, less intuitive, and just
+less fun to write.  Hopefully, ActiveLdap will remedy all of these
+problems!</p>
+<h2>Getting Started</h2>
+<h3>Requirements</h3>
+<ul>
+	<li>A Ruby implementation: <a href="http://www.ruby-lang.org">Ruby</a> 1.8.x, 1.9.1 or <a href="http://jruby.codehaus.org/">JRuby</a></li>
+	<li>A <span class="caps">LDAP</span> library: <a href="http://code.google.com/p/ruby-activeldap/wiki/RubyLDAP">Ruby/<span class="caps">LDAP</span></a> (for Ruby), <a href="http://rubyforge.org/projects/net-ldap/">Net::<span class="caps">LDAP</span></a> (for Ruby or JRuby) or <span class="caps">JNDI</span> (for JRuby)</li>
+	<li>A <span class="caps">LDAP</span> server: <a href="http://www.openldap.org">OpenLDAP</a>, etc
+	<ul>
+		<li>Your <span class="caps">LDAP</span> server must allow root_dse queries to allow for schema queries</li>
+	</ul></li>
+</ul>
+<h3>Installation</h3>
+<p>Assuming all the requirements are installed, you can install by gem.</p>
+<pre class="code plain"><code class="plain"># gem install activeldap
+</code></pre>
+<p>Now as a quick test, you can run:</p>
+<pre class="code ruby"><code class="ruby">
+$ irb -rubygems
+irb&gt; require 'active_ldap'
+=&gt; true
+irb&gt; exit
+</code></pre>
+<p>If the require returns false or an exception is raised, there has been a
+problem with the installation.  You may need to customize what setup.rb does on
+install.</p>
+<h2>Usage</h2>
+<p>This section covers using ActiveLdap from writing extension classes to
+writing applications that use them.</p>
+<p>Just to give a taste of what&#8217;s to come, here is a quick example using irb:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; require 'active_ldap'
+</code></pre>
+<p>Call setup_connection method  for connect to <span class="caps">LDAP</span> server. In this case, <span class="caps">LDAP</span> server
+is localhost, and base of <span class="caps">LDAP</span> tree is &#8220;dc=dataspill,dc=org&#8221;.</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; ActiveLdap::Base.setup_connection :host =&gt; 'localhost', :base =&gt; 'dc=dataspill,dc=org'
+</code></pre>
+<p>Here&#8217;s an extension class that maps to the <span class="caps">LDAP</span> Group objects:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; class Group &lt; ActiveLdap::Base
+irb*   ldap_mapping
+irb* end
+</code></pre>
+<p>In the above code, Group class handles sub tree of ou=Groups
+tha is :base value specified by setup_connection. A instance
+of Group class represents a <span class="caps">LDAP</span> object under ou=Gruops.</p>
+<p>Here is the Group class in use:</p>
+<pre class="code ruby"><code class="ruby">
+# Get all group names
+irb&gt; all_groups = Group.find(:all, '*').collect {|group| group.cn}
+=&gt; [&quot;root&quot;, &quot;daemon&quot;, &quot;bin&quot;, &quot;sys&quot;, &quot;adm&quot;, &quot;tty&quot;, ..., &quot;develop&quot;]
+
+# Get LDAP objects in develop group
+irb&gt; group = Group.find(&quot;develop&quot;)
+=&gt; #&lt;Group objectClass:&lt;...&gt; ...&gt;
+
+# Get cn of the develop group
+irb&gt; group.cn
+=&gt; &quot;develop&quot;
+
+# Get gid_number of the develop group
+irb&gt; group.gid_number
+=&gt; &quot;1003&quot;
+</code></pre>
+<p>That&#8217;s it! No let&#8217;s get back in to it.</p>
+<h3>Extension Classes</h3>
+<p>Extension classes are classes that are subclassed from ActiveLdap::Base.  They
+are used to represent objects in your <span class="caps">LDAP</span> server abstractly.</p>
+<h4>Why do I need them?</h4>
+<p>Extension classes are what make ActiveLdap &#8220;active&#8221;! They do all the
+background work to make easy-to-use objects by mapping the <span class="caps">LDAP</span> object&#8217;s
+attributes on to a Ruby class.</p>
+<h4>Special Methods</h4>
+<p>I will briefly talk about each of the methods you can use when defining an
+extension class.  In the above example, I only made one special method call
+inside the Group class. More than likely, you will want to more than that.</p>
+<h5>ldap_mapping</h5>
+<p>ldap_mapping is the only required method to setup an extension class for use
+with ActiveLdap. It must be called inside of a subclass as shown above.</p>
+<p>Below is a much more realistic Group class:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cn</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+               <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ou=Groups</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>top</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>posixGroup</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+               <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='symbol'>:one</span>
+<span class='kw'>end</span>
+</code></pre>
+<p>As you can see, this method is used for defining how this class maps in to <span class="caps">LDAP</span>.  Let&#8217;s say that
+my <span class="caps">LDAP</span> tree looks something like this:</p>
+<pre class="code plain"><code class="plain">* dc=dataspill,dc=org
+|- ou=People,dc=dataspill,dc=org
+|+ ou=Groups,dc=dataspill,dc=org
+  \
+   |- cn=develop,ou=Groups,dc=dataspill,dc=org
+   |- cn=root,ou=Groups,dc=dataspill,dc=org
+   |- ...
+</code></pre>
+<p>Under ou=People I store user objects, and under ou=Groups, I store group
+objects.  What |ldap_mapping| has done is mapped the class in to the <span class="caps">LDAP</span> tree
+abstractly. With the given :dn_attributes and :prefix, it will only work for
+entries under ou=Groups,dc=dataspill,dc=org using the primary attribute &#8216;cn&#8217;
+as the beginning of the distinguished name.</p>
+<p>Just for clarity, here&#8217;s how the arguments map out:</p>
+<pre class="code plain"><code class="plain"> cn=develop,ou=Groups,dc=dataspill,dc=org
+ ^^         ^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^
+:dn_attribute |         |
+            :prefix     |
+              :base from setup_connection
+</code></pre>
+<p>:scope tells ActiveLdap to only search under ou=Groups, and not to look deeper
+for dn_attribute matches.
+(e.g. cn=develop,ou=DevGroups,ou=Groups,dc=dataspill,dc=org)
+You can choose value from between :sub, :one and :base.</p>
+<p>Something&#8217;s missing: :classes.  :classes is used to tell ActiveLdap what
+the minimum requirement is when creating a new object. <span class="caps">LDAP</span> uses objectClasses
+to define what attributes a <span class="caps">LDAP</span> object may have. ActiveLdap needs to know
+what classes are required when creating a new object.  Of course, you can leave
+that field out to default to [&#8216;top&#8217;] only.  Then you can let each application
+choose what objectClasses their objects should have by calling the method e.g.
+Group#add_class(*values).</p>
+<p>Note that is can be very important to define the default :classes value. Due to
+implementation choices with most <span class="caps">LDAP</span> servers, once an object is created, its
+structural objectclasses may not be removed (or replaced).  Setting a sane default
+may help avoid programmer error later.</p>
+<p>:classes isn&#8217;t the only optional argument.  If :dn_attribute is left off,
+it defaults to super class&#8217;s value or &#8216;cn&#8217;.  If :prefix is left off,
+it will default to &#8216;ou=PluralizedClassName&#8217;. In this
+case, it would be &#8216;ou=Groups&#8217;.</p>
+<p>:classes should be an Array. :dn_attribute should be a String and so should
+:prefix.</p>
+<h5>belongs_to</h5>
+<p>This method allows an extension class to make use of other extension classes
+tying objects together across the <span class="caps">LDAP</span> tree. Often, user objects will be
+members of, or belong_to, Group objects.</p>
+<pre class="code plain"><code class="plain">* dc=dataspill,dc=org
+|+ ou=People,dc=dataspill,dc=org
+ \
+ |- uid=drewry,ou=People,dc=dataspill,dc=org
+|- ou=Groups,dc=dataspill,dc=org
+</code></pre>
+<p>In the above tree, one such example would be user &#8216;drewry&#8217; who is a part of the
+group &#8216;develop&#8217;. You can see this by looking at the &#8216;memberUid&#8217; field of &#8216;develop&#8217;.</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; develop = Group.find('develop')
+=&gt; ...
+irb&gt; develop.memberUid
+=&gt; ['drewry', 'builder']
+</code></pre>
+<p>If we look at the <span class="caps">LDAP</span> entry for &#8216;drewry&#8217;, we do not see any references to
+group &#8216;develop&#8217;. In order to remedy that, we can use belongs_to</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; class User &lt; ActiveLdap::Base
+irb*   ldap_mapping :dn_attribute =&gt; 'uid', :prefix =&gt; 'ou=People', :classes =&gt; ['top','account']
+irb*   belongs_to :groups, :class_name =&gt; 'Group', :many =&gt; 'memberUid', :foreign_key =&gt; 'uid'
+irb* end
+</code></pre>
+<p>Now, class User will have a method called &#8216;groups&#8217; which will retrieve all
+Group objects that a user is in.</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; me = User.find('drewry')
+irb&gt; me.groups
+=&gt;  #&lt;ActiveLdap::Association::BelongsToMany...&gt;    # Enumerable object
+irb&gt; me.groups.each { |group| p group.cn };nil
+&quot;cdrom&quot;
+&quot;audio&quot;
+&quot;develop&quot;
+=&gt; nil
+(Note: nil is just there to make the output cleaner...)
+</code></pre>
+<p><span class="caps">TIP</span>: If you weren&#8217;t sure what the distinguished name attribute was for Group,
+you could also do the following:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; me.groups.each { |group| p group.id };nil
+&quot;cdrom&quot;
+&quot;audio&quot;
+&quot;develop&quot;
+=&gt; nil
+</code></pre>
+<p>Now let&#8217;s talk about the arguments of belongs_to. We use the following code that extends Group group a bit for explain:</p>
+<pre class="code ruby"><code class="ruby">
+class User &lt; ActiveLdap::Base
+  ldap_mapping :dn_attribute =&gt; 'uid', :prefix =&gt; 'People', :classes =&gt; ['top','account']
+
+  # Associate with primary belonged group
+  belongs_to :primary_group, :foreign_key =&gt; 'gidNumber',
+               :class_name =&gt; 'Group', :primary_key =&gt; 'gidNumber'
+
+  # Associate with all belonged groups
+  belongs_to :groups,  :foreign_key =&gt; 'uid',
+               :class_name =&gt; 'Group', :many =&gt; 'memberUid',
+end
+</code></pre>
+<p>The first argument is the name of the method you wish to create. In this case, we created a method called primary_group and groups using the symbol :primary_group and :groups. The next collection of arguments are actually a Hash (as with ldap_mapping).</p>
+<p>:foreign_key tells belongs_to what attribute Group objects have that match the related object&#8217;s attribute. If :foreign_key is left off of the argument list, it is assumed to be the dn_attribute.</p>
+<p>In the example, uid is used for :foreign_key. It may confuse you.</p>
+<p>ActiveLdap uses :foreign_key as &#8220;own attribute name&#8221;. So it
+may not be &#8220;foreign key&#8221;. You can consider :foreign_key just
+as a relation key.</p>
+<p>:primary_key is treated as &#8220;related object&#8217;s attribute name&#8221;
+as we discussed later.</p>
+<p>:class_name should be a string that has the name of a class
+you&#8217;ve already included. If your class is inside of a module,
+be sure to put the whole name, e.g.
+<code>:class_name =&gt; "MyLdapModule::Group"</code>.</p>
+<p>:many and :primary_key are similar. Both of them specifies attribute name of related object specified by :foreign_key. Those values are attribute name that can be used by object of class specified by :class_name.</p>
+<p>Relation is resolved by searching entries of :class_name class with :foreign_key attribute value. Search target attribute for it is :primary_key or :many. primary_group method in the above example searches Group objects with User object&#8217;s gidNumber value as Group object&#8217;s gidNumber value. Matched Group objects are belonged objects.</p>
+<p>:parimary_key is used for an object just belongs to an object. The first matched object is treated as beloned object.</p>
+<p>:many is used for an object belongs to many objects. All of matched objects are treated as belonged objects.</p>
+<p>In addition, you can do simple membership tests by doing the following:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; me.groups.member? 'root'
+=&gt; false
+irb&gt; me.groups.member? 'develop'
+=&gt; true
+</code></pre>
+<h5>has_many</h5>
+<p>This method is the opposite of belongs_to. Instead of checking other objects in
+other parts of the <span class="caps">LDAP</span> tree to see if you belong to them, you have multiple
+objects from other trees listed in your object. To show this, we can just
+invert the example from above:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cn</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ou=Groups</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>top</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>posixGroup</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+
+  <span class='comment'># Associate with primary belonged users
+</span>  <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:primary_members</span><span class='comma'>,</span> <span class='symbol'>:foreign_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+           <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:primary_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>'</span></span>
+
+  <span class='comment'># Associate with all belonged users
+</span>  <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:members</span><span class='comma'>,</span>  <span class='symbol'>:wrap</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+           <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='symbol'>:primary_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>uid</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span>
+</code></pre>
+<p>Now we can see that group develop has user &#8216;drewry&#8217; as a member, and it can
+even return all responses in object form just like belongs_to methods.</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; develop = Group.find('develop')
+=&gt; ...
+irb&gt; develop.members
+=&gt; #&lt;ActiveLdap::Association::HasManyWrap:..&gt; # Enumerable object
+irb&gt; develop.members.map{|member| member.id}
+=&gt; [&quot;drewry&quot;, &quot;builder&quot;]
+</code></pre>
+<p>The arguments for has_many follow the exact same idea that belongs_to&#8217;s
+arguments followed. :wrap&#8217;s contents are used to search for matching
+:primary_key content.  If :primary_key is not specified, it defaults to the
+dn_attribute of the specified :class_name.</p>
+<h3>Using these new classes</h3>
+<p>These new classes have many method calls. Many of them are automatically
+generated to provide access to the <span class="caps">LDAP</span> object&#8217;s attributes. Other were defined
+during class creation by special methods like belongs_to. There are a few other
+methods that do not fall in to these categories.</p>
+<h4>.find</h4>
+<p>.find is a class method that is accessible from
+any subclass of Base that has &#8216;ldap_mapping&#8217; called. When
+called .first(:first) returns the first match of the given class.</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; Group.find(:first, 'deve*&quot;).cn
+=&gt; &quot;develop&quot;
+</code></pre>
+<p>In this simple example, Group.find took the search string of &#8216;deve*&#8217; and
+searched for the first match in Group where the dn_attribute matched the
+query. This is the simplest example of .find.</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; Group.find(:all).collect {|group| group.cn}
+=&gt; [&quot;root&quot;, &quot;daemon&quot;, &quot;bin&quot;, &quot;sys&quot;, &quot;adm&quot;, &quot;tty&quot;, ..., &quot;develop&quot;]
+</code></pre>
+<p>Here .find(:all) returns all matches to the same query.  Both .find(:first) and
+.find(:all) also can take more expressive arguments:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; Group.find(:all, :attribute =&gt; 'gidNumber', :value =&gt; '1003').collect {|group| group.cn}
+=&gt; [&quot;develop&quot;]
+</code></pre>
+<p>So it is pretty clear what :attribute and :value do &#8211; they are used to query as
+:attribute=:value.</p>
+<p>If :attribute is unspecified, it defaults to the dn_attribute.</p>
+<p>It is also possible to override :attribute and :value by specifying :filter. This
+argument allows the direct specification of a <span class="caps">LDAP</span> filter to retrieve objects by.</p>
+<h4>.search</h4>
+<p>.search is a class method that is accessible from any subclass of Base, and Base.
+It lets the user perform an arbitrary search against the current <span class="caps">LDAP</span> connection
+irrespetive of <span class="caps">LDAP</span> mapping data.  This is meant to be useful as a utility method
+to cover 80% of the cases where a user would want to use Base.connection directly.</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; Base.search(:base =&gt; 'dc=example,dc=com', :filter =&gt; '(uid=roo*)',
+                 :scope =&gt; :sub, :attributes =&gt; ['uid', 'cn'])
+=&gt;  [[&quot;uid=root,ou=People,dc=dataspill,dc=org&quot;,{&quot;cn&quot;=&gt;[&quot;root&quot;], &quot;uidNumber&quot;=&gt;[&quot;0&quot;]}]
+</code></pre>
+<p>You can specify the :filter, :base, :scope, and :attributes, but they all have defaults &#8212;</p>
+<ul>
+	<li>:filter defaults to objectClass=* &#8211; usually this isn&#8217;t what you want</li>
+	<li>:base defaults to the base of the class this is executed from (as set in ldap_mapping)</li>
+	<li>:scope defaults to :sub. Usually you won&#8217;t need to change it (You can choose value also from between :one and :base)</li>
+	<li>:attributes defaults to [] and is the list of attributes you want back. Empty means all of them.</li>
+</ul>
+<h4>#valid?</h4>
+<p>valid? is a method that verifies that all attributes that are required by the
+objects current objectClasses are populated.</p>
+<h4>#save</h4>
+<p>save is a method that writes any changes to an object back to the <span class="caps">LDAP</span> server.
+It automatically handles the addition of new objects, and the modification of
+existing ones.</p>
+<h4>.exists?</h4>
+<p>exists? is a simple method which returns true is the current object exists in
+<span class="caps">LDAP</span>, or false if it does not.</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; User.exists?(&quot;dshadsadsa&quot;)
+=&gt; false
+</code></pre>
+<h3>ActiveLdap::Base</h3>
+<p>ActiveLdap::Base has come up a number of times in the examples above.  Every
+time, it was being used as the super class for the wrapper objects. While this
+is it&#8217;s main purpose, it also handles quite a bit more in the background.</p>
+<h4>What is it?</h4>
+<p>ActiveLdap::Base is the heart of ActiveLdap.  It does all the schema
+parsing for validation and attribute-to-method mangling as well as manage the
+connection to <span class="caps">LDAP</span>.</p>
+<h5>setup_connection</h5>
+<p>Base.setup_connection takes many (optional) arguments and is used to
+connect to the <span class="caps">LDAP</span> server. Sometimes you will want to connect anonymously
+and other times over <span class="caps">TLS</span> with user credentials. Base.setup_connection is
+here to do all of that for you.</p>
+<p>By default, if you call any subclass of Base, such as Group, it will call
+Base.setup_connection() if these is no active <span class="caps">LDAP</span> connection. If your
+server allows anonymous binding, and you only want to access data in a
+read-only fashion, you won&#8217;t need to call Base.setup_connection. Here
+is a fully parameterized call:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span>
+  <span class='symbol'>:host</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ldap.dataspill.org</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+  <span class='symbol'>:port</span> <span class='op'>=&gt;</span> <span class='int'>389</span><span class='comma'>,</span>
+  <span class='symbol'>:base</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>dc=dataspill,dc=org</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+  <span class='symbol'>:logger</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_logger_object'>logger_object</span><span class='comma'>,</span>
+  <span class='symbol'>:bind_dn</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>uid=drewry,ou=People,dc=dataspill,dc=org</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>password12345</span><span class='tstring_end'>'</span></span> <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='symbol'>:allow_anonymous</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span>
+  <span class='symbol'>:try_sasl</span> <span class='op'>=&gt;</span> <span class='kw'>false</span>
+<span class='rparen'>)</span>
+</code></pre>
+<p>There are quite a few arguments, but luckily many of them have safe defaults:</p>
+<ul>
+	<li>:host defaults to &#8220;127.0.0.1&#8221;.</li>
+	<li>:port defaults to nil. 389 is applied if not specified.</li>
+	<li>:bind_dn defaults to nil. anonymous binding is applied if not specified.</li>
+	<li>:logger defaults to a Logger object that prints fatal messages to stderr</li>
+	<li>:password_block defaults to nil</li>
+	<li>:allow_anonymous defaults to true</li>
+	<li>:try_sasl defaults to false &#8211; see Advanced Topics for more on this one.</li>
+</ul>
+<p>Most of these are obvious, but I&#8217;ll step through them for completeness:</p>
+<ul>
+	<li>:host defines the <span class="caps">LDAP</span> server hostname to connect to.</li>
+	<li>:port defines the <span class="caps">LDAP</span> server port to connect to.</li>
+	<li>:method defines the type of connection &#8211; :tls, :ssl, :plain</li>
+	<li>:base specifies the <span class="caps">LDAP</span> search base to use with the prefixes defined in all
+  subclasses.</li>
+	<li>:bind_dn specifies what your server expects when attempting to bind with
+  credentials.</li>
+	<li>:logger accepts a custom logger object to integrate with any other logging
+  your application uses.</li>
+	<li>:password_block, if defined, give the Proc block for acquiring the password</li>
+	<li>:password, if defined, give the user&#8217;s password as a String</li>
+	<li>:store_password indicates whether the password should be stored, or if used
+  whether the :password_block should be called on each reconnect.</li>
+	<li>:allow_anonymous determines whether anonymous binding is allowed if other
+  bind methods fail</li>
+	<li>:try_sasl, when true, tells ActiveLdap to attempt a <span class="caps">SASL</span>-<span class="caps">GSSAPI</span> bind</li>
+	<li>:sasl_quiet, when true, tells the <span class="caps">SASL</span> libraries to not spew messages to <span class="caps">STDOUT</span></li>
+	<li>:sasl_options, if defined, should be a hash of options to pass through. This currently only works with the ruby-ldap adapter, which currently only supports :realm, :authcid, and :authzid.</li>
+	<li>:retry_limit &#8211; indicates the number of attempts to reconnect that will be undertaken when a stale connection occurs. -1 means infinite.</li>
+	<li>:retry_wait &#8211; seconds to wait before retrying a connection</li>
+	<li>:scope &#8211; dictates how to find objects. (Default: :one)</li>
+	<li>:timeout &#8211; time in seconds &#8211; defaults to disabled. This <span class="caps">CAN</span> interrupt search() requests. Be warned.</li>
+	<li>:retry_on_timeout &#8211; whether to reconnect when timeouts occur. Defaults to true
+See lib/configuration.rb(ActiveLdap::Configuration::DEFAULT_CONFIG) for defaults for each option</li>
+</ul>
+<p>Base.setup_connection just setups connection
+configuration. A connection is connected and bound when it
+is needed. It follows roughly the following approach:</p>
+<ul>
+	<li>Connect to host:port using :method</li>
+</ul>
+<ul>
+	<li>If bind_dn and password_block/password, attempt to bind with credentials.</li>
+	<li>If that fails or no password_block and anonymous allowed, attempt to bind
+  anonymously.</li>
+	<li>If that fails, error out.</li>
+</ul>
+<p>On connect, the configuration options passed in are stored
+in an internal class variable which is used to cache the
+information without ditching the defaults passed in from
+configuration.rb</p>
+<h5>connection</h5>
+<p>Base.connection returns the ActiveLdap::Connection object.</p>
+<h3>Exceptions</h3>
+<p>There are a few custom exceptions used in ActiveLdap. They are detailed below.</p>
+<h4>DeleteError</h4>
+<p>This exception is raised when #delete fails. It will include <span class="caps">LDAP</span> error
+information that was passed up during the error.</p>
+<h4>SaveError</h4>
+<p>This exception is raised when there is a problem in #save updating or creating
+an <span class="caps">LDAP</span> entry.  Often the error messages are cryptic. Looking at the server
+logs or doing an <a href="http://www.wireshark.org">Wireshark</a> dump of the connection will
+often provide better insight.</p>
+<h4>AuthenticationError</h4>
+<p>This exception is raised during Base.setup_connection if no valid authentication methods
+succeeded.</p>
+<h4>ConnectionError</h4>
+<p>This exception is raised during Base.setup_connection if no valid
+connection to the <span class="caps">LDAP</span> server could be created. Check you 
+Base.setup_connection arguments, and network connectivity! Also check
+your <span class="caps">LDAP</span> server logs to see if it ever saw the request.</p>
+<h4>ObjectClassError</h4>
+<p>This exception is raised when an object class is used that is not defined
+in the schema.</p>
+<h3>Others</h3>
+<p>Other exceptions may be raised by the Ruby/<span class="caps">LDAP</span> module, or by other subsystems.
+If you get one of these exceptions and think it should be wrapped, write me an
+email and let me know where it is and what you expected. For faster results,
+email a patch!</p>
+<h3>Putting it all together</h3>
+<p>Now that all of the components of ActiveLdap have been covered, it&#8217;s time
+to put it all together! The rest of this section will show the steps to setup
+example user and group management scripts for use with the <span class="caps">LDAP</span> tree described
+above.</p>
+<p>All of the scripts here are in the package&#8217;s examples/ directory.</p>
+<h4>Setting up</h4>
+<p>Create directory for scripts.</p>
+<pre class="code plain"><code class="plain">% mkdir -p ldapadmin/objects
+</code></pre>
+<p>In ldapadmin/objects/ create the file user.rb:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>objects/group</span><span class='tstring_end'>'</span></span>
+
+<span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>uid</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ou=People</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>person</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>posixAccount</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:groups</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Group</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:many</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span>
+</code></pre>
+<p>In ldapadmin/objects/ create the file group.rb:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>top</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>posixGroup</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ou=Groups</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:wrap</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:primary_members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>User</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:foreign_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:primary_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span>
+</code></pre>
+<p>Now, we can write some small scripts to do simple management tasks.</p>
+<h4>Creating <span class="caps">LDAP</span> entries</h4>
+<p>Now let&#8217;s create a really dumb script for adding users &#8211; ldapadmin/useradd:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='comment'>#!/usr/bin/ruby -W0
+</span>
+<span class='id identifier rubyid_base'>base</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>..</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='gvar'>$LOAD_PATH</span> <span class='op'>&lt;&lt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>lib</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='gvar'>$LOAD_PATH</span> <span class='op'>&lt;&lt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>examples</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>rubygems</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>active_ldap</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>objects/user</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>objects/group</span><span class='tstring_end'>'</span></span>
+
+<span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_parse_options'>parse_options</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>|</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> USER_NAME CN UID</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+
+<span class='kw'>if</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>==</span> <span class='int'>3</span>
+  <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_cn'>cn</span><span class='comma'>,</span> <span class='id identifier rubyid_uid'>uid</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span>
+<span class='kw'>else</span>
+  <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_opts'>opts</span>
+  <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_pwb'>pwb</span> <span class='op'>=</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span>
+  <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_read_password'>read_password</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='rbrace'>}</span><span class='tstring_content'>] Password: </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+
+<span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span><span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pwb'>pwb</span><span class='comma'>,</span>
+                                  <span class='symbol'>:allow_anonymous</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
+
+<span class='kw'>if</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'> already exists.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_add_class'>add_class</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>shadowAccount</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_cn'>cn</span> <span class='op'>=</span> <span class='id identifier rubyid_cn'>cn</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_uid_number'>uid_number</span> <span class='op'>=</span> <span class='id identifier rubyid_uid'>uid</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_gid_number'>gid_number</span> <span class='op'>=</span> <span class='id identifier rubyid_uid'>uid</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_home_directory'>home_directory</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/home/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_sn'>sn</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>somesn</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>unless</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>failed</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_full_messages'>full_messages</span>
+  <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+<span class='kw'>end</span>
+</code></pre>
+<h4>Managing <span class="caps">LDAP</span> entries</h4>
+<p>Now let&#8217;s create another dumb script for modifying users &#8211; ldapadmin/usermod:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='comment'>#!/usr/bin/ruby -W0
+</span>
+<span class='id identifier rubyid_base'>base</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>..</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='gvar'>$LOAD_PATH</span> <span class='op'>&lt;&lt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>lib</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='gvar'>$LOAD_PATH</span> <span class='op'>&lt;&lt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>examples</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>rubygems</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>active_ldap</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>objects/user</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>objects/group</span><span class='tstring_end'>'</span></span>
+
+<span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_parse_options'>parse_options</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>|</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> USER_NAME CN UID</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+
+<span class='kw'>if</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>==</span> <span class='int'>3</span>
+  <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_cn'>cn</span><span class='comma'>,</span> <span class='id identifier rubyid_uid'>uid</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span>
+<span class='kw'>else</span>
+  <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_opts'>opts</span>
+  <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_pwb'>pwb</span> <span class='op'>=</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span>
+  <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_read_password'>read_password</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='rbrace'>}</span><span class='tstring_content'>] Password: </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+
+<span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span><span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pwb'>pwb</span><span class='comma'>,</span>
+                                  <span class='symbol'>:allow_anonymous</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
+
+<span class='kw'>unless</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'> doesn't exist.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_cn'>cn</span> <span class='op'>=</span> <span class='id identifier rubyid_cn'>cn</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_uid_number'>uid_number</span> <span class='op'>=</span> <span class='id identifier rubyid_uid'>uid</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_gid_number'>gid_number</span> <span class='op'>=</span> <span class='id identifier rubyid_uid'>uid</span>
+<span class='kw'>unless</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>failed</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_full_messages'>full_messages</span>
+  <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+<span class='kw'>end</span>
+</code></pre>
+<h4>Removing <span class="caps">LDAP</span> entries</h4>
+<p>Now let&#8217;s create more one for deleting users &#8211; ldapadmin/userdel:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='comment'>#!/usr/bin/ruby -W0
+</span>
+<span class='id identifier rubyid_base'>base</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>..</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='gvar'>$LOAD_PATH</span> <span class='op'>&lt;&lt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>lib</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='gvar'>$LOAD_PATH</span> <span class='op'>&lt;&lt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>examples</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>rubygems</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>active_ldap</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>objects/user</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>objects/group</span><span class='tstring_end'>'</span></span>
+
+<span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_parse_options'>parse_options</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>|</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> USER_NAME</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+
+<span class='kw'>if</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>==</span> <span class='int'>1</span>
+  <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span>
+<span class='kw'>else</span>
+  <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_opts'>opts</span>
+  <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_pwb'>pwb</span> <span class='op'>=</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span>
+  <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_read_password'>read_password</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='rbrace'>}</span><span class='tstring_content'>] Password: </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+
+<span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span><span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pwb'>pwb</span><span class='comma'>,</span>
+                                  <span class='symbol'>:allow_anonymous</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
+
+<span class='kw'>unless</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'> doesn't exist.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+<span class='kw'>end</span>
+
+<span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+</code></pre>
+<h3>Advanced Topics</h3>
+<p>Below are some situation tips and tricks to get the most out of ActiveLdap.</p>
+<h4>Binary data and other subtypes</h4>
+<p>Sometimes, you may want to store attributes with language specifiers, or
+perhaps in binary form.  This is (finally!) fully supported.  To do so,
+follow the examples below:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; user = User.new('drewry')
+=&gt; ...
+# This adds a cn entry in lang-en and whatever the server default is.
+irb&gt; user.cn = [ 'wad', {'lang-en' =&gt; ['wad', 'Will Drewry']} ]
+=&gt; ...
+irb&gt; user.cn
+=&gt; [&quot;wad&quot;, {&quot;lang-en-us&quot; =&gt; [&quot;wad&quot;, &quot;Will Drewry&quot;]}]
+# Now let's add a binary X.509 certificate (assume objectClass is correct)
+irb&gt; user.user_certificate = File.read('example.der')
+=&gt; ...
+irb&gt; user.save
+</code></pre>
+<p>So that&#8217;s a lot to take in. Here&#8217;s what is going on. I just set the <span class="caps">LDAP</span>
+object&#8217;s cn to &#8220;wad&#8221; and cn:lang-en-us to [&#8220;wad&#8221;, &#8220;Will Drewry&#8221;].
+Anytime a <span class="caps">LDAP</span> subtype is required, you must encapsulate the data in a Hash.</p>
+<p>But wait a minute, I just read in a binary certificate without wrapping it up.
+So any binary attribute <em>that requires ;binary subtyping</em> will automagically
+get wrapped in <code>{'binary' =&gt; value}</code> if you don&#8217;t do it. This keeps your #writes
+from breaking, and my code from crying.  For correctness, I could have easily
+done the following:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='id identifier rubyid_irb'>irb</span><span class='op'>&gt;</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_user_certificate'>user_certificate</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>binary</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>example.der</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rbrace'>}</span>
+</code></pre>
+<p>You should note that some binary data does not use the binary subtype all the time.
+One example is jpegPhoto. You can use it as jpegPhoto;binary or just as jpegPhoto.
+Since the schema dictates that it is a binary value, ActiveLdap will write
+it as binary, but the subtype will not be automatically appended as above. The
+use of the subtype on attributes like jpegPhoto is ultimately decided by the
+<span class="caps">LDAP</span> site policy and not by any programmatic means.</p>
+<p>The only subtypes defined in LDAPv3 are lang-* and binary.  These can be nested
+though:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='id identifier rubyid_irb'>irb</span><span class='op'>&gt;</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_cn'>cn</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>lang-ja</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>binary</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>some Japanese</span><span class='tstring_end'>'</span></span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rbracket'>]</span>
+</code></pre>
+<p>As I understand it, OpenLDAP does not support nested subtypes, but some
+documentation I&#8217;ve read suggests that Netscape&#8217;s <span class="caps">LDAP</span> server does. I only
+have access to OpenLDAP. If anyone tests this out, please let me know how it
+goes!</p>
+<p>And that pretty much wraps up this section.</p>
+<h4>Further integration with your environment aka namespacing</h4>
+<p>If you want this to cleanly integrate into your system-wide Ruby include path,
+you should put your extension classes inside a custom module.</p>
+<p>Example:</p>
+<p>./myldap.rb:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>active_ldap</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>myldap/user</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>myldap/group</span><span class='tstring_end'>'</span></span>
+<span class='kw'>module</span> <span class='const'>MyLDAP</span>
+<span class='kw'>end</span>
+</code></pre>
+<p>./myldap/user.rb:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='kw'>module</span> <span class='const'>MyLDAP</span>
+  <span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+    <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>uid</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ou=People</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>top</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>account</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>posixAccount</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:groups</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MyLDAP::Group</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:many</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+<p>./myldap/group.rb:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='kw'>module</span> <span class='const'>MyLDAP</span>
+  <span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+    <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>top</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>posixGroup</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ou=Groups</span><span class='tstring_end'>'</span></span>
+    <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MyLDAP::User</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:wrap</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>'</span></span>
+    <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:primary_members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MyLDAP::User</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:foreign_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:primary_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+<p>Now in your local applications, you can call</p>
+<pre class="code ruby"><code class="ruby">
+require 'myldap'
+
+MyLDAP::Group.new('foo')
+...
+</code></pre>
+<p>and everything should work well.</p>
+<h4>force array results for single values</h4>
+<p>Even though ActiveLdap attempts to maintain programmatic ease by
+returning Array values only. By specifying &#8216;true&#8217; as an argument to
+any attribute method you will get back a Array if it is single value.
+Here&#8217;s an example:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; user = User.new('drewry')
+=&gt; ...
+irb&gt; user.cn(true)
+=&gt; [&quot;Will Drewry&quot;]
+</code></pre>
+<h4>Dynamic attribute crawling</h4>
+<p>If you use tab completion in irb, you&#8217;ll notice that you /can/ tab complete the dynamic
+attribute methods. You can still see which methods are for attributes using
+Base#attribute_names:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; d = Group.new('develop')
+=&gt; ...
+irb&gt; d.attribute_names
+=&gt; [&quot;gidNumber&quot;, &quot;cn&quot;, &quot;memberUid&quot;, &quot;commonName&quot;, &quot;description&quot;, &quot;userPassword&quot;, &quot;objectClass&quot;]
+</code></pre>
+<h4>Juggling multiple <span class="caps">LDAP</span> connections</h4>
+<p>In the same vein as the last tip, you can use multiple <span class="caps">LDAP</span> connections by
+per class as follows:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; anon_class = Class.new(Base)
+=&gt; ...
+irb&gt; anon_class.setup_connection
+=&gt; ...
+irb&gt; auth_class = Class.new(Base)
+=&gt; ...
+irb&gt; auth_class.setup_connection(:password_block =&gt; lambda{'mypass'})
+=&gt; ...
+</code></pre>
+<p>This can be useful for doing authentication tests and other such tricks.</p>
+<h4>:try_sasl</h4>
+<p>If you have the Ruby/<span class="caps">LDAP</span> package with the <span class="caps">SASL</span>/<span class="caps">GSSAPI</span> patch from Ian
+MacDonald&#8217;s web site, you can use Kerberos to bind to your <span class="caps">LDAP</span> server. By
+default, :try_sasl is false.</p>
+<p>Also note that you must be using OpenLDAP 2.1.29 or higher to use <span class="caps">SASL</span>/<span class="caps">GSSAPI</span>
+due to some bugs in older versions of OpenLDAP.</p>
+<h4>Don&#8217;t be afraid! [Internals]</h4>
+<p>Don&#8217;t be afraid to add more methods to the extensions classes and to
+experiment. That&#8217;s exactly how I ended up with this package. If you come up
+with something cool, please share it!</p>
+<p>The internal structure of ActiveLdap::Base, and thus all its subclasses, is
+still in flux. I&#8217;ve tried to minimize the changes to the overall <span class="caps">API</span>, but
+the internals are still rough around the edges.</p>
+<h5>Where&#8217;s ldap_mapping data stored? How can I get to it?</h5>
+<p>When you call ldap_mapping, it overwrites several class methods inherited
+from Base:</p>
+<ul>
+	<li>Base.base()</li>
+	<li>Base.required_classes()</li>
+	<li>Base.dn_attribute()</li>
+</ul>
+<p>You can access these from custom class methods by calling MyClass.base(),
+or whatever. There are predefined instance methods for getting to these
+from any new instance methods you define:</p>
+<ul>
+	<li>Base#base()</li>
+	<li>Base#required_classes()</li>
+	<li>Base#dn_attribute()</li>
+</ul>
+<h5>What else?</h5>
+<p>Well if you want to use the <span class="caps">LDAP</span> connection for anything, I&#8217;d suggest still
+calling Base.connection to get it. There really aren&#8217;t many other internals
+that need to be worried about.  You could get the <span class="caps">LDAP</span> schema with
+Base.schema.</p>
+<p>The only other useful tricks are dereferencing and accessing the stored
+data. Since <span class="caps">LDAP</span> attributes can have multiple names, e.g. cn or commonName,
+any methods you write might need to figure it out. I&#8217;d suggest just
+calling self[attribname] to get the value, but if that&#8217;s not good enough,
+you can call look up the stored name by #to_real_attribute_name as follows:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; User.find(:first).instance_eval do
+irb&gt;   to_real_attribute_name('commonName')
+irb&gt; end
+=&gt; 'cn'
+</code></pre>
+<p>This tells you the name the attribute is stored in behind the scenes (@data).
+Again, self[attribname] should be enough for most extensions, but if not,
+it&#8217;s probably safe to dabble here.</p>
+<p>Also, if you like to look up all aliases for an attribute, you can call the
+following:</p>
+<pre class="code ruby"><code class="ruby">
+irb&gt; User.schema.attribute_type 'cn', 'NAME'
+=&gt; [&quot;cn&quot;, &quot;commonName&quot;]
+</code></pre>
+<p>This is discovered automagically from the <span class="caps">LDAP</span> server&#8217;s schema.</p>
+<h2>Limitations</h2>
+<h3>Speed</h3>
+<p>Currently, ActiveLdap could be faster.  I have some recursive type
+checking going on which slows object creation down, and I&#8217;m sure there
+are many, many other places optimizations can be done.  Feel free
+to send patches, or just hang in there until I can optimize away the
+slowness.</p>
+<h2>Feedback</h2>
+<p>Any and all feedback and patches are welcome. I am very excited about this
+package, and I&#8217;d like to see it prove helpful to more people than just myself.</p></div></div>
+
+    <div id="footer"></div>
+
+  
+      </div>
+
+      <div class="sidebar">
+        <h2>About Project</h2>
+	<ul>
+	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li>
+	    <a href="http://rubyforge.org/mailman/listinfo/ruby-activeldap-discuss">Mailinglist</a>
+	  </li>
+	  <li>
+	    <a href="http://github.com/activeldap/">GitHub page</a>
+	  </li>
+	  <li>
+	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
+	  </li>
+	</ul>
+
+        <h2>About ActiveLdap</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../activeldap/en/">Reference</a>
+          </li>
+	  <li class="menu-tutorial">
+	    <a href="../../activeldap/en/file.tutorial.html">Tutorial</a>
+	  </li>
+	  <li class="menu-rails">
+	    <a href="../../activeldap/en/file.rails.html">Rails</a>
+	  </li>
+	  <li class="menu-install">
+	    <a href="../../#activeldap-install">Install</a>
+	  </li>
+	  <li class="menu-development">
+	    <a href="../../activeldap/en/file.development.html">Development</a>
+	  </li>
+	</ul>
+
+        <h2>About ActiveLdap Fabrication</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../activeldap-fabrication/en/">Reference</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <p id="sponsor-rubyforge">
+        <a href="http://rubyforge.org/projects/ruby-activeldap/">
+          <img src="../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
+        </a>
+      </p>
+      <p id="sponsor-github">
+        <a href="https://github.com/activeldap/">
+          <img src="../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
+        </a>
+      </p>
+      <p id="sponsor-tango">
+	<a href="http://tango.freedesktop.org/">
+          <img width="120" height="53" border="0" alt="Tango Desktop Project's icons are used." src="../../tango-logo.png" />
+        </a>
+      </p>
+      <p id="sponsor-famfamfam">
+	<a href="http://www.famfamfam.com/">
+          <img width="120" height="18" border="0" alt="famfamfam.com's flags are used." src="../../famfamfam-logo.png" />
+        </a>
+      </p>
+    </div>
+
+</body>
+</html>

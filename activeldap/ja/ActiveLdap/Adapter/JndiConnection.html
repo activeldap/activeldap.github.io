@@ -1,0 +1,995 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../../activeldap.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../favicon.ico" />
+    <link rel="icon" href="../../../../favicon.png" />
+    <title>
+  Class: ActiveLdap::Adapter::JndiConnection
+  
+    &mdash; activeldap
+  
+ - ActiveLdap</title>
+
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+<div class="header">
+  <div class="title">
+    <a href="../../../../ja/">
+      <span class="title">
+  Class: ActiveLdap::Adapter::JndiConnection
+  
+    &mdash; activeldap
+  
+</span>
+      <span class="title-separator">-</span>
+      <span class="title-project">ActiveLdap</span>
+    </a>
+  </div>
+  <ul class="other-languages">
+    <li id="other-language-english" lang="en" xml:lang="en"><a href="../../../../activeldap/en/ActiveLdap/Adapter/JndiConnection.html">English</a></li>
+  </ul>
+  <ul class="menu">
+    <li><a href="../../../../ja/#activeldap-about">ActiveLdap</a></li>
+    <li><a href="../../../../ja/#activeldap-fabrication-about">ActiveLdap Fabrication</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="main">
+
+
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../alphabetical_index.html">Index (J)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Adapter.html" title="ActiveLdap::Adapter (module)">Adapter</a></span></span>
+     &raquo; 
+    <span class="title">JndiConnection</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: ActiveLdap::Adapter::JndiConnection
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveLdap::Adapter::JndiConnection</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/active_ldap/adapter/jndi_connection.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="JndiConnection/Scope.html" title="ActiveLdap::Adapter::JndiConnection::Scope (module)">Scope</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="JndiConnection/ModifyRecord.html" title="ActiveLdap::Adapter::JndiConnection::ModifyRecord (class)">ModifyRecord</a></span>
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="HashTable-constant" class="">HashTable =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_util'>util</span><span class='period'>.</span><span class='const'>Hashtable</span></pre></dd>
+      
+        <dt id="InitialDirContext-constant" class="">InitialDirContext =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>InitialDirContext</span></pre></dd>
+      
+        <dt id="InitialLdapContext-constant" class="">InitialLdapContext =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_ldap'>ldap</span><span class='period'>.</span><span class='const'>InitialLdapContext</span></pre></dd>
+      
+        <dt id="SearchControls-constant" class="">SearchControls =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>SearchControls</span></pre></dd>
+      
+        <dt id="ModificationItem-constant" class="">ModificationItem =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>ModificationItem</span></pre></dd>
+      
+        <dt id="BasicAttributes-constant" class="">BasicAttributes =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>BasicAttributes</span></pre></dd>
+      
+        <dt id="Context-constant" class="">Context =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>Context</span></pre></dd>
+      
+        <dt id="StartTlsRequest-constant" class="">StartTlsRequest =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_ldap'>ldap</span><span class='period'>.</span><span class='const'>StartTlsRequest</span></pre></dd>
+      
+        <dt id="Control-constant" class="">Control =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_ldap'>ldap</span><span class='period'>.</span><span class='const'>Control</span></pre></dd>
+      
+        <dt id="CommunicationException-constant" class="">CommunicationException =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>CommunicationException</span></pre></dd>
+      
+        <dt id="NamingException-constant" class="">NamingException =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>NamingException</span></pre></dd>
+      
+        <dt id="NameNotFoundException-constant" class="">NameNotFoundException =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>NameNotFoundException</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add-instance_method" title="#add (instance method)">- (Object) <strong>add</strong>(dn, records) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bind_as_anonymous-instance_method" title="#bind_as_anonymous (instance method)">- (Object) <strong>bind_as_anonymous</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bound%3F-instance_method" title="#bound? (instance method)">- (Boolean) <strong>bound?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong>(dn) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (JndiConnection) <strong>initialize</strong>(host, port, method) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of JndiConnection.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#modify-instance_method" title="#modify (instance method)">- (Object) <strong>modify</strong>(dn, records) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#modify_rdn-instance_method" title="#modify_rdn (instance method)">- (Object) <strong>modify_rdn</strong>(dn, new_rdn, delete_old_rdn) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sasl_bind-instance_method" title="#sasl_bind (instance method)">- (Object) <strong>sasl_bind</strong>(bind_dn, mechanism, quiet) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#search-instance_method" title="#search (instance method)">- (Object) <strong>search</strong>(base, scope, filter, attrs, limit) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#simple_bind-instance_method" title="#simple_bind (instance method)">- (Object) <strong>simple_bind</strong>(bind_dn, password) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unbind-instance_method" title="#unbind (instance method)">- (Object) <strong>unbind</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="ActiveLdap::Adapter::JndiConnection (class)">JndiConnection</a></span></tt>) <strong>initialize</strong>(host, port, method) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of JndiConnection</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_method'>method</span><span class='rparen'>)</span>
+  <span class='ivar'>@host</span> <span class='op'>=</span> <span class='id identifier rubyid_host'>host</span>
+  <span class='ivar'>@port</span> <span class='op'>=</span> <span class='id identifier rubyid_port'>port</span>
+  <span class='ivar'>@method</span> <span class='op'>=</span> <span class='id identifier rubyid_method'>method</span>
+  <span class='ivar'>@context</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='ivar'>@tls</span> <span class='op'>=</span> <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add</strong>(dn, records) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+129
+130
+131
+132
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 129</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_records'>records</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='const'>BasicAttributes</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_records'>records</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_record'>record</span><span class='op'>|</span>
+    <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_to_java_attribute'>to_java_attribute</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_create_subcontext'>create_subcontext</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bind_as_anonymous-instance_method">
+  
+    - (<tt>Object</tt>) <strong>bind_as_anonymous</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106
+107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 104</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_bind_as_anonymous'>bind_as_anonymous</span>
+  <span class='id identifier rubyid_setup_context'>setup_context</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>none</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_bound?'>bound?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bound?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>bound?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 90</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_bound?'>bound?</span>
+  <span class='kw'>not</span> <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>delete</strong>(dn) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+151
+152
+153</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 151</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='rparen'>)</span>
+  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_destroy_subcontext'>destroy_subcontext</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="modify-instance_method">
+  
+    - (<tt>Object</tt>) <strong>modify</strong>(dn, records) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139
+140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_modify'>modify</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_records'>records</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_items'>items</span> <span class='op'>=</span> <span class='id identifier rubyid_records'>records</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_java_modification_item</span><span class='rparen'>)</span>
+  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_modify_attributes'>modify_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='lparen'>(</span><span class='const'>ModificationItem</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="modify_rdn-instance_method">
+  
+    - (<tt>Object</tt>) <strong>modify_rdn</strong>(dn, new_rdn, delete_old_rdn) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+142
+143
+144
+145
+146
+147
+148
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 142</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_modify_rdn'>modify_rdn</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_new_rdn'>new_rdn</span><span class='comma'>,</span> <span class='id identifier rubyid_delete_old_rdn'>delete_old_rdn</span><span class='rparen'>)</span>
+  <span class='comment'># should use mutex
+</span>  <span class='id identifier rubyid_delete_rdn_key'>delete_rdn_key</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java.naming.ldap.deleteRDN</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_add_to_environment'>add_to_environment</span><span class='lparen'>(</span><span class='id identifier rubyid_delete_rdn_key'>delete_rdn_key</span><span class='comma'>,</span> <span class='id identifier rubyid_delete_old_rdn'>delete_old_rdn</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_rename'>rename</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_new_rdn'>new_rdn</span><span class='rparen'>)</span>
+<span class='kw'>ensure</span>
+  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_remove_from_environment'>remove_from_environment</span><span class='lparen'>(</span><span class='id identifier rubyid_delete_rdn_key'>delete_rdn_key</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sasl_bind-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sasl_bind</strong>(bind_dn, mechanism, quiet) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 94</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sasl_bind'>sasl_bind</span><span class='lparen'>(</span><span class='id identifier rubyid_bind_dn'>bind_dn</span><span class='comma'>,</span> <span class='id identifier rubyid_mechanism'>mechanism</span><span class='comma'>,</span> <span class='id identifier rubyid_quiet'>quiet</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_setup_context'>setup_context</span><span class='lparen'>(</span><span class='id identifier rubyid_bind_dn'>bind_dn</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_mechanism'>mechanism</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_bound?'>bound?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="search-instance_method">
+  
+    - (<tt>Object</tt>) <strong>search</strong>(base, scope, filter, attrs, limit) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 109</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='id identifier rubyid_scope'>scope</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='comma'>,</span> <span class='id identifier rubyid_limit'>limit</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_controls'>controls</span> <span class='op'>=</span> <span class='const'>SearchControls</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_controls'>controls</span><span class='period'>.</span><span class='id identifier rubyid_search_scope'>search_scope</span> <span class='op'>=</span> <span class='id identifier rubyid_scope'>scope</span>
+
+  <span class='id identifier rubyid_controls'>controls</span><span class='period'>.</span><span class='id identifier rubyid_count_limit'>count_limit</span> <span class='op'>=</span> <span class='id identifier rubyid_limit'>limit</span> <span class='kw'>if</span> <span class='id identifier rubyid_limit'>limit</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+    <span class='id identifier rubyid_controls'>controls</span><span class='period'>.</span><span class='id identifier rubyid_returning_attributes'>returning_attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='lparen'>(</span><span class='symbol'>:string</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='comma'>,</span> <span class='id identifier rubyid_controls'>controls</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_result'>result</span><span class='op'>|</span>
+    <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+    <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_get_all'>get_all</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_attribute'>attribute</span><span class='op'>|</span>
+      <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='id identifier rubyid_attribute'>attribute</span><span class='period'>.</span><span class='id identifier rubyid_get_id'>get_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_attribute'>attribute</span><span class='period'>.</span><span class='id identifier rubyid_get_all'>get_all</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+        <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>:</span> <span class='const'>String</span><span class='period'>.</span><span class='id identifier rubyid_from_java_bytes'>from_java_bytes</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='kw'>yield</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_name_in_namespace'>name_in_namespace</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="simple_bind-instance_method">
+  
+    - (<tt>Object</tt>) <strong>simple_bind</strong>(bind_dn, password) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+99
+100
+101
+102</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 99</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_simple_bind'>simple_bind</span><span class='lparen'>(</span><span class='id identifier rubyid_bind_dn'>bind_dn</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_setup_context'>setup_context</span><span class='lparen'>(</span><span class='id identifier rubyid_bind_dn'>bind_dn</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>simple</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_bound?'>bound?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unbind-instance_method">
+  
+    - (<tt>Object</tt>) <strong>unbind</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86
+87
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unbind'>unbind</span>
+  <span class='ivar'>@tls</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span> <span class='kw'>if</span> <span class='ivar'>@tls</span>
+  <span class='ivar'>@tls</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span> <span class='kw'>if</span> <span class='ivar'>@context</span>
+  <span class='ivar'>@context</span> <span class='op'>=</span> <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Aug 29 17:57:37 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7 (ruby-1.9.3).
+</div>
+
+  
+      </div>
+
+      <div class="sidebar">
+        <h2>プロジェクトについて</h2>
+	<ul>
+	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">プロジェクトページ</a></li>
+	  <li>
+	    <a href="http://rubyforge.org/mailman/listinfo/activeldap-discuss-ja">メーリングリスト</a>
+	  </li>
+	  <li>
+	    <a href="http://github.com/activeldap/">GitHubページ</a>
+	  </li>
+	  <li>
+	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCodeページ</a>
+	  </li>
+	</ul>
+
+        <h2>ActiveLdapについて</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../../activeldap/ja/">リファレンス</a>
+          </li>
+	  <li class="menu-tutorial">
+	    <a href="../../../../activeldap/ja/file.tutorial.html">チュートリアル</a>
+	  </li>
+	  <li class="menu-rails">
+	    <a href="../../../../activeldap/ja/file.rails.html">Rails</a>
+	  </li>
+	  <li class="menu-install">
+	    <a href="../../../../index.html.ja#activeldap-install">インストール</a>
+	  </li>
+	  <li class="menu-development">
+	    <a href="../../../../activeldap/ja/file.development.html">開発者向け情報</a>
+	  </li>
+	</ul>
+
+        <h2>ActiveLdap Fabricationについて</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../../activeldap-fabrication/ja/">リファレンス</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <p id="sponsor-rubyforge">
+        <a href="http://rubyforge.org/projects/ruby-activeldap/">
+          <img src="../../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdapプロジェクトはRubyForge.orgにホスティングしてもらっています。" />
+        </a>
+      </p>
+      <p id="sponsor-github">
+        <a href="http://github.com/activeldap/">
+          <img src="../../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdapプロジェクトはGitHubにホスティングしてもらっています。" />
+        </a>
+      </p>
+      <p id="sponsor-tango">
+	<a href="http://tango.freedesktop.org/">
+          <img width="120" height="53" border="0" alt="Tango Desktop Projectのアイコンを利用しています。" src="../../../../tango-logo.png" />
+        </a>
+      </p>
+    </div>
+
+</body>
+</html>

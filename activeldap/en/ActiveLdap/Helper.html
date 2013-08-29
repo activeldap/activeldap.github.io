@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../activeldap.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../favicon.ico" />
+    <link rel="icon" href="../../../favicon.png" />
+    <title>
+  Module: ActiveLdap::Helper
+  
+    &mdash; activeldap
+  
+ - ActiveLdap</title>
+
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+<div class="header">
+  <div class="title">
+    <a href="../../../">
+      <span class="title">
+  Module: ActiveLdap::Helper
+  
+    &mdash; activeldap
+  
+</span>
+      <span class="title-separator">-</span>
+      <span class="title-project">ActiveLdap</span>
+    </a>
+  </div>
+  <ul class="other-languages">
+    <li id="other-language-japanese" lang="ja" xml:lang="ja"><a href="../../../activeldap/ja/ActiveLdap/Helper.html">日本語</a></li>
+  </ul>
+  <ul class="menu">
+    <li><a href="../../../#activeldap-about">ActiveLdap</a></li>
+    <li><a href="../../../#activeldap-fabrication-about">ActiveLdap Fabrication</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="main">
+
+
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../alphabetical_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span>
+     &raquo; 
+    <span class="title">Helper</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ActiveLdap::Helper
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/active_ldap/helper.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ldap_attribute_description_gettext-instance_method" title="#ldap_attribute_description_gettext (instance method)">- (Object) <strong>ldap_attribute_description_gettext</strong>(attribute) </a>
+    
+
+    
+      (also: #lad_)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ldap_attribute_name_gettext-instance_method" title="#ldap_attribute_name_gettext (instance method)">- (Object) <strong>ldap_attribute_name_gettext</strong>(attribute) </a>
+    
+
+    
+      (also: #la_)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ldap_field-instance_method" title="#ldap_field (instance method)">- (Object) <strong>ldap_field</strong>(type, object_name, method, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ldap_object_class_description_gettext-instance_method" title="#ldap_object_class_description_gettext (instance method)">- (Object) <strong>ldap_object_class_description_gettext</strong>(object_class) </a>
+    
+
+    
+      (also: #locd_)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ldap_object_class_name_gettext-instance_method" title="#ldap_object_class_name_gettext (instance method)">- (Object) <strong>ldap_object_class_name_gettext</strong>(object_class) </a>
+    
+
+    
+      (also: #loc_)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ldap_syntax_description_gettext-instance_method" title="#ldap_syntax_description_gettext (instance method)">- (Object) <strong>ldap_syntax_description_gettext</strong>(syntax) </a>
+    
+
+    
+      (also: #lsd_)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ldap_syntax_name_gettext-instance_method" title="#ldap_syntax_name_gettext (instance method)">- (Object) <strong>ldap_syntax_name_gettext</strong>(syntax) </a>
+    
+
+    
+      (also: #ls_)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="ldap_attribute_description_gettext-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ldap_attribute_description_gettext</strong>(attribute) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='lad_-instance_method'>lad_</span></span>
+    </span>
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ldap_attribute_description_gettext'>ldap_attribute_description_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
+  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_attribute_description'>human_attribute_description</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ldap_attribute_name_gettext-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ldap_attribute_name_gettext</strong>(attribute) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='la_-instance_method'>la_</span></span>
+    </span>
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3
+4
+5</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 3</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ldap_attribute_name_gettext'>ldap_attribute_name_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
+  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_attribute_name'>human_attribute_name</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ldap_field-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ldap_field</strong>(type, object_name, method, options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ldap_field'>ldap_field</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_object_name'>object_name</span><span class='comma'>,</span> <span class='id identifier rubyid_method'>method</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_type'>type</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>radio_button</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>check_box</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>text_area</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_form_method'>form_method</span> <span class='op'>=</span> <span class='id identifier rubyid_type'>type</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_form_method'>form_method</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_type'>type</span><span class='rbrace'>}</span><span class='tstring_content'>_field</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_object'>object</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:object</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_object'>object</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_normalized_object_name'>normalized_object_name</span> <span class='op'>=</span> <span class='id identifier rubyid_object_name'>object_name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\[\](\])?$</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\\1</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_object'>object</span> <span class='op'>=</span> <span class='id identifier rubyid_instance_variable_get'>instance_variable_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_normalized_object_name'>normalized_object_name</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='id identifier rubyid_object'>object</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='kw'>nil</span> <span class='op'>:</span> <span class='id identifier rubyid_object'>object</span><span class='lbracket'>[</span><span class='id identifier rubyid_method'>method</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='kw'>nil</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+  <span class='id identifier rubyid_required_ldap_options'>required_ldap_options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:ldap_options</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_required_ldap_options'>required_ldap_options</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_required_ldap_option'>required_ldap_option</span><span class='op'>|</span>
+    <span class='id identifier rubyid_found'>found</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+      <span class='kw'>next</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+      <span class='kw'>if</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>==</span> <span class='id identifier rubyid_required_ldap_option'>required_ldap_option</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+        <span class='id identifier rubyid_found'>found</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>break</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_values'>values</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span><span class='id identifier rubyid_required_ldap_option'>required_ldap_option</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='id identifier rubyid_found'>found</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_fields'>fields</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_collect_values'>collect_values</span> <span class='op'>=</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_ldap_options'>ldap_options</span><span class='op'>|</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_value'>value</span>
+    <span class='kw'>when</span> <span class='const'>Hash</span>
+      <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+        <span class='id identifier rubyid_collect_values'>collect_values</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_ldap_options'>ldap_options</span> <span class='op'>+</span> <span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='const'>Array</span>
+      <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+        <span class='id identifier rubyid_collect_values'>collect_values</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_ldap_options'>ldap_options</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_object_name'>object_name</span><span class='rbrace'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method'>method</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_object_name'>object_name</span><span class='rbrace'>}</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method'>method</span><span class='rbrace'>}</span><span class='tstring_content'>][]</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_ldap_options'>ldap_options</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ldap_option'>ldap_option</span><span class='op'>|</span>
+        <span class='id identifier rubyid_id'>id</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ldap_option'>ldap_option</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_name'>name</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ldap_option'>ldap_option</span><span class='rbrace'>}</span><span class='tstring_content'>][]</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_ldap_value_options'>ldap_value_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_value'>value</span><span class='rbrace'>}</span>
+      <span class='id identifier rubyid_field'>field</span> <span class='op'>=</span> <span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_form_method'>form_method</span><span class='comma'>,</span> <span class='id identifier rubyid_object_name'>object_name</span><span class='comma'>,</span> <span class='id identifier rubyid_method'>method</span><span class='comma'>,</span>
+                   <span class='id identifier rubyid_ldap_value_options'>ldap_value_options</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span><span class='rparen'>)</span>
+       <span class='kw'>if</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+         <span class='id identifier rubyid_field'>field</span> <span class='op'>=</span> <span class='kw'>yield</span><span class='lparen'>(</span><span class='id identifier rubyid_field'>field</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ldap_options'>ldap_options</span><span class='comma'>,</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_value'>value</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+       <span class='kw'>end</span>
+      <span class='id identifier rubyid_fields'>fields</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_field'>field</span> <span class='kw'>unless</span> <span class='id identifier rubyid_field'>field</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_collect_values'>collect_values</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_values'>values</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fields'>fields</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ldap_object_class_description_gettext-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ldap_object_class_description_gettext</strong>(object_class) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='locd_-instance_method'>locd_</span></span>
+    </span>
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ldap_object_class_description_gettext'>ldap_object_class_description_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
+  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_object_class_description'>human_object_class_description</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ldap_object_class_name_gettext-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ldap_object_class_name_gettext</strong>(object_class) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='loc_-instance_method'>loc_</span></span>
+    </span>
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ldap_object_class_name_gettext'>ldap_object_class_name_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
+  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_object_class_name'>human_object_class_name</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ldap_syntax_description_gettext-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ldap_syntax_description_gettext</strong>(syntax) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='lsd_-instance_method'>lsd_</span></span>
+    </span>
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ldap_syntax_description_gettext'>ldap_syntax_description_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
+  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_syntax_description'>human_syntax_description</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ldap_syntax_name_gettext-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ldap_syntax_name_gettext</strong>(syntax) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='ls_-instance_method'>ls_</span></span>
+    </span>
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ldap_syntax_name_gettext'>ldap_syntax_name_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
+  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_syntax_name'>human_syntax_name</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer"></div>
+
+  
+      </div>
+
+      <div class="sidebar">
+        <h2>About Project</h2>
+	<ul>
+	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li>
+	    <a href="http://rubyforge.org/mailman/listinfo/ruby-activeldap-discuss">Mailinglist</a>
+	  </li>
+	  <li>
+	    <a href="http://github.com/activeldap/">GitHub page</a>
+	  </li>
+	  <li>
+	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
+	  </li>
+	</ul>
+
+        <h2>About ActiveLdap</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../activeldap/en/">Reference</a>
+          </li>
+	  <li class="menu-tutorial">
+	    <a href="../../../activeldap/en/file.tutorial.html">Tutorial</a>
+	  </li>
+	  <li class="menu-rails">
+	    <a href="../../../activeldap/en/file.rails.html">Rails</a>
+	  </li>
+	  <li class="menu-install">
+	    <a href="../../../#activeldap-install">Install</a>
+	  </li>
+	  <li class="menu-development">
+	    <a href="../../../activeldap/en/file.development.html">Development</a>
+	  </li>
+	</ul>
+
+        <h2>About ActiveLdap Fabrication</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../activeldap-fabrication/en/">Reference</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <p id="sponsor-rubyforge">
+        <a href="http://rubyforge.org/projects/ruby-activeldap/">
+          <img src="../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
+        </a>
+      </p>
+      <p id="sponsor-github">
+        <a href="https://github.com/activeldap/">
+          <img src="../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
+        </a>
+      </p>
+      <p id="sponsor-tango">
+	<a href="http://tango.freedesktop.org/">
+          <img width="120" height="53" border="0" alt="Tango Desktop Project's icons are used." src="../../../tango-logo.png" />
+        </a>
+      </p>
+      <p id="sponsor-famfamfam">
+	<a href="http://www.famfamfam.com/">
+          <img width="120" height="18" border="0" alt="famfamfam.com's flags are used." src="../../../famfamfam-logo.png" />
+        </a>
+      </p>
+    </div>
+
+</body>
+</html>

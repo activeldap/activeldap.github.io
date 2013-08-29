@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../../../activeldap.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../../favicon.ico" />
+    <link rel="icon" href="../../../../../favicon.png" />
+    <title>
+  Class: ActiveLdap::Ldif::ModifyRecord::AddOperation
+  
+    &mdash; activeldap
+  
+ - ActiveLdap</title>
+
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../';
+  framesUrl = "../../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+<div class="header">
+  <div class="title">
+    <a href="../../../../../ja/">
+      <span class="title">
+  Class: ActiveLdap::Ldif::ModifyRecord::AddOperation
+  
+    &mdash; activeldap
+  
+</span>
+      <span class="title-separator">-</span>
+      <span class="title-project">ActiveLdap</span>
+    </a>
+  </div>
+  <ul class="other-languages">
+    <li id="other-language-english" lang="en" xml:lang="en"><a href="../../../../../activeldap/en/ActiveLdap/Ldif/ModifyRecord/AddOperation.html">English</a></li>
+  </ul>
+  <ul class="menu">
+    <li><a href="../../../../../ja/#activeldap-about">ActiveLdap</a></li>
+    <li><a href="../../../../../ja/#activeldap-fabrication-about">ActiveLdap Fabrication</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="main">
+
+
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../alphabetical_index.html">Index (A)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Ldif.html" title="ActiveLdap::Ldif (class)">Ldif</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../ModifyRecord.html" title="ActiveLdap::Ldif::ModifyRecord (class)">ModifyRecord</a></span></span>
+     &raquo; 
+    <span class="title">AddOperation</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: ActiveLdap::Ldif::ModifyRecord::AddOperation
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Operation.html" title="ActiveLdap::Ldif::ModifyRecord::Operation (class)">Operation</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Operation.html" title="ActiveLdap::Ldif::ModifyRecord::Operation (class)">Operation</a></span></li>
+          
+            <li class="next">ActiveLdap::Ldif::ModifyRecord::AddOperation</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/active_ldap/ldif.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+  <h2>Instance Attribute Summary</h2>
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="Operation.html" title="ActiveLdap::Ldif::ModifyRecord::Operation (class)">Operation</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Operation.html#attribute-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#attribute (method)">#attribute</a></span>, <span class='object_link'><a href="Operation.html#attributes-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#attributes (method)">#attributes</a></span>, <span class='object_link'><a href="Operation.html#options-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#options (method)">#options</a></span>, <span class='object_link'><a href="Operation.html#type-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#type (method)">#type</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (AddOperation) <strong>initialize</strong>(attribute, options, attributes) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of AddOperation.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Operation.html" title="ActiveLdap::Ldif::ModifyRecord::Operation (class)">Operation</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Operation.html#%3D%3D-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#== (method)">#==</a></span>, <span class='object_link'><a href="Operation.html#add%3F-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#add? (method)">#add?</a></span>, <span class='object_link'><a href="Operation.html#delete%3F-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#delete? (method)">#delete?</a></span>, <span class='object_link'><a href="Operation.html#full_attribute_name-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#full_attribute_name (method)">#full_attribute_name</a></span>, <span class='object_link'><a href="Operation.html#replace%3F-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#replace? (method)">#replace?</a></span>, <span class='object_link'><a href="Operation.html#to_s-instance_method" title="ActiveLdap::Ldif::ModifyRecord::Operation#to_s (method)">#to_s</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="ActiveLdap::Ldif::ModifyRecord::AddOperation (class)">AddOperation</a></span></tt>) <strong>initialize</strong>(attribute, options, attributes) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of AddOperation</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+910
+911
+912</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/ldif.rb', line 910</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>add</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_attribute'>attribute</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Aug 29 17:57:40 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7 (ruby-1.9.3).
+</div>
+
+  
+      </div>
+
+      <div class="sidebar">
+        <h2>プロジェクトについて</h2>
+	<ul>
+	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">プロジェクトページ</a></li>
+	  <li>
+	    <a href="http://rubyforge.org/mailman/listinfo/activeldap-discuss-ja">メーリングリスト</a>
+	  </li>
+	  <li>
+	    <a href="http://github.com/activeldap/">GitHubページ</a>
+	  </li>
+	  <li>
+	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCodeページ</a>
+	  </li>
+	</ul>
+
+        <h2>ActiveLdapについて</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../../../activeldap/ja/">リファレンス</a>
+          </li>
+	  <li class="menu-tutorial">
+	    <a href="../../../../../activeldap/ja/file.tutorial.html">チュートリアル</a>
+	  </li>
+	  <li class="menu-rails">
+	    <a href="../../../../../activeldap/ja/file.rails.html">Rails</a>
+	  </li>
+	  <li class="menu-install">
+	    <a href="../../../../../index.html.ja#activeldap-install">インストール</a>
+	  </li>
+	  <li class="menu-development">
+	    <a href="../../../../../activeldap/ja/file.development.html">開発者向け情報</a>
+	  </li>
+	</ul>
+
+        <h2>ActiveLdap Fabricationについて</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../../../../activeldap-fabrication/ja/">リファレンス</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <p id="sponsor-rubyforge">
+        <a href="http://rubyforge.org/projects/ruby-activeldap/">
+          <img src="../../../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdapプロジェクトはRubyForge.orgにホスティングしてもらっています。" />
+        </a>
+      </p>
+      <p id="sponsor-github">
+        <a href="http://github.com/activeldap/">
+          <img src="../../../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdapプロジェクトはGitHubにホスティングしてもらっています。" />
+        </a>
+      </p>
+      <p id="sponsor-tango">
+	<a href="http://tango.freedesktop.org/">
+          <img width="120" height="53" border="0" alt="Tango Desktop Projectのアイコンを利用しています。" src="../../../../../tango-logo.png" />
+        </a>
+      </p>
+    </div>
+
+</body>
+</html>
