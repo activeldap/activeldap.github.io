@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../activeldap.css" type="text/css" />
+    <link rel="shortcut icon" href="../../favicon.ico" />
+    <link rel="icon" href="../../favicon.png" />
+    <title>
+  File: README
+  
+    &mdash; activeldap-fabrication
+  
+ - ActiveLdap</title>
+
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+<div class="header">
+  <div class="title">
+    <a href="../../ja/">
+      <span class="title">
+  File: README
+  
+    &mdash; activeldap-fabrication
+  
+</span>
+      <span class="title-separator">-</span>
+      <span class="title-project">ActiveLdap</span>
+    </a>
+  </div>
+  <ul class="other-languages">
+    <li id="other-language-english" lang="en" xml:lang="en"><a href="../../activeldap-fabrication/en/file.README.html">English</a></li>
+  </ul>
+  <ul class="menu">
+    <li><a href="../../ja/#activeldap-about">ActiveLdap</a></li>
+    <li><a href="../../ja/#activeldap-fabrication-about">ActiveLdap Fabrication</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="main">
+
+
+    <div id="header">
+      <div id="menu">
+  
+    <a href="alphabetical_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>ActiveLdap Fabrication</h1>
+<p><a href="http://fabricationgem.org/">Fabrication</a> の <a href="http://ruby-activeldap.rubyforge.org/">ActiveLdap</a> アダプターです。</p>
+<h2>説明</h2>
+<p>‘ActiveLdap Fabrication’はFabricationのActiveLdapアダプターです。これを使うとActiveLdapの代替フィクスチャーシステムとしてFabricationを使えるようになります。</p>
+<h2>必要なもの</h2>
+<ul>
+	<li><a href="http://ruby-activeldap.rubyforge.org/">ActiveLdap</a></li>
+	<li><a href="http://fabricationgem.org/">Fabrication</a></li>
+</ul>
+<h2>インストール</h2>
+<p>Here are install steps for Rails 3:</p>
+<ul>
+	<li>Add activeldap-fabrication gem to your Gemfile.</li>
+	<li>Change fixture_replacement to Fabrication in your config/application.rb.</li>
+	<li>Add <code>require "active_ldap_fabrication"</code> in your test/test_helper.rb or spec/spec_helper.rb.</li>
+</ul>
+<p>Gemfile:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='id identifier rubyid_group'>group</span> <span class='symbol'>:development</span><span class='comma'>,</span> <span class='symbol'>:test</span> <span class='kw'>do</span>
+  <span class='comment'># ...
+</span>  <span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>activeldap-fabrication</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># &lt;- Add this.
+</span><span class='kw'>end</span>
+</code></pre>
+<p>config/application.rb:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_generators'>generators</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_g'>g</span><span class='op'>|</span>
+  <span class='comment'># For test-unit
+</span>  <span class='id identifier rubyid_g'>g</span><span class='period'>.</span><span class='id identifier rubyid_test_framework'>test_framework</span> <span class='symbol'>:test_unit</span><span class='comma'>,</span> <span class='symbol'>:fixture</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:fixture_replacement</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>fabrication</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_g'>g</span><span class='period'>.</span><span class='id identifier rubyid_fixture_replacement'>fixture_replacement</span> <span class='symbol'>:fabrication</span><span class='comma'>,</span> <span class='symbol'>:dir</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test/fabricators</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'># For RSpec
+</span>  <span class='comment'># g.test_framework      :rspec, :fixture =&gt; true, :fixture_replacement =&gt; &quot;fabrication&quot;
+</span>  <span class='comment'># g.fixture_replacement :fabrication
+</span><span class='kw'>end</span>
+</code></pre>
+<p>test/test_helper.rb:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RAILS_ENV</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>../../config/environment</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='kw'>__FILE__</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>rails/test_help</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active_ldap_fabrication</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># &lt;- Add this.
+</span>
+<span class='kw'>class</span> <span class='const'>ActiveSupport</span><span class='op'>::</span><span class='const'>TestCase</span>
+  <span class='comment'># Add more helper methods to be used by all tests here...
+</span>
+  <span class='comment'># LDAP: start
+</span>  <span class='id identifier rubyid_setup'>setup</span> <span class='kw'>do</span>
+    <span class='ivar'>@dumped_data</span> <span class='op'>=</span> <span class='kw'>nil</span>
+    <span class='kw'>begin</span>
+      <span class='ivar'>@dumped_data</span> <span class='op'>=</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='symbol'>:sub</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>ConnectionError</span>
+    <span class='kw'>end</span>
+    <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_delete_all'>delete_all</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='symbol'>:sub</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_populate_ldap'>populate_ldap</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_teardown'>teardown</span> <span class='kw'>do</span>
+    <span class='kw'>if</span> <span class='ivar'>@dumped_data</span>
+      <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'>setup_connection</span>
+      <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_delete_all'>delete_all</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='symbol'>:sub</span><span class='rparen'>)</span>
+      <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='ivar'>@dumped_data</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_populate_ldap'>populate_ldap</span>
+    <span class='id identifier rubyid_populate_ldap_base'>populate_ldap_base</span>
+    <span class='id identifier rubyid_populate_ldap_ou'>populate_ldap_ou</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_populate_ldap_base'>populate_ldap_base</span>
+    <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Populate</span><span class='period'>.</span><span class='id identifier rubyid_ensure_base'>ensure_base</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_populate_ldap_ou'>populate_ldap_ou</span>
+  <span class='kw'>end</span>
+  <span class='comment'># LDAP: end
+</span><span class='kw'>end</span>
+</code></pre>
+<h2>使い方</h2>
+<p>Userモデルを生成します:</p>
+<pre class="command">
+% script/rails generate model User --classes person
+</pre>
+<p>test/test_helper.b内でou=Usersを作成します。</p>
+<pre class="code ruby"><code class="ruby">
+<span class='comment'># ...
+</span><span class='kw'>class</span> <span class='const'>ActiveSupport</span><span class='op'>::</span><span class='const'>TestCase</span>
+  <span class='comment'># ...
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_populate_ldap_ou'>populate_ldap_ou</span>
+    <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Populate</span><span class='period'>.</span><span class='id identifier rubyid_ensure_ou'>ensure_ou</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Users</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'># &lt;- Add this.
+</span>  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+<p>test/fabricators/user_fabricator.rbでテストデータを定義します:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='const'>Fabricator</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span>
+<span class='kw'>end</span>
+
+<span class='const'>Fabricator</span><span class='lparen'>(</span><span class='symbol'>:bob</span><span class='comma'>,</span> <span class='symbol'>:from</span> <span class='op'>=&gt;</span> <span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_cn'>cn</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bob</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_sn'>sn</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Dyran</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+<p>test/unit/user_test.rbでUserモデルのテストを書きます:</p>
+<pre class="code ruby"><code class="ruby">
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>test_helper</span><span class='tstring_end'>'</span></span>
+
+<span class='kw'>class</span> <span class='const'>UserTest</span> <span class='op'>&lt;</span> <span class='const'>ActiveSupport</span><span class='op'>::</span><span class='const'>TestCase</span>
+   <span class='id identifier rubyid_test'>test</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cn</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>do</span>
+     <span class='id identifier rubyid_assert_equal'>assert_equal</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bob</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>Fabricate</span><span class='lparen'>(</span><span class='symbol'>:bob</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_cn'>cn</span><span class='rparen'>)</span>
+   <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+<p>We run tests:</p>
+<pre class="command">
+% bundle exec rake test
+Loaded suite /var/lib/gems/1.9.1/gems/rake-0.9.2/lib/rake/rake_test_loader
+Started
+
+UserTest:
+     PASS cn (1.10s)
+
+Finished in 1.101005 seconds.
+
+1 tests, 1 assertions, 0 failures, 0 errors, 0 skips
+</pre>
+<h2>作者</h2>
+<ul>
+	<li>Copyright &#169; 2011 Kouhei Sutou <em>&lt;kou@clear-code.com&gt;</em></li>
+</ul>
+<h2>ライセンス</h2>
+<p>This program is free software; you can redistribute it and/or modify it.  It is dual licensed under Ruby&#8217;s license and under the terms of the Lesser <span class="caps">GNU</span> General Public License as published by the Free Software Foundation; either version 2.1, or (at your option) any later version.</p>
+<p>ライセンス条項はCOPYINGファイルを見てください。</p>
+<h2>感謝</h2>
+<ul>
+	<li>&#8230;</li>
+</ul></div></div>
+
+    <div id="footer">
+  Generated on Thu Aug 29 18:45:48 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7 (ruby-1.9.3).
+</div>
+
+  
+      </div>
+
+      <div class="sidebar">
+        <h2>プロジェクトについて</h2>
+	<ul>
+	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">プロジェクトページ</a></li>
+	  <li>
+	    <a href="http://rubyforge.org/mailman/listinfo/activeldap-discuss-ja">メーリングリスト</a>
+	  </li>
+	  <li>
+	    <a href="http://github.com/activeldap/">GitHubページ</a>
+	  </li>
+	  <li>
+	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCodeページ</a>
+	  </li>
+	</ul>
+
+        <h2>ActiveLdapについて</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../activeldap/ja/">リファレンス</a>
+          </li>
+	  <li class="menu-tutorial">
+	    <a href="../../activeldap/ja/file.tutorial.html">チュートリアル</a>
+	  </li>
+	  <li class="menu-rails">
+	    <a href="../../activeldap/ja/file.rails.html">Rails</a>
+	  </li>
+	  <li class="menu-install">
+	    <a href="../../index.html.ja#activeldap-install">インストール</a>
+	  </li>
+	  <li class="menu-development">
+	    <a href="../../activeldap/ja/file.development.html">開発者向け情報</a>
+	  </li>
+	</ul>
+
+        <h2>ActiveLdap Fabricationについて</h2>
+	<ul>
+	  <li class="menu-reference">
+            <a href="../../activeldap-fabrication/ja/">リファレンス</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <p id="sponsor-rubyforge">
+        <a href="http://rubyforge.org/projects/ruby-activeldap/">
+          <img src="../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdapプロジェクトはRubyForge.orgにホスティングしてもらっています。" />
+        </a>
+      </p>
+      <p id="sponsor-github">
+        <a href="http://github.com/activeldap/">
+          <img src="../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdapプロジェクトはGitHubにホスティングしてもらっています。" />
+        </a>
+      </p>
+      <p id="sponsor-tango">
+	<a href="http://tango.freedesktop.org/">
+          <img width="120" height="53" border="0" alt="Tango Desktop Projectのアイコンを利用しています。" src="../../tango-logo.png" />
+        </a>
+      </p>
+    </div>
+
+</body>
+</html>
