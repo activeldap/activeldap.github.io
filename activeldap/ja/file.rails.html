@@ -96,12 +96,12 @@
 <h2>Install</h2>
 <p>Gemfileに以下のようなコードを追加するとインストールできます:</p>
 <pre class="code ruby"><code class="ruby">
-<span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>activeldap</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:require</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>active_ldap/railtie</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>activeldap</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:require</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>active_ldap/railtie</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 <p>You should also depend on an <span class="caps">LDAP</span> adapter such as Net::<span class="caps">LDAP</span>
 or Ruby/<span class="caps">LDAP</span>. The following example uses Ruby/<span class="caps">LDAP</span>:</p>
 <pre class="code ruby"><code class="ruby">
-<span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ruby-ldap</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ruby-ldap</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 <p>Bundler will install the gems automatically when you run
 &#8216;bundle install&#8217;.</p>
@@ -147,15 +147,15 @@ ou=Users by the following command:</p>
 <p>app/model/user.rbを編集して関係設定を追加できます:</p>
 <pre class="code ruby"><code class="ruby">
 <span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
-  <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>uid</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+  <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>uid</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
                <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ou=Users</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-               <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>person</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>posixAccount</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+               <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>person</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>posixAccount</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:primary_group</span><span class='comma'>,</span>
              <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Group</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
              <span class='symbol'>:foreign_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
              <span class='symbol'>:primary_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:groups</span><span class='comma'>,</span>
-             <span class='symbol'>:many</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>'</span></span>
+             <span class='symbol'>:many</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>&#39;</span></span>
 <span class='kw'>end</span>
 </code></pre>
 <p>以下のコマンドでGroupモデルも生成できます:</p>
@@ -199,9 +199,9 @@ ou=Users by the following command:</p>
 </code></pre></div></div>
 
     <div id="footer">
-  Generated on Thu Aug 29 20:42:00 2013 by
+  Generated on Sat Jan  4 14:20:23 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7 (ruby-1.9.3).
+  0.8.7.2 (ruby-2.0.0).
 </div>
 
   

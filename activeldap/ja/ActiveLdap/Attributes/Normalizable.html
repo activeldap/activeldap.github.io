@@ -321,8 +321,8 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_normalize_attribute'>normalize_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>The first argument, name, must not be nil. </span><span class='tstring_end'>'</span></span> \
-                          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Please report this as a bug!</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The first argument, name, must not be nil. </span><span class='tstring_end'>&#39;</span></span> \
+                          <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Please report this as a bug!</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
   <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_normalize_attribute_name'>normalize_attribute_name</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -378,9 +378,10 @@
 <p>normalize_attribute_options</p>
 
 <p>Makes the Hashized value from the full attribute name e.g.
-userCertificate;binary =&gt; "some_bin"</p>
+userCertificate;binary =&gt; “some_bin”</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_becomes'>becomes</span> <span class='id identifier rubyid_userCertificate'>userCertificate</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>binary</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>some_bin</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span></code></pre>
+<pre class="ruby"><span class="ruby-identifier">becomes</span> <span class="ruby-identifier">userCertificate</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;binary&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;some_bin&quot;</span>}
+</pre>
 
 
   </div>
@@ -531,10 +532,10 @@ returns the attribute suffix and the final true value</p>
       <pre class="code"><span class="info file"># File 'lib/active_ldap/attributes.rb', line 126</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unnormalize_attribute_options'>unnormalize_attribute_options</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
   <span class='id identifier rubyid_ret_val'>ret_val</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Hash</span>
-    <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>;</span><span class='tstring_end'>'</span></span> <span class='op'>+</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>;</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_ret_val'>ret_val</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span><span class='lbracket'>[</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_ret_val'>ret_val</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Hash</span>
       <span class='id identifier rubyid_sub_options'>sub_options</span><span class='comma'>,</span> <span class='id identifier rubyid_ret_val'>ret_val</span> <span class='op'>=</span> <span class='id identifier rubyid_unnormalize_attribute_options'>unnormalize_attribute_options</span><span class='lparen'>(</span><span class='id identifier rubyid_ret_val'>ret_val</span><span class='rparen'>)</span>
@@ -592,9 +593,9 @@ returns the attribute suffix and the final true value</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Aug 29 20:42:01 2013 by
+  Generated on Sat Jan  4 14:20:24 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7 (ruby-1.9.3).
+  0.8.7.2 (ruby-2.0.0).
 </div>
 
   

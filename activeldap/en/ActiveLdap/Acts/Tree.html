@@ -302,7 +302,8 @@
     
 <p>Returns list of ancestors, starting from parent until root.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_subchild1'>subchild1</span><span class='period'>.</span><span class='id identifier rubyid_ancestors'>ancestors</span> <span class='comment'># =&gt; [child1, root]</span></code></pre>
+<pre class="ruby"><span class="ruby-identifier">subchild1</span>.<span class="ruby-identifier">ancestors</span> <span class="ruby-comment"># =&gt; [child1, root]</span>
+</pre>
 
 
   </div>
@@ -434,7 +435,7 @@
 
   <span class='kw'>unless</span> <span class='id identifier rubyid_new_entry?'>new_entry?</span>
     <span class='kw'>begin</span>
-      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_modify_rdn_entry'>modify_rdn_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dn_attribute'>dn_attribute</span><span class='rbrace'>}</span><span class='tstring_content'>=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_modify_rdn_entry'>modify_rdn_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dn_attribute'>dn_attribute</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
                                   <span class='kw'>true</span><span class='comma'>,</span> <span class='id identifier rubyid_base'>base</span><span class='comma'>,</span>
                                   <span class='symbol'>:connection</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_connection'>connection</span><span class='rparen'>)</span>
     <span class='kw'>rescue</span> <span class='const'>NotImplemented</span>
@@ -443,7 +444,7 @@
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_dn'>dn</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dn_attribute'>dn_attribute</span><span class='rbrace'>}</span><span class='tstring_content'>=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_content'>,</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base'>base</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_dn'>dn</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dn_attribute'>dn_attribute</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_content'>,</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base'>base</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_save'>save</span> <span class='kw'>if</span> <span class='id identifier rubyid_new_entry?'>new_entry?</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -510,7 +511,8 @@
     
 <p>Returns all siblings and a reference to the current node.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_subchild1'>subchild1</span><span class='period'>.</span><span class='id identifier rubyid_self_and_siblings'>self_and_siblings</span> <span class='comment'># =&gt; [subchild1, subchild2]</span></code></pre>
+<pre class="ruby"><span class="ruby-identifier">subchild1</span>.<span class="ruby-identifier">self_and_siblings</span> <span class="ruby-comment"># =&gt; [subchild1, subchild2]</span>
+</pre>
 
 
   </div>
@@ -553,7 +555,8 @@
     
 <p>Returns all siblings of the current node.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_subchild1'>subchild1</span><span class='period'>.</span><span class='id identifier rubyid_siblings'>siblings</span> <span class='comment'># =&gt; [subchild2]</span></code></pre>
+<pre class="ruby"><span class="ruby-identifier">subchild1</span>.<span class="ruby-identifier">siblings</span> <span class="ruby-comment"># =&gt; [subchild2]</span>
+</pre>
 
 
   </div>

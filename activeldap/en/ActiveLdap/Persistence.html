@@ -676,7 +676,7 @@
     <span class='id identifier rubyid_dn'>dn</span> <span class='op'>==</span> <span class='id identifier rubyid__dn'>_dn</span>
   <span class='kw'>end</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>EntryNotFound</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Can't find DN '%s' to reload</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_dn'>dn</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>EntryNotFound</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Can&#39;t find DN &#39;%s&#39; to reload</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_dn'>dn</span>
   <span class='kw'>end</span>
 
   <span class='ivar'>@ldap_data</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
@@ -762,7 +762,7 @@ attributes TODO: Relative DN support</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_save!'>save!</span><span class='lparen'>(</span><span class='op'>*</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_create_or_update'>create_or_update</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>EntryNotSaved</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>entry %s can't be saved</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_dn'>dn</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>EntryNotSaved</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>entry %s can&#39;t be saved</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_dn'>dn</span>
   <span class='kw'>end</span>
   <span class='kw'>true</span>
 <span class='kw'>end</span></pre>
@@ -820,10 +820,10 @@ attributes TODO: Relative DN support</p>
       <span class='kw'>if</span> <span class='id identifier rubyid_old_dn_base'>old_dn_base</span> <span class='op'>==</span> <span class='id identifier rubyid_new_dn_base'>new_dn_base</span>
         <span class='id identifier rubyid_new_superior'>new_superior</span> <span class='op'>=</span> <span class='kw'>nil</span>
       <span class='kw'>else</span>
-        <span class='id identifier rubyid_new_superior'>new_superior</span> <span class='op'>=</span> <span class='id identifier rubyid_new_dn_base'>new_dn_base</span>
+        <span class='id identifier rubyid_new_superior'>new_superior</span> <span class='op'>=</span> <span class='id identifier rubyid_new_dn_base'>new_dn_base</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
       <span class='kw'>end</span>
       <span class='id identifier rubyid_modify_rdn_entry'>modify_rdn_entry</span><span class='lparen'>(</span><span class='ivar'>@original_dn</span><span class='comma'>,</span>
-                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dn_attribute'>dn_attribute</span><span class='rbrace'>}</span><span class='tstring_content'>=</span><span class='embexpr_beg'>#{</span><span class='const'>DN</span><span class='period'>.</span><span class='id identifier rubyid_escape_value'>escape_value</span><span class='lparen'>(</span><span class='id identifier rubyid_new_dn_value'>new_dn_value</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dn_attribute'>dn_attribute</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='embexpr_beg'>#{</span><span class='const'>DN</span><span class='period'>.</span><span class='id identifier rubyid_escape_value'>escape_value</span><span class='lparen'>(</span><span class='id identifier rubyid_new_dn_value'>new_dn_value</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
                        <span class='kw'>true</span><span class='comma'>,</span>
                        <span class='id identifier rubyid_new_superior'>new_superior</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
