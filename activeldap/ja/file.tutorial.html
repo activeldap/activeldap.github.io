@@ -21,7 +21,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!" + escape(window.location.href);
+  framesUrl = "frames.html#!file.tutorial.html";
 </script>
 
 
@@ -324,13 +324,6 @@ be sure to put the whole name, e.g.
 <p>Relation is resolved by searching entries of :class_name class with :foreign_key attribute value. Search target attribute for it is :primary_key or :many. primary_group method in the above example searches Group objects with User object&#8217;s gidNumber value as Group object&#8217;s gidNumber value. Matched Group objects are belonged objects.</p>
 <p>:parimary_key は所属先がただ一つの場合に利用します。検索の結果、最初にマッチしたもののみが所属先として扱われます。</p>
 <p>:many は所属先が複数の場合に利用します。検索の結果マッチしたすべてのオブジェクトが所属先として扱われます。</p>
-<p>尚、:many を利用していると、メンバーシップテストも下記のように行えます。</p>
-<pre class="code ruby"><code class="ruby">
-irb&gt; me.groups.member? &#39;root&#39;
-=&gt; false
-irb&gt; me.groups.member? &#39;develop&#39;
-=&gt; true
-</code></pre>
 <h5>has_many</h5>
 <p>This method is the opposite of belongs_to. Instead of checking other objects in
 other parts of the <span class="caps">LDAP</span> tree to see if you belong to them, you have multiple
@@ -904,9 +897,9 @@ slowness.</p>
 package, and I&#8217;d like to see it prove helpful to more people than just myself.</p></div></div>
 
     <div id="footer">
-  Generated on Sat Jan  4 14:20:23 2014 by
+  Generated on Tue May 13 21:55:03 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.2 (ruby-2.0.0).
+  0.8.7.4 (ruby-2.0.0).
 </div>
 
   

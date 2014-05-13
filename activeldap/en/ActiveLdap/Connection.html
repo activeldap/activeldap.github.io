@@ -21,7 +21,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '../';
-  framesUrl = "../frames.html#!" + escape(window.location.href);
+  framesUrl = "../frames.html#!ActiveLdap/Connection.html";
 </script>
 
 
@@ -361,12 +361,12 @@
       <pre class="lines">
 
 
-268
-269
-270</pre>
+261
+262
+263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 268</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 261</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connected?'>connected?</span>
   <span class='id identifier rubyid_connection'>connection</span> <span class='op'>!=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_connection'>connection</span>
@@ -391,23 +391,23 @@
       <pre class="lines">
 
 
+246
+247
+248
+249
+250
+251
+252
 253
 254
 255
 256
 257
 258
-259
-260
-261
-262
-263
-264
-265
-266</pre>
+259</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 253</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 246</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
   <span class='id identifier rubyid_conn'>conn</span> <span class='op'>=</span> <span class='ivar'>@connection</span>
@@ -443,19 +443,19 @@
       <pre class="lines">
 
 
+265
+266
+267
+268
+269
+270
+271
 272
 273
-274
-275
-276
-277
-278
-279
-280
-281</pre>
+274</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 272</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 265</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection='>connection=</span><span class='lparen'>(</span><span class='id identifier rubyid_adapter'>adapter</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_adapter'>adapter</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_adapter'>adapter</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Adapter</span><span class='op'>::</span><span class='const'>Base</span><span class='rparen'>)</span>
@@ -487,17 +487,17 @@
       <pre class="lines">
 
 
-239
-240
-241
-242
-243
-244
-245
-246</pre>
+232
+233
+234
+235
+236
+237
+238
+239</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 239</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 232</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_establish_connection'>establish_connection</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span>
@@ -527,13 +527,13 @@
       <pre class="lines">
 
 
-248
-249
-250
-251</pre>
+241
+242
+243
+244</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 248</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 241</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_connection'>remove_connection</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_remove_connection'>remove_connection</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='rparen'>)</span>
@@ -559,20 +559,20 @@
       <pre class="lines">
 
 
+276
+277
+278
+279
+280
+281
+282
 283
 284
 285
-286
-287
-288
-289
-290
-291
-292
-293</pre>
+286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 283</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 276</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_retrieve_connection'>retrieve_connection</span>
   <span class='id identifier rubyid_conn'>conn</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_active_connections'>active_connections</span><span class='lbracket'>[</span><span class='id identifier rubyid_dn'>dn</span><span class='rbracket'>]</span>
@@ -605,12 +605,12 @@
       <pre class="lines">
 
 
-295
-296
-297</pre>
+288
+289
+290</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 295</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 288</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_schema'>schema</span>
   <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_schema'>schema</span>
@@ -635,17 +635,17 @@
       <pre class="lines">
 
 
-230
-231
-232
-233
-234
-235
-236
-237</pre>
+223
+224
+225
+226
+227
+228
+229
+230</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 230</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 223</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_ensure_configuration'>ensure_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>

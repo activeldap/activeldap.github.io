@@ -21,7 +21,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!" + escape(window.location.href);
+  framesUrl = "frames.html#!file.rails.html";
 </script>
 
 
@@ -92,7 +92,7 @@
     <iframe id="search_frame"></iframe>
 
     <div id="content"><div id='filecontents'><h1>Rails</h1>
-<p>ActiveLdapはRails 3.1に対応しています。</p>
+<p>ActiveLdap supports Rails 4.0 or later.</p>
 <h2>Install</h2>
 <p>Gemfileに以下のようなコードを追加するとインストールできます:</p>
 <pre class="code ruby"><code class="ruby">
@@ -113,7 +113,7 @@ rails app. This file has a similar function to the
 connection configurations per environment. Similarly, the
 ldap.yml file allows configurations to be set for
 development, test, and production environments.</p>
-<p>You can generate &#8216;config/ldap.yml&#8217; by the follwoing command:</p>
+<p>You can generate &#8216;config/ldap.yml&#8217; by the following command:</p>
 <pre class="command">
 % script/rails generate active_ldap:scaffold
 </pre>
@@ -130,11 +130,14 @@ would look something like the following:</p>
 <p>When your application starts up,
 ActiveLdap::Base.setup_connection will be called with the
 parameters specified for your current environment.</p>
+<p>You can replace default orm generators with gems one
+to skip active_ldap prefix in &#8216;config/application.rb&#8217;:
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_app_generators'>app_generators</span><span class='period'>.</span><span class='id identifier rubyid_orm'>orm</span> <span class='symbol'>:active_ldap</span></code></pre></p>
 <h2>Model</h2>
 <p>You can generate a User model that represents entries under
 ou=Users by the following command:</p>
 <pre class="command">
-% script/rails generate model User --dn-attribute uid --classes person PosixAccount
+% script/rails generate active_ldap:model User --dn-attribute uid --classes person PosixAccount
 </pre>
 <p>以下のようなapp/model/user.rbが生成されます:</p>
 <pre class="code ruby"><code class="ruby">
@@ -187,7 +190,7 @@ ou=Users by the following command:</p>
 </code></pre>
 <p>以下のコマンドでOuモデルも生成できます:</p>
 <pre class="command">
-% script/rails generate model Ou --prefix '' --classes organizationalUnit
+% script/rails generate active_ldap:model Ou --prefix '' --classes organizationalUnit
 </pre>
 
 <pre class="code ruby"><code class="ruby">
@@ -199,9 +202,9 @@ ou=Users by the following command:</p>
 </code></pre></div></div>
 
     <div id="footer">
-  Generated on Sat Jan  4 14:20:23 2014 by
+  Generated on Tue May 13 21:55:03 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.2 (ruby-2.0.0).
+  0.8.7.4 (ruby-2.0.0).
 </div>
 
   

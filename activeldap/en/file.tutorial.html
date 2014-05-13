@@ -21,7 +21,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!" + escape(window.location.href);
+  framesUrl = "frames.html#!file.tutorial.html";
 </script>
 
 
@@ -324,13 +324,6 @@ be sure to put the whole name, e.g.
 <p>Relation is resolved by searching entries of :class_name class with :foreign_key attribute value. Search target attribute for it is :primary_key or :many. primary_group method in the above example searches Group objects with User object&#8217;s gidNumber value as Group object&#8217;s gidNumber value. Matched Group objects are belonged objects.</p>
 <p>:parimary_key is used for an object just belongs to an object. The first matched object is treated as beloned object.</p>
 <p>:many is used for an object belongs to many objects. All of matched objects are treated as belonged objects.</p>
-<p>In addition, you can do simple membership tests by doing the following:</p>
-<pre class="code ruby"><code class="ruby">
-irb&gt; me.groups.member? &#39;root&#39;
-=&gt; false
-irb&gt; me.groups.member? &#39;develop&#39;
-=&gt; true
-</code></pre>
 <h5>has_many</h5>
 <p>This method is the opposite of belongs_to. Instead of checking other objects in
 other parts of the <span class="caps">LDAP</span> tree to see if you belong to them, you have multiple

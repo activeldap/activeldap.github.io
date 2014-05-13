@@ -21,7 +21,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '../../';
-  framesUrl = "../../frames.html#!" + escape(window.location.href);
+  framesUrl = "../../frames.html#!ActiveLdap/Adapter/Base.html";
 </script>
 
 
@@ -165,40 +165,6 @@
 
 
 
-
-  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
-  <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#runtime-instance_method" title="#runtime (instance method)">- (Object) <strong>runtime</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute runtime.</p>
-</div></span>
-  
-</li>
-
-    
-  </ul>
 
 
 
@@ -513,28 +479,6 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#log_info-instance_method" title="#log_info (instance method)">- (Object) <strong>log_info</strong>(name, runtime_in_seconds, info = nil) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#modify-instance_method" title="#modify (instance method)">- (Object) <strong>modify</strong>(dn, entries, options = {}) </a>
     
 
@@ -623,28 +567,6 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#reset_runtime-instance_method" title="#reset_runtime (instance method)">- (Object) <strong>reset_runtime</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#schema-instance_method" title="#schema (instance method)">- (Object) <strong>schema</strong>(options = {}) </a>
     
 
@@ -668,6 +590,28 @@
   <span class="summary_signature">
     
       <a href="#search-instance_method" title="#search (instance method)">- (Object) <strong>search</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#supported_control-instance_method" title="#supported_control (instance method)">- (Object) <strong>supported_control</strong> </a>
     
 
     
@@ -746,6 +690,8 @@
       <pre class="lines">
 
 
+21
+22
 23
 24
 25
@@ -757,16 +703,12 @@
 31
 32
 33
-34
-35
-36
-37</pre>
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_configuration'>configuration</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='ivar'>@runtime</span> <span class='op'>=</span> <span class='int'>0</span>
   <span class='ivar'>@connection</span> <span class='op'>=</span> <span class='kw'>nil</span>
   <span class='ivar'>@disconnected</span> <span class='op'>=</span> <span class='kw'>false</span>
   <span class='ivar'>@bound</span> <span class='op'>=</span> <span class='kw'>false</span>
@@ -786,54 +728,6 @@
 </div>
   
 </div>
-
-  <div id="instance_attr_details" class="attr_details">
-    <h2>Instance Attribute Details</h2>
-    
-      
-      <span id=""></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="runtime-instance_method">
-  
-    - (<tt>Object</tt>) <strong>runtime</strong>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the value of attribute runtime</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-22
-23
-24</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 22</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_runtime'>runtime</span>
-  <span class='ivar'>@runtime</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
 
 
   <div id="class_method_details" class="method_details_list">
@@ -957,6 +851,9 @@
       <pre class="lines">
 
 
+195
+196
+197
 198
 199
 200
@@ -973,13 +870,10 @@
 211
 212
 213
-214
-215
-216
-217</pre>
+214</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 198</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 195</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_entries'>entries</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dn'>dn</span> <span class='op'>=</span> <span class='id identifier rubyid_ensure_dn_string'>ensure_dn_string</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='rparen'>)</span>
@@ -1021,6 +915,14 @@
       <pre class="lines">
 
 
+60
+61
+62
+63
+64
+65
+66
+67
 68
 69
 70
@@ -1043,18 +945,10 @@
 87
 88
 89
-90
-91
-92
-93
-94
-95
-96
-97
-98</pre>
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bind'>bind</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@bind_tried</span> <span class='op'>=</span> <span class='kw'>true</span>
@@ -1107,12 +1001,12 @@
       <pre class="lines">
 
 
-105
-106
-107</pre>
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 97</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bind_as_anonymous'>bind_as_anonymous</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>yield</span>
@@ -1159,12 +1053,12 @@
       <pre class="lines">
 
 
-113
-114
-115</pre>
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bound?'>bound?</span>
   <span class='id identifier rubyid_connecting?'>connecting?</span> <span class='kw'>and</span> <span class='ivar'>@bound</span>
@@ -1189,21 +1083,21 @@
       <pre class="lines">
 
 
+36
+37
+38
+39
+40
+41
+42
+43
 44
 45
 46
-47
-48
-49
-50
-51
-52
-53
-54
-55</pre>
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connect'>connect</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:host</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='ivar'>@host</span>
@@ -1259,12 +1153,12 @@
       <pre class="lines">
 
 
-109
-110
-111</pre>
+101
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 109</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connecting?'>connecting?</span>
   <span class='op'>!</span><span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='op'>!</span><span class='ivar'>@disconnected</span>
@@ -1289,6 +1183,9 @@
       <pre class="lines">
 
 
+176
+177
+178
 179
 180
 181
@@ -1303,13 +1200,10 @@
 190
 191
 192
-193
-194
-195
-196</pre>
+193</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 179</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 176</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_targets'>targets</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_targets'>targets</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_targets'>targets</span><span class='rbracket'>]</span> <span class='kw'>unless</span> <span class='id identifier rubyid_targets'>targets</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
@@ -1349,14 +1243,14 @@
       <pre class="lines">
 
 
-57
-58
-59
-60
-61</pre>
+49
+50
+51
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_disconnect!'>disconnect!</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_unbind'>unbind</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -1383,53 +1277,17 @@
       <pre class="lines">
 
 
-151
-152
-153
-154</pre>
+148
+149
+150
+151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 151</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 148</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_entry_attribute'>entry_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_object_classes'>object_classes</span><span class='rparen'>)</span>
   <span class='ivar'>@entry_attributes</span><span class='lbracket'>[</span><span class='id identifier rubyid_object_classes'>object_classes</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span><span class='rbracket'>]</span> <span class='op'>||=</span>
     <span class='const'>EntryAttribute</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_object_classes'>object_classes</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="log_info-instance_method">
-  
-    - (<tt>Object</tt>) <strong>log_info</strong>(name, runtime_in_seconds, info = nil) 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-243
-244
-245
-246
-247
-248</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 243</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_log_info'>log_info</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_runtime_in_seconds'>runtime_in_seconds</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='ivar'>@logger</span>
-  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='ivar'>@logger</span><span class='period'>.</span><span class='id identifier rubyid_debug?'>debug?</span>
-  <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LDAP: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%.1f</span><span class='tstring_end'>&#39;</span></span> <span class='op'>%</span> <span class='lparen'>(</span><span class='id identifier rubyid_runtime_in_seconds'>runtime_in_seconds</span> <span class='op'>*</span> <span class='int'>1000</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>ms)</span><span class='tstring_end'>&quot;</span></span>
-  <span class='ivar'>@logger</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span><span class='lparen'>(</span><span class='id identifier rubyid_format_log_entry'>format_log_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1451,6 +1309,9 @@
       <pre class="lines">
 
 
+216
+217
+218
 219
 220
 221
@@ -1463,13 +1324,10 @@
 228
 229
 230
-231
-232
-233
-234</pre>
+231</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 219</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 216</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_modify'>modify</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_entries'>entries</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dn'>dn</span> <span class='op'>=</span> <span class='id identifier rubyid_ensure_dn_string'>ensure_dn_string</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='rparen'>)</span>
@@ -1507,15 +1365,15 @@
       <pre class="lines">
 
 
+233
+234
+235
 236
 237
-238
-239
-240
-241</pre>
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 236</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 233</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_modify_rdn'>modify_rdn</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_new_rdn'>new_rdn</span><span class='comma'>,</span> <span class='id identifier rubyid_delete_old_rdn'>delete_old_rdn</span><span class='comma'>,</span> <span class='id identifier rubyid_new_superior'>new_superior</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dn'>dn</span> <span class='op'>=</span> <span class='id identifier rubyid_ensure_dn_string'>ensure_dn_string</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='rparen'>)</span>
@@ -1543,12 +1401,12 @@
       <pre class="lines">
 
 
-147
-148
-149</pre>
+139
+140
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 147</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 139</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_naming_contexts'>naming_contexts</span>
   <span class='id identifier rubyid_root_dse_values'>root_dse_values</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>namingContexts</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1573,49 +1431,17 @@
       <pre class="lines">
 
 
-63
-64
-65
-66</pre>
+55
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rebind'>rebind</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_unbind'>unbind</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_bound?'>bound?</span>
   <span class='id identifier rubyid_connect'>connect</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="reset_runtime-instance_method">
-  
-    - (<tt>Object</tt>) <strong>reset_runtime</strong> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-39
-40
-41
-42</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 39</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_reset_runtime'>reset_runtime</span>
-  <span class='id identifier rubyid_runtime'>runtime</span><span class='comma'>,</span> <span class='ivar'>@runtime</span> <span class='op'>=</span> <span class='ivar'>@runtime</span><span class='comma'>,</span> <span class='int'>0</span>
-  <span class='id identifier rubyid_runtime'>runtime</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1637,6 +1463,14 @@
       <pre class="lines">
 
 
+109
+110
+111
+112
+113
+114
+115
+116
 117
 118
 119
@@ -1657,18 +1491,10 @@
 134
 135
 136
-137
-138
-139
-140
-141
-142
-143
-144
-145</pre>
+137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_schema'>schema</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@schema</span> <span class='op'>||=</span> <span class='id identifier rubyid_operation'>operation</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span> <span class='kw'>do</span>
@@ -1719,6 +1545,9 @@
       <pre class="lines">
 
 
+153
+154
+155
 156
 157
 158
@@ -1737,13 +1566,10 @@
 171
 172
 173
-174
-175
-176
-177</pre>
+174</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 156</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 153</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_filter'>filter</span> <span class='op'>=</span> <span class='id identifier rubyid_parse_filter'>parse_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:filter</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>objectClass=*</span><span class='tstring_end'>&#39;</span></span>
@@ -1773,6 +1599,38 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="supported_control-instance_method">
+  
+    - (<tt>Object</tt>) <strong>supported_control</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+143
+144
+145
+146</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 143</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_supported_control'>supported_control</span>
+  <span class='ivar'>@supported_control</span> <span class='op'>||=</span>
+    <span class='const'>SupportedControl</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_root_dse_values'>root_dse_values</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>supportedControl</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="unbind-instance_method">
   
     - (<tt>Object</tt>) <strong>unbind</strong>(options = {}) 
@@ -1787,13 +1645,13 @@
       <pre class="lines">
 
 
-100
-101
-102
-103</pre>
+92
+93
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/base.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unbind'>unbind</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>yield</span> <span class='kw'>if</span> <span class='ivar'>@connection</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='ivar'>@bind_tried</span> <span class='kw'>or</span> <span class='id identifier rubyid_bound?'>bound?</span><span class='rparen'>)</span>

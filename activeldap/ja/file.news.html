@@ -21,7 +21,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!" + escape(window.location.href);
+  framesUrl = "frames.html#!file.news.html";
 </script>
 
 
@@ -92,6 +92,42 @@
     <iframe id="search_frame"></iframe>
 
     <div id="content"><div id='filecontents'><h1>おしらせ</h1>
+<h2 id="4-0-3">4.0.3: 2014-05-15</h2>
+<h3>改良</h3>
+<ul>
+	<li>Supported stopping colorize logging by <code>config.colorize_logging = false</code>.
+  [GitHub:#81] [Reported by nengxu]</li>
+	<li>Supported PagedResults defined in <span class="caps">RFC</span> 2696 in the net-ldap adapter.
+  [activeldap-discuss] Paged results
+  [Suggested by Aaron Knister]</li>
+	<li>Supported PagedResults defined in <span class="caps">RFC</span> 2696 in the ldap adapter.
+  [GitHub#83] [Patch by Aaron Knister]</li>
+	<li>Stopped to override <span class="caps">ORM</span> generator by default.
+  [GitHub#87] [Patch by Josef Šimánek]</li>
+	<li>Supported Rails 4.1.0.
+  [GitHub#90] [Patch by Francisco Miguel Biete]</li>
+	<li>document: Removed obsoleted description.
+  [activeldap-discuss] [Reported by Jarod Watkins]</li>
+	<li>Supported <code>ActiveLdap::Base.attribute_method?</code> .
+  [GitHub#92] [Reported by Renaud Chaput]</li>
+</ul>
+<h3>修正</h3>
+<ul>
+	<li>Fixed a bug that <code>belongs_to :many</code> &#8217;s inconsistent behavior.
+  You get DN attribute when you add an entry by DN attribute to
+  belongs_to :many collection. It should return entry object instead of
+  DN attribute. Because loaded collection returns entry objects.
+  [activeldap-discuss] [Reported by Jarod Watkins]</li>
+</ul>
+<h3>感謝</h3>
+<ul>
+	<li>nengxu</li>
+	<li>Aaron Knister</li>
+	<li>Josef Šimánek</li>
+	<li>Francisco Miguel Biete</li>
+	<li>Jarod Watkins</li>
+	<li>Renaud Chaput</li>
+</ul>
 <h2 id="4-0-2">4.0.2: 2014-01-04</h2>
 <h3>改良</h3>
 <ul>
@@ -1093,9 +1129,9 @@ This makes things easier for larger programming tasks.
 </ul></div></div>
 
     <div id="footer">
-  Generated on Sat Jan  4 14:20:23 2014 by
+  Generated on Tue May 13 21:55:03 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.2 (ruby-2.0.0).
+  0.8.7.4 (ruby-2.0.0).
 </div>
 
   

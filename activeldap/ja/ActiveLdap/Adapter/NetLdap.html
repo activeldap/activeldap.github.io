@@ -21,7 +21,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '../../';
-  framesUrl = "../../frames.html#!" + escape(window.location.href);
+  framesUrl = "../../frames.html#!ActiveLdap/Adapter/NetLdap.html";
 </script>
 
 
@@ -158,11 +158,6 @@
 
 
 
-
-  <h2>Instance Attribute Summary</h2>
-  
-  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="Base.html" title="ActiveLdap::Adapter::Base (class)">Base</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Base.html#runtime-instance_method" title="ActiveLdap::Adapter::Base#runtime (method)">#runtime</a></span></p>
 
 
   
@@ -384,7 +379,7 @@
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Base.html" title="ActiveLdap::Adapter::Base (class)">Base</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Base.html#bound%3F-instance_method" title="ActiveLdap::Adapter::Base#bound? (method)">#bound?</a></span>, <span class='object_link'><a href="Base.html#connecting%3F-instance_method" title="ActiveLdap::Adapter::Base#connecting? (method)">#connecting?</a></span>, <span class='object_link'><a href="Base.html#disconnect%21-instance_method" title="ActiveLdap::Adapter::Base#disconnect! (method)">#disconnect!</a></span>, <span class='object_link'><a href="Base.html#entry_attribute-instance_method" title="ActiveLdap::Adapter::Base#entry_attribute (method)">#entry_attribute</a></span>, <span class='object_link'><a href="Base.html#initialize-instance_method" title="ActiveLdap::Adapter::Base#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="Base.html#jndi_connection-class_method" title="ActiveLdap::Adapter::Base.jndi_connection (method)">jndi_connection</a></span>, <span class='object_link'><a href="Base.html#ldap_connection-class_method" title="ActiveLdap::Adapter::Base.ldap_connection (method)">ldap_connection</a></span>, <span class='object_link'><a href="Base.html#log_info-instance_method" title="ActiveLdap::Adapter::Base#log_info (method)">#log_info</a></span>, <span class='object_link'><a href="Base.html#naming_contexts-instance_method" title="ActiveLdap::Adapter::Base#naming_contexts (method)">#naming_contexts</a></span>, <span class='object_link'><a href="Base.html#net_ldap_connection-class_method" title="ActiveLdap::Adapter::Base.net_ldap_connection (method)">net_ldap_connection</a></span>, <span class='object_link'><a href="Base.html#rebind-instance_method" title="ActiveLdap::Adapter::Base#rebind (method)">#rebind</a></span>, <span class='object_link'><a href="Base.html#reset_runtime-instance_method" title="ActiveLdap::Adapter::Base#reset_runtime (method)">#reset_runtime</a></span>, <span class='object_link'><a href="Base.html#schema-instance_method" title="ActiveLdap::Adapter::Base#schema (method)">#schema</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Base.html#bound%3F-instance_method" title="ActiveLdap::Adapter::Base#bound? (method)">#bound?</a></span>, <span class='object_link'><a href="Base.html#connecting%3F-instance_method" title="ActiveLdap::Adapter::Base#connecting? (method)">#connecting?</a></span>, <span class='object_link'><a href="Base.html#disconnect%21-instance_method" title="ActiveLdap::Adapter::Base#disconnect! (method)">#disconnect!</a></span>, <span class='object_link'><a href="Base.html#entry_attribute-instance_method" title="ActiveLdap::Adapter::Base#entry_attribute (method)">#entry_attribute</a></span>, <span class='object_link'><a href="Base.html#initialize-instance_method" title="ActiveLdap::Adapter::Base#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="Base.html#jndi_connection-class_method" title="ActiveLdap::Adapter::Base.jndi_connection (method)">jndi_connection</a></span>, <span class='object_link'><a href="Base.html#ldap_connection-class_method" title="ActiveLdap::Adapter::Base.ldap_connection (method)">ldap_connection</a></span>, <span class='object_link'><a href="Base.html#naming_contexts-instance_method" title="ActiveLdap::Adapter::Base#naming_contexts (method)">#naming_contexts</a></span>, <span class='object_link'><a href="Base.html#net_ldap_connection-class_method" title="ActiveLdap::Adapter::Base.net_ldap_connection (method)">net_ldap_connection</a></span>, <span class='object_link'><a href="Base.html#rebind-instance_method" title="ActiveLdap::Adapter::Base#rebind (method)">#rebind</a></span>, <span class='object_link'><a href="Base.html#schema-instance_method" title="ActiveLdap::Adapter::Base#schema (method)">#schema</a></span>, <span class='object_link'><a href="Base.html#supported_control-instance_method" title="ActiveLdap::Adapter::Base#supported_control (method)">#supported_control</a></span></p>
 
   
   
@@ -418,22 +413,22 @@
       <pre class="lines">
 
 
-97
-98
-99
-100
-101
-102
-103
-104
 105
 106
 107
 108
-109</pre>
+109
+110
+111
+112
+113
+114
+115
+116
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/net_ldap.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/net_ldap.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_entries'>entries</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid__dn'>_dn</span><span class='comma'>,</span> <span class='id identifier rubyid__entries'>_entries</span><span class='op'>|</span>
@@ -602,16 +597,16 @@
       <pre class="lines">
 
 
-89
-90
-91
-92
-93
-94
-95</pre>
+97
+98
+99
+100
+101
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/net_ldap.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/net_ldap.rb', line 97</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_targets'>targets</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_target'>target</span><span class='op'>|</span>
@@ -640,17 +635,17 @@
       <pre class="lines">
 
 
-111
-112
-113
-114
-115
-116
-117
-118</pre>
+119
+120
+121
+122
+123
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/net_ldap.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/net_ldap.rb', line 119</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_modify'>modify</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_entries'>entries</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid__dn'>_dn</span><span class='comma'>,</span> <span class='id identifier rubyid__entries'>_entries</span><span class='op'>|</span>
@@ -680,14 +675,6 @@
       <pre class="lines">
 
 
-120
-121
-122
-123
-124
-125
-126
-127
 128
 129
 130
@@ -695,10 +682,18 @@
 132
 133
 134
-135</pre>
+135
+136
+137
+138
+139
+140
+141
+142
+143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/net_ldap.rb', line 120</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/net_ldap.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_modify_rdn'>modify_rdn</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_new_rdn'>new_rdn</span><span class='comma'>,</span> <span class='id identifier rubyid_delete_old_rdn'>delete_old_rdn</span><span class='comma'>,</span> <span class='id identifier rubyid_new_superior'>new_superior</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid__dn'>_dn</span><span class='comma'>,</span> <span class='id identifier rubyid__new_rdn'>_new_rdn</span><span class='comma'>,</span> <span class='id identifier rubyid__delete_old_rdn'>_delete_old_rdn</span><span class='comma'>,</span> <span class='id identifier rubyid__new_superior'>_new_superior</span><span class='op'>|</span>
@@ -758,12 +753,26 @@
 84
 85
 86
-87</pre>
+87
+88
+89
+90
+91
+92
+93
+94
+95</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/net_ldap.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_use_paged_results'>use_paged_results</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:use_paged_results</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_use_paged_results'>use_paged_results</span> <span class='kw'>or</span> <span class='id identifier rubyid_use_paged_results'>use_paged_results</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_paged_results_supported'>paged_results_supported</span> <span class='op'>=</span> <span class='id identifier rubyid_supported_control'>supported_control</span><span class='period'>.</span><span class='id identifier rubyid_paged_results?'>paged_results?</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_paged_results_supported'>paged_results_supported</span> <span class='op'>=</span> <span class='kw'>false</span>
+  <span class='kw'>end</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='id identifier rubyid_scope'>scope</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='comma'>,</span> <span class='id identifier rubyid_limit'>limit</span><span class='op'>|</span>
     <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='lbrace'>{</span>
       <span class='symbol'>:base</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_base'>base</span><span class='comma'>,</span>
@@ -771,10 +780,12 @@
       <span class='symbol'>:filter</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_filter'>filter</span><span class='comma'>,</span>
       <span class='symbol'>:attributes</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='comma'>,</span>
       <span class='symbol'>:size</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_limit'>limit</span><span class='comma'>,</span>
+      <span class='symbol'>:paged_searches_supported</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_paged_results_supported'>paged_results_supported</span><span class='comma'>,</span>
     <span class='rbrace'>}</span>
     <span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='lbrace'>{</span>
       <span class='symbol'>:base</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_scope_name'>scope_name</span><span class='lparen'>(</span><span class='id identifier rubyid_scope'>scope</span><span class='rparen'>)</span><span class='comma'>,</span>
-      <span class='symbol'>:filter</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_filter'>filter</span><span class='comma'>,</span> <span class='symbol'>:attributes</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='comma'>,</span> <span class='symbol'>:limit</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_limit'>limit</span>
+      <span class='symbol'>:filter</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_filter'>filter</span><span class='comma'>,</span> <span class='symbol'>:attributes</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='comma'>,</span> <span class='symbol'>:limit</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_limit'>limit</span><span class='comma'>,</span>
+      <span class='symbol'>:paged_results_supported</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_paged_results_supported'>paged_results_supported</span><span class='comma'>,</span>
     <span class='rbrace'>}</span>
     <span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='symbol'>:search</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_entry'>entry</span><span class='op'>|</span>
       <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -834,9 +845,9 @@
 </div>
 
     <div id="footer">
-  Generated on Sat Jan  4 14:20:25 2014 by
+  Generated on Tue May 13 21:55:04 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.2 (ruby-2.0.0).
+  0.8.7.4 (ruby-2.0.0).
 </div>
 
   
