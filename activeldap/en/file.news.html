@@ -92,6 +92,44 @@
     <iframe id="search_frame"></iframe>
 
     <div id="content"><div id='filecontents'><h1>News</h1>
+<h2 id="release-4-0-4">4.0.4: 2014-10-11</h2>
+<h3>Improvements</h3>
+<ul>
+	<li>Migrated to commit mail mailing list to <a href="https://groups.google.com/forum/?hl=ja#!forum/activeldap-commit">Google
+  Groups</a>
+  from RubyForge. Thanks to RubyForge! RubyForge was very helpful!</li>
+	<li>Update project homepage <span class="caps">URL</span> in <span class="caps">README</span>.
+  [GitHub#103] [Patch by Adam Whittingham]</li>
+	<li>Removed needless <code>Enumerable</code> inclusion in <code>ActiveLdap::Base</code>.
+  [GitHub#104] [Patch by Murray Steele]</li>
+	<li><span class='object_link'><a href="ActiveLdap/Populate.html#ensure_base-class_method" title="ActiveLdap::Populate.ensure_base (method)">ActiveLdap::Populate.ensure_base</a></span>: Supported ou entry creation in base DN.</li>
+	<li>Added <code>follow_referrals</code> configuration. You can disable auto
+  referrals following by specifying <code>false</code>. It is useful when you
+  can&#8217;t access referrals.</li>
+</ul>
+This configuration is enabled by default.
+This configuration works only with ruby-ldap adapter.
+[GitHub#99] [Suggested by hadmut]
+<ul>
+	<li>Supported <code>bindname</code> extension in <span class="caps">LDAP</span> <span class="caps">URL</span> such as
+  <code>ldap://host/dc=base,dc=name????bindname=cn%3Dadmin%2Cdc%3Dexample%2Cdc%3Dcom%3F</code>.</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+	<li>Fixed a bug logging is failed on removing a connection.
+  [GitHub#94] [Reported by Francisco Miguel Biete]</li>
+	<li>Fixed homepage <span class="caps">URL</span> in RubyGems.
+  [GitHub#95] [Patch by Vít Ondruch]</li>
+	<li>Fixed a bug that DN in <span class="caps">LDAP</span> <span class="caps">URL</span> is used as bind DN not base DN.</li>
+</ul>
+<h3>Thanks</h3>
+<ul>
+	<li>Francisco Miguel Biete</li>
+	<li>Vít Ondruch</li>
+	<li>Adam Whittingham</li>
+	<li>Murray Steele</li>
+	<li>hadmut</li>
+</ul>
 <h2 id="4-0-3">4.0.3: 2014-05-15</h2>
 <h3>Improvements</h3>
 <ul>

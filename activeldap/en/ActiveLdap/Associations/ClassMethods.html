@@ -283,16 +283,16 @@ entry covered by class |:class_name|.</p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-identifier">belongs_to</span> :<span class="ruby-identifier">groups</span>, :<span class="ruby-identifier">class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Group&quot;</span>,
-           :<span class="ruby-identifier">many</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;memberUid&quot;</span> <span class="ruby-comment"># Group#memberUid</span>
-           <span class="ruby-comment"># :primary_key =&gt; &quot;uid&quot; # User#uid</span>
-           <span class="ruby-comment">## deprecated since 1.1.0. Use :primary_key instead.</span>
-           <span class="ruby-comment">## :foreign_key =&gt; &quot;uid&quot; # User#uid</span>
-           <span class="ruby-comment"># dn attribute value is used by default</span>
-<span class="ruby-identifier">belongs_to</span> :<span class="ruby-identifier">primary_group</span>, :<span class="ruby-identifier">class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Group&quot;</span>,
-           :<span class="ruby-identifier">foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;gidNumber&quot;</span>, <span class="ruby-comment"># User#gidNumber</span>
-           :<span class="ruby-identifier">primary_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;gidNumber&quot;</span>  <span class="ruby-comment"># Group#gidNumber</span>
-</pre>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:groups</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Group</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+           <span class='symbol'>:many</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># Group#memberUid
+</span>           <span class='comment'># :primary_key =&gt; &quot;uid&quot; # User#uid
+</span>           <span class='comment'>## deprecated since 1.1.0. Use :primary_key instead.
+</span>           <span class='comment'>## :foreign_key =&gt; &quot;uid&quot; # User#uid
+</span>           <span class='comment'># dn attribute value is used by default
+</span><span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:primary_group</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Group</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+           <span class='symbol'>:foreign_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='comment'># User#gidNumber
+</span>           <span class='symbol'>:primary_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&quot;</span></span>  <span class='comment'># Group#gidNumber
+</span></code></pre>
 
 
   </div>
@@ -425,16 +425,16 @@ which result in entries that don&#39;t exist in LDAP!</p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-identifier">has_many</span> :<span class="ruby-identifier">primary_members</span>, :<span class="ruby-identifier">class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;User&quot;</span>,
-         :<span class="ruby-identifier">primary_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;gidNumber&quot;</span>, <span class="ruby-comment"># Group#gidNumber</span>
-         :<span class="ruby-identifier">foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;gidNumber&quot;</span>  <span class="ruby-comment"># User#gidNumber</span>
-         <span class="ruby-comment">## deprecated since 1.1.0. Those options</span>
-         <span class="ruby-comment">## are inverted.</span>
-         <span class="ruby-comment"># :primary_key =&gt; &quot;gidNumber&quot;, # User#gidNumber</span>
-         <span class="ruby-comment"># :foreign_key =&gt; &quot;gidNumber&quot;  # Group#gidNumber</span>
-<span class="ruby-identifier">has_many</span> :<span class="ruby-identifier">members</span>, :<span class="ruby-identifier">class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;User&quot;</span>,
-         :<span class="ruby-identifier">wrap</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;memberUid&quot;</span> <span class="ruby-comment"># Group#memberUid</span>
-</pre>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:primary_members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='symbol'>:primary_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='comment'># Group#gidNumber
+</span>         <span class='symbol'>:foreign_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&quot;</span></span>  <span class='comment'># User#gidNumber
+</span>         <span class='comment'>## deprecated since 1.1.0. Those options
+</span>         <span class='comment'>## are inverted.
+</span>         <span class='comment'># :primary_key =&gt; &quot;gidNumber&quot;, # User#gidNumber
+</span>         <span class='comment'># :foreign_key =&gt; &quot;gidNumber&quot;  # Group#gidNumber
+</span><span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='symbol'>:wrap</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># Group#memberUid
+</span></code></pre>
 
 
   </div>

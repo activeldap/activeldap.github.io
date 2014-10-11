@@ -114,6 +114,16 @@
 </dl>
 <div class="clear"></div>
 
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ClassMethods/URIConfigurationMerger.html" title="ActiveLdap::Configuration::ClassMethods::URIConfigurationMerger (class)">URIConfigurationMerger</a></span>
+    
+  
+</p>
 
   <h2>Constant Summary</h2>
   
@@ -368,12 +378,12 @@
       <pre class="lines">
 
 
-79
-80
-81</pre>
+82
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='cvar'>@@defined_configurations</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span> <span class='op'>||</span> <span class='id identifier rubyid_active_connection_name'>active_connection_name</span><span class='rbracket'>]</span>
@@ -398,12 +408,12 @@
       <pre class="lines">
 
 
-52
-53
-54</pre>
+55
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_default_configuration'>default_configuration</span>
   <span class='const'>DEFAULT_CONFIG</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
@@ -428,12 +438,12 @@
       <pre class="lines">
 
 
-83
-84
-85</pre>
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 86</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_define_configuration'>define_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
   <span class='cvar'>@@defined_configurations</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_config'>config</span>
@@ -458,12 +468,12 @@
       <pre class="lines">
 
 
-87
-88
-89</pre>
+90
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_defined_configurations'>defined_configurations</span>
   <span class='cvar'>@@defined_configurations</span>
@@ -488,9 +498,6 @@
       <pre class="lines">
 
 
-56
-57
-58
 59
 60
 61
@@ -509,10 +516,13 @@
 74
 75
 76
-77</pre>
+77
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ensure_configuration'>ensure_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -556,9 +566,6 @@
       <pre class="lines">
 
 
-102
-103
-104
 105
 106
 107
@@ -576,10 +583,13 @@
 119
 120
 121
-122</pre>
+122
+123
+124
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_merge_configuration'>merge_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_user_configuration'>user_configuration</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='op'>=</span><span class='kw'>self</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_configuration'>configuration</span> <span class='op'>=</span> <span class='id identifier rubyid_default_configuration'>default_configuration</span>
@@ -622,9 +632,6 @@
       <pre class="lines">
 
 
-124
-125
-126
 127
 128
 129
@@ -641,11 +648,10 @@
 140
 141
 142
-143
-144</pre>
+143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prepare_configuration'>prepare_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_configuration'>configuration</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_configuration'>configuration</span> <span class='op'>=</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_symbolize_keys'>symbolize_keys</span>
@@ -661,12 +667,8 @@
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigurationError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>not a LDAP URI: %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:port</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span><span class='rbrace'>}</span>
-  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='lbracket'>[</span><span class='symbol'>:host</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='kw'>if</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span>
-  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='lbracket'>[</span><span class='symbol'>:bind_dn</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_dn'>dn</span> <span class='kw'>if</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_dn'>dn</span>
-  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='lbracket'>[</span><span class='symbol'>:scope</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_scope'>scope</span> <span class='kw'>if</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_scope'>scope</span>
-  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='lbracket'>[</span><span class='symbol'>:method</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='symbol'>:ssl</span> <span class='kw'>if</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>URI</span><span class='op'>::</span><span class='const'>LDAPS</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_uri_configuration'>uri_configuration</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_configuration'>configuration</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_merger'>merger</span> <span class='op'>=</span> <span class='const'>URIConfigurationMerger</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_uri'>uri</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_merger'>merger</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_configuration'>configuration</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -688,12 +690,12 @@
       <pre class="lines">
 
 
-91
-92
-93</pre>
+94
+95
+96</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 94</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_configuration_by_configuration'>remove_configuration_by_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
   <span class='cvar'>@@defined_configurations</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>==</span> <span class='id identifier rubyid_config'>config</span><span class='rbrace'>}</span>
@@ -718,19 +720,19 @@
       <pre class="lines">
 
 
-96
-97
-98
 99
-100</pre>
+100
+101
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 96</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/configuration.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_connection_related_configuration'>remove_connection_related_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
     <span class='const'>CONNECTION_CONFIGURATION_KEYS</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
-	<span class='kw'>end</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
