@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../../../favicon.ico" />
     <link rel="icon" href="../../../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "ActiveLdap::Ldif::DeleteRecord";
   relpath = '../../';
-  framesUrl = "../../frames.html#!ActiveLdap/Ldif/DeleteRecord.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../../../">
@@ -58,51 +63,42 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="../../alphabetical_index.html">Index (D)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Ldif.html" title="ActiveLdap::Ldif (class)">Ldif</a></span></span>
      &raquo; 
     <span class="title">DeleteRecord</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Class: ActiveLdap::Ldif::DeleteRecord
+      <div id="content"><h1>Class: ActiveLdap::Ldif::DeleteRecord
   
   
   
 </h1>
-
-<dl class="box">
+<div class="box_info">
   
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
       <span class="inheritName"><span class='object_link'><a href="ChangeRecord.html" title="ActiveLdap::Ldif::ChangeRecord (class)">ChangeRecord</a></span></span>
       
         <ul class="fullTree">
@@ -117,21 +113,25 @@
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
       
-      </dd>
-    
+    </dd>
+  </dl>
   
-  
-    
-  
-    
+
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/active_ldap/ldif.rb</dd>
   
-</dl>
-<div class="clear"></div>
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/active_ldap/ldif.rb</dd>
+  </dl>
+  
+</div>
 
 
 
@@ -153,7 +153,7 @@
   
     <h2>
       Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -161,7 +161,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (DeleteRecord) <strong>initialize</strong>(dn, controls = []) </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(dn, controls = [])  &#x21d2; DeleteRecord </a>
     
 
     
@@ -197,7 +197,7 @@
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ChangeRecord.html" title="ActiveLdap::Ldif::ChangeRecord (class)">ChangeRecord</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="ChangeRecord.html#%3D%3D-instance_method" title="ActiveLdap::Ldif::ChangeRecord#== (method)">#==</a></span>, <span class='object_link'><a href="ChangeRecord.html#add%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#add? (method)">#add?</a></span>, <span class='object_link'><a href="ChangeRecord.html#delete%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#delete? (method)">#delete?</a></span>, <span class='object_link'><a href="ChangeRecord.html#modify%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#modify? (method)">#modify?</a></span>, <span class='object_link'><a href="ChangeRecord.html#modify_dn%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#modify_dn? (method)">#modify_dn?</a></span>, <span class='object_link'><a href="ChangeRecord.html#modify_rdn%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#modify_rdn? (method)">#modify_rdn?</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="ChangeRecord.html#==-instance_method" title="ActiveLdap::Ldif::ChangeRecord#== (method)">#==</a></span>, <span class='object_link'><a href="ChangeRecord.html#add%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#add? (method)">#add?</a></span>, <span class='object_link'><a href="ChangeRecord.html#delete%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#delete? (method)">#delete?</a></span>, <span class='object_link'><a href="ChangeRecord.html#modify%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#modify? (method)">#modify?</a></span>, <span class='object_link'><a href="ChangeRecord.html#modify_dn%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#modify_dn? (method)">#modify_dn?</a></span>, <span class='object_link'><a href="ChangeRecord.html#modify_rdn%3F-instance_method" title="ActiveLdap::Ldif::ChangeRecord#modify_rdn? (method)">#modify_rdn?</a></span></p>
 
   
   
@@ -208,7 +208,7 @@
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Record.html" title="ActiveLdap::Ldif::Record (class)">Record</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Record.html#%3D%3D-instance_method" title="ActiveLdap::Ldif::Record#== (method)">#==</a></span>, <span class='object_link'><a href="Record.html#to_hash-instance_method" title="ActiveLdap::Ldif::Record#to_hash (method)">#to_hash</a></span>, <span class='object_link'><a href="Record.html#to_s-instance_method" title="ActiveLdap::Ldif::Record#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Record.html#==-instance_method" title="ActiveLdap::Ldif::Record#== (method)">#==</a></span>, <span class='object_link'><a href="Record.html#to_hash-instance_method" title="ActiveLdap::Ldif::Record#to_hash (method)">#to_hash</a></span>, <span class='object_link'><a href="Record.html#to_s-instance_method" title="ActiveLdap::Ldif::Record#to_s (method)">#to_s</a></span></p>
 
   
   
@@ -221,7 +221,7 @@
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="ActiveLdap::Ldif::DeleteRecord (class)">DeleteRecord</a></span></tt>) <strong>initialize</strong>(dn, controls = []) 
+    #<strong>initialize</strong>(dn, controls = [])  &#x21d2; <tt><span class='object_link'><a href="" title="ActiveLdap::Ldif::DeleteRecord (class)">DeleteRecord</a></span></tt> 
   
 
   
@@ -244,12 +244,12 @@
       <pre class="lines">
 
 
-779
-780
-781</pre>
+785
+786
+787</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/ldif.rb', line 779</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/ldif.rb', line 785</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_controls'>controls</span><span class='op'>=</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_controls'>controls</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>delete</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -264,23 +264,18 @@
 
 </div>
 
-    <div id="footer"></div>
-
-  
+      <div id="footer">
       </div>
 
       <div class="sidebar">
         <h2>About Project</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li><a href="http://activeldap.github.io/">Project page</a></li>
 	  <li>
-	    <a href="http://rubyforge.org/mailman/listinfo/ruby-activeldap-discuss">Mailinglist</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit mail</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHub page</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
 	  </li>
 	</ul>
 
@@ -313,11 +308,6 @@
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="https://github.com/activeldap/">
           <img src="../../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
@@ -335,5 +325,6 @@
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

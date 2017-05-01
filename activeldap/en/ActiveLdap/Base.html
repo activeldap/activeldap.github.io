@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../../favicon.ico" />
     <link rel="icon" href="../../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "ActiveLdap::Base";
   relpath = '../';
-  framesUrl = "../frames.html#!ActiveLdap/Base.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../../">
@@ -58,51 +63,42 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="../alphabetical_index.html">Index (B)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span>
      &raquo; 
     <span class="title">Base</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Class: ActiveLdap::Base
+      <div id="content"><h1>Class: ActiveLdap::Base
   
   
   
 </h1>
-
-<dl class="box">
+<div class="box_info">
   
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
       <span class="inheritName">Object</span>
       
         <ul class="fullTree">
@@ -113,25 +109,30 @@
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
       
-      </dd>
-    
+    </dd>
+  </dl>
   
-  
-    
-  
-    
-      <dt class="r2">Includes:</dt>
-      <dd class="r2"><span class='object_link'><a href="GetTextSupport.html" title="ActiveLdap::GetTextSupport (module)">GetTextSupport</a></span>, Reloadable::Deprecated, Reloadable::Subclasses</dd>
-      
-    
+
   
   
   
-    <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/active_ldap/base.rb</dd>
   
-</dl>
-<div class="clear"></div>
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="GetTextSupport.html" title="ActiveLdap::GetTextSupport (module)">GetTextSupport</a></span>, Reloadable::Deprecated, Reloadable::Subclasses</dd>
+  </dl>
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/active_ldap/base.rb</dd>
+  </dl>
+  
+</div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
@@ -153,34 +154,32 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
 </div>
 
   <h2>Constant Summary</h2>
-  
-    <dl class="constants">
-      
-        <dt id="VALID_LDAP_MAPPING_OPTIONS-constant" class="">VALID_LDAP_MAPPING_OPTIONS =
-          
-        </dt>
-        <dd><pre class="code"><span class='lbracket'>[</span><span class='symbol'>:dn_attribute</span><span class='comma'>,</span> <span class='symbol'>:prefix</span><span class='comma'>,</span> <span class='symbol'>:scope</span><span class='comma'>,</span>
+  <dl class="constants">
+    
+      <dt id="VALID_LDAP_MAPPING_OPTIONS-constant" class="">VALID_LDAP_MAPPING_OPTIONS =
+        
+      </dt>
+      <dd><pre class="code"><span class='lbracket'>[</span><span class='symbol'>:dn_attribute</span><span class='comma'>,</span> <span class='symbol'>:prefix</span><span class='comma'>,</span> <span class='symbol'>:scope</span><span class='comma'>,</span>
 <span class='symbol'>:classes</span><span class='comma'>,</span> <span class='symbol'>:recommended_classes</span><span class='comma'>,</span>
 <span class='symbol'>:excluded_classes</span><span class='comma'>,</span> <span class='symbol'>:sort_by</span><span class='comma'>,</span> <span class='symbol'>:order</span><span class='rbracket'>]</span></pre></dd>
-      
-        <dt id="configurations-classvariable" class="">@@configurations =
-          
-        </dt>
-        <dd><pre class="code"><span class='lbrace'>{</span><span class='rbrace'>}</span></pre></dd>
-      
-    </dl>
-  
+    
+      <dt id="configurations-classvariable" class="">@@configurations =
+        
+      </dt>
+      <dd><pre class="code"><span class='lbrace'>{</span><span class='rbrace'>}</span></pre></dd>
+    
+  </dl>
 
 
 
 
-  <h2>Class Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <h2>Class Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
   <ul class="summary">
     
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#abstract_class-class_method" title="abstract_class (class method)">+ (Object) <strong>abstract_class</strong> </a>
+      <a href="#abstract_class-class_method" title="abstract_class (class method)">.<strong>abstract_class</strong>  &#x21d2; Object </a>
     
 
     
@@ -212,7 +211,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
   
     <h2>
       Class Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -220,7 +219,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#abstract_class%3F-class_method" title="abstract_class? (class method)">+ (Boolean) <strong>abstract_class?</strong> </a>
+      <a href="#abstract_class%3F-class_method" title="abstract_class? (class method)">.<strong>abstract_class?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -242,7 +241,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#base-class_method" title="base (class method)">+ (Object) <strong>base</strong> </a>
+      <a href="#base-class_method" title="base (class method)">.<strong>base</strong>  &#x21d2; Object </a>
     
 
     
@@ -266,7 +265,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#base%3D-class_method" title="base= (class method)">+ (Object) <strong>base=</strong>(value) </a>
+      <a href="#base=-class_method" title="base= (class method)">.<strong>base=</strong>(value)  &#x21d2; Object </a>
     
 
     
@@ -288,7 +287,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#base_class-class_method" title="base_class (class method)">+ (Object) <strong>base_class</strong> </a>
+      <a href="#base_class-class_method" title="base_class (class method)">.<strong>base_class</strong>  &#x21d2; Object </a>
     
 
     
@@ -310,7 +309,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#class_local_attr_accessor-class_method" title="class_local_attr_accessor (class method)">+ (Object) <strong>class_local_attr_accessor</strong>(search_ancestors, *syms) </a>
+      <a href="#class_local_attr_accessor-class_method" title="class_local_attr_accessor (class method)">.<strong>class_local_attr_accessor</strong>(search_ancestors, *syms)  &#x21d2; Object </a>
     
 
     
@@ -332,7 +331,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#class_of_active_ldap_descendant-class_method" title="class_of_active_ldap_descendant (class method)">+ (Object) <strong>class_of_active_ldap_descendant</strong>(klass) </a>
+      <a href="#class_of_active_ldap_descendant-class_method" title="class_of_active_ldap_descendant (class method)">.<strong>class_of_active_ldap_descendant</strong>(klass)  &#x21d2; Object </a>
     
 
     
@@ -354,7 +353,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create-class_method" title="create (class method)">+ (Object) <strong>create</strong>(attributes = nil, &amp;block) </a>
+      <a href="#create-class_method" title="create (class method)">.<strong>create</strong>(attributes = nil, &amp;block)  &#x21d2; Object </a>
     
 
     
@@ -376,7 +375,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#default_search_attribute-class_method" title="default_search_attribute (class method)">+ (Object) <strong>default_search_attribute</strong> </a>
+      <a href="#default_search_attribute-class_method" title="default_search_attribute (class method)">.<strong>default_search_attribute</strong>  &#x21d2; Object </a>
     
 
     
@@ -398,7 +397,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#establish_connection-class_method" title="establish_connection (class method)">+ (Object) <strong>establish_connection</strong>(config = nil) </a>
+      <a href="#establish_connection-class_method" title="establish_connection (class method)">.<strong>establish_connection</strong>(config = nil)  &#x21d2; Object </a>
     
 
     
@@ -422,7 +421,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#human_name-class_method" title="human_name (class method)">+ (Object) <strong>human_name</strong>(options = {}) </a>
+      <a href="#human_name-class_method" title="human_name (class method)">.<strong>human_name</strong>(options = {})  &#x21d2; Object </a>
     
 
     
@@ -444,7 +443,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#inspect-class_method" title="inspect (class method)">+ (Object) <strong>inspect</strong> </a>
+      <a href="#inspect-class_method" title="inspect (class method)">.<strong>inspect</strong>  &#x21d2; Object </a>
     
 
     
@@ -466,7 +465,7 @@ functionality. It is meant to only ever be subclassed by extension classes.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldap_mapping-class_method" title="ldap_mapping (class method)">+ (Object) <strong>ldap_mapping</strong>(options = {}) </a>
+      <a href="#ldap_mapping-class_method" title="ldap_mapping (class method)">.<strong>ldap_mapping</strong>(options = {})  &#x21d2; Object </a>
     
 
     
@@ -491,7 +490,7 @@ ldap for use in activeldap.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#parsed_base-class_method" title="parsed_base (class method)">+ (Object) <strong>parsed_base</strong> </a>
+      <a href="#parsed_base-class_method" title="parsed_base (class method)">.<strong>parsed_base</strong>  &#x21d2; Object </a>
     
 
     
@@ -515,7 +514,7 @@ ldap for use in activeldap.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#prefix-class_method" title="prefix (class method)">+ (Object) <strong>prefix</strong> </a>
+      <a href="#prefix-class_method" title="prefix (class method)">.<strong>prefix</strong>  &#x21d2; Object </a>
     
 
     
@@ -537,7 +536,7 @@ ldap for use in activeldap.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#prefix%3D-class_method" title="prefix= (class method)">+ (Object) <strong>prefix=</strong>(value) </a>
+      <a href="#prefix=-class_method" title="prefix= (class method)">.<strong>prefix=</strong>(value)  &#x21d2; Object </a>
     
 
     
@@ -559,7 +558,7 @@ ldap for use in activeldap.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#scope%3D-class_method" title="scope= (class method)">+ (Object) <strong>scope=</strong>(scope) </a>
+      <a href="#scope=-class_method" title="scope= (class method)">.<strong>scope=</strong>(scope)  &#x21d2; Object </a>
     
 
     
@@ -581,7 +580,7 @@ ldap for use in activeldap.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#scope_without_validation%3D-class_method" title="scope_without_validation= (class method)">+ (Object) <strong>scope_without_validation=</strong> </a>
+      <a href="#scope_without_validation=-class_method" title="scope_without_validation= (class method)">.<strong>scope_without_validation=</strong>  &#x21d2; Object </a>
     
 
     
@@ -603,7 +602,7 @@ ldap for use in activeldap.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#self_and_descendants_from_active_ldap-class_method" title="self_and_descendants_from_active_ldap (class method)">+ (Object) <strong>self_and_descendants_from_active_ldap</strong> </a>
+      <a href="#self_and_descendants_from_active_ldap-class_method" title="self_and_descendants_from_active_ldap (class method)">.<strong>self_and_descendants_from_active_ldap</strong>  &#x21d2; Object </a>
     
 
     
@@ -625,7 +624,7 @@ ldap for use in activeldap.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#setup_connection-class_method" title="setup_connection (class method)">+ (Object) <strong>setup_connection</strong>(config = nil) </a>
+      <a href="#setup_connection-class_method" title="setup_connection (class method)">.<strong>setup_connection</strong>(config = nil)  &#x21d2; Object </a>
     
 
     
@@ -649,7 +648,7 @@ ldap for use in activeldap.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#validate_scope-class_method" title="validate_scope (class method)">+ (Object) <strong>validate_scope</strong>(scope) </a>
+      <a href="#validate_scope-class_method" title="validate_scope (class method)">.<strong>validate_scope</strong>(scope)  &#x21d2; Object </a>
     
 
     
@@ -672,7 +671,7 @@ ldap for use in activeldap.</p>
   
     <h2>
       Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -680,7 +679,7 @@ ldap for use in activeldap.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%3D%3D-instance_method" title="#== (instance method)">- (Object) <strong>==</strong>(comparison_object) </a>
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(comparison_object)  &#x21d2; Object </a>
     
 
     
@@ -705,7 +704,7 @@ is of the same type and has the same dn.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%5B%5D-instance_method" title="#[] (instance method)">- (Object) <strong>[]</strong>(name, force_array = false) </a>
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(name, force_array = false)  &#x21d2; Object </a>
     
 
     
@@ -727,7 +726,7 @@ is of the same type and has the same dn.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%5B%5D%3D-instance_method" title="#[]= (instance method)">- (Object) <strong>[]=</strong>(name, value) </a>
+      <a href="#[]=-instance_method" title="#[]= (instance method)">#<strong>[]=</strong>(name, value)  &#x21d2; Object </a>
     
 
     
@@ -749,7 +748,7 @@ is of the same type and has the same dn.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#_-instance_method" title="#_ (instance method)">- (Object) <strong>_</strong> </a>
+      <a href="#assign_attributes-instance_method" title="#assign_attributes (instance method)">#<strong>assign_attributes</strong>(new_attributes)  &#x21d2; Object </a>
     
 
     
@@ -771,29 +770,7 @@ is of the same type and has the same dn.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#assign_attributes-instance_method" title="#assign_attributes (instance method)">- (Object) <strong>assign_attributes</strong>(new_attributes) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#attribute_names-instance_method" title="#attribute_names (instance method)">- (Object) <strong>attribute_names</strong>(normalize = false) </a>
+      <a href="#attribute_names-instance_method" title="#attribute_names (instance method)">#<strong>attribute_names</strong>(normalize = false)  &#x21d2; Object </a>
     
 
     
@@ -817,7 +794,7 @@ is of the same type and has the same dn.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#attribute_present%3F-instance_method" title="#attribute_present? (instance method)">- (Boolean) <strong>attribute_present?</strong>(name) </a>
+      <a href="#attribute_present%3F-instance_method" title="#attribute_present? (instance method)">#<strong>attribute_present?</strong>(name)  &#x21d2; Boolean </a>
     
 
     
@@ -839,7 +816,7 @@ is of the same type and has the same dn.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#attributes-instance_method" title="#attributes (instance method)">- (Object) <strong>attributes</strong> </a>
+      <a href="#attributes-instance_method" title="#attributes (instance method)">#<strong>attributes</strong>  &#x21d2; Object </a>
     
 
     
@@ -863,7 +840,7 @@ is of the same type and has the same dn.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#attributes%3D-instance_method" title="#attributes= (instance method)">- (Object) <strong>attributes=</strong>(new_attributes) </a>
+      <a href="#attributes=-instance_method" title="#attributes= (instance method)">#<strong>attributes=</strong>(new_attributes)  &#x21d2; Object </a>
     
 
     
@@ -888,7 +865,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#base-instance_method" title="#base (instance method)">- (Object) <strong>base</strong> </a>
+      <a href="#base-instance_method" title="#base (instance method)">#<strong>base</strong>  &#x21d2; Object </a>
     
 
     
@@ -910,7 +887,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#base%3D-instance_method" title="#base= (instance method)">- (Object) <strong>base=</strong>(object_local_base) </a>
+      <a href="#base=-instance_method" title="#base= (instance method)">#<strong>base=</strong>(object_local_base)  &#x21d2; Object </a>
     
 
     
@@ -932,7 +909,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#bind-instance_method" title="#bind (instance method)">- (Object) <strong>bind</strong>(config_or_password = {}, config_or_ignore = nil, &amp;block) </a>
+      <a href="#bind-instance_method" title="#bind (instance method)">#<strong>bind</strong>(config_or_password = {}, config_or_ignore = nil, &amp;block)  &#x21d2; Object </a>
     
 
     
@@ -954,7 +931,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#clear_connection_based_cache-instance_method" title="#clear_connection_based_cache (instance method)">- (Object) <strong>clear_connection_based_cache</strong> </a>
+      <a href="#clear_connection_based_cache-instance_method" title="#clear_connection_based_cache (instance method)">#<strong>clear_connection_based_cache</strong>  &#x21d2; Object </a>
     
 
     
@@ -976,7 +953,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#clear_object_class_based_cache-instance_method" title="#clear_object_class_based_cache (instance method)">- (Object) <strong>clear_object_class_based_cache</strong> </a>
+      <a href="#clear_object_class_based_cache-instance_method" title="#clear_object_class_based_cache (instance method)">#<strong>clear_object_class_based_cache</strong>  &#x21d2; Object </a>
     
 
     
@@ -998,7 +975,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#clear_removed_attributes_data-instance_method" title="#clear_removed_attributes_data (instance method)">- (Object) <strong>clear_removed_attributes_data</strong>(removed_attributes) </a>
+      <a href="#clear_removed_attributes_data-instance_method" title="#clear_removed_attributes_data (instance method)">#<strong>clear_removed_attributes_data</strong>(removed_attributes)  &#x21d2; Object </a>
     
 
     
@@ -1020,7 +997,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#default_search_attribute-instance_method" title="#default_search_attribute (instance method)">- (Object) <strong>default_search_attribute</strong> </a>
+      <a href="#default_search_attribute-instance_method" title="#default_search_attribute (instance method)">#<strong>default_search_attribute</strong>  &#x21d2; Object </a>
     
 
     
@@ -1042,7 +1019,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#delete_all-instance_method" title="#delete_all (instance method)">- (Object) <strong>delete_all</strong>(options = {}) </a>
+      <a href="#delete_all-instance_method" title="#delete_all (instance method)">#<strong>delete_all</strong>(options = {})  &#x21d2; Object </a>
     
 
     
@@ -1064,7 +1041,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#destroy_all-instance_method" title="#destroy_all (instance method)">- (Object) <strong>destroy_all</strong>(options = {}) </a>
+      <a href="#destroy_all-instance_method" title="#destroy_all (instance method)">#<strong>destroy_all</strong>(options = {})  &#x21d2; Object </a>
     
 
     
@@ -1086,7 +1063,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#dn-instance_method" title="#dn (instance method)">- (Object) <strong>dn</strong> </a>
+      <a href="#dn-instance_method" title="#dn (instance method)">#<strong>dn</strong>  &#x21d2; Object </a>
     
 
     
@@ -1110,7 +1087,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#dn%3D-instance_method" title="#dn= (instance method)">- (Object) <strong>dn=</strong>(value) </a>
+      <a href="#dn=-instance_method" title="#dn= (instance method)">#<strong>dn=</strong>(value)  &#x21d2; Object </a>
     
 
     
@@ -1134,7 +1111,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#dn_attribute-instance_method" title="#dn_attribute (instance method)">- (Object) <strong>dn_attribute</strong> </a>
+      <a href="#dn_attribute-instance_method" title="#dn_attribute (instance method)">#<strong>dn_attribute</strong>  &#x21d2; Object </a>
     
 
     
@@ -1156,7 +1133,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#dn_attribute_of_class-instance_method" title="#dn_attribute_of_class (instance method)">- (Object) <strong>dn_attribute_of_class</strong> </a>
+      <a href="#dn_attribute_of_class-instance_method" title="#dn_attribute_of_class (instance method)">#<strong>dn_attribute_of_class</strong>  &#x21d2; Object </a>
     
 
     
@@ -1178,7 +1155,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#eql%3F-instance_method" title="#eql? (instance method)">- (Boolean) <strong>eql?</strong>(comparison_object) </a>
+      <a href="#eql%3F-instance_method" title="#eql? (instance method)">#<strong>eql?</strong>(comparison_object)  &#x21d2; Boolean </a>
     
 
     
@@ -1202,7 +1179,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#exist%3F-instance_method" title="#exist? (instance method)">- (Boolean) <strong>exist?</strong> </a>
+      <a href="#exist%3F-instance_method" title="#exist? (instance method)">#<strong>exist?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -1228,29 +1205,7 @@ immediate save or validation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#gettext-instance_method" title="#gettext (instance method)">- (Object) <strong>gettext</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#hash-instance_method" title="#hash (instance method)">- (Object) <strong>hash</strong> </a>
+      <a href="#hash-instance_method" title="#hash (instance method)">#<strong>hash</strong>  &#x21d2; Object </a>
     
 
     
@@ -1277,7 +1232,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#have_attribute%3F-instance_method" title="#have_attribute? (instance method)">- (Boolean) <strong>have_attribute?</strong>(name, except = []) </a>
+      <a href="#have_attribute%3F-instance_method" title="#have_attribute? (instance method)">#<strong>have_attribute?</strong>(name, except = [])  &#x21d2; Boolean </a>
     
 
     
@@ -1301,7 +1256,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#id-instance_method" title="#id (instance method)">- (Object) <strong>id</strong> </a>
+      <a href="#id-instance_method" title="#id (instance method)">#<strong>id</strong>  &#x21d2; Object </a>
     
 
     
@@ -1323,7 +1278,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Base) <strong>initialize</strong>(attributes = nil) {|_self| ... }</a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(attributes = nil) {|_self| ... } &#x21d2; Base </a>
     
 
     
@@ -1349,7 +1304,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#inspect-instance_method" title="#inspect (instance method)">- (Object) <strong>inspect</strong> </a>
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  &#x21d2; Object </a>
     
 
     
@@ -1371,7 +1326,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#may-instance_method" title="#may (instance method)">- (Object) <strong>may</strong> </a>
+      <a href="#may-instance_method" title="#may (instance method)">#<strong>may</strong>  &#x21d2; Object </a>
     
 
     
@@ -1393,7 +1348,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#must-instance_method" title="#must (instance method)">- (Object) <strong>must</strong> </a>
+      <a href="#must-instance_method" title="#must (instance method)">#<strong>must</strong>  &#x21d2; Object </a>
     
 
     
@@ -1415,7 +1370,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#schema-instance_method" title="#schema (instance method)">- (Object) <strong>schema</strong> </a>
+      <a href="#schema-instance_method" title="#schema (instance method)">#<strong>schema</strong>  &#x21d2; Object </a>
     
 
     
@@ -1437,7 +1392,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#scope-instance_method" title="#scope (instance method)">- (Object) <strong>scope</strong> </a>
+      <a href="#scope-instance_method" title="#scope (instance method)">#<strong>scope</strong>  &#x21d2; Object </a>
     
 
     
@@ -1459,7 +1414,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#scope%3D-instance_method" title="#scope= (instance method)">- (Object) <strong>scope=</strong>(scope) </a>
+      <a href="#scope=-instance_method" title="#scope= (instance method)">#<strong>scope=</strong>(scope)  &#x21d2; Object </a>
     
 
     
@@ -1481,7 +1436,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#scope_of_class-instance_method" title="#scope_of_class (instance method)">- (Object) <strong>scope_of_class</strong> </a>
+      <a href="#scope_of_class-instance_method" title="#scope_of_class (instance method)">#<strong>scope_of_class</strong>  &#x21d2; Object </a>
     
 
     
@@ -1503,7 +1458,7 @@ User.find(“a”) ].</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_key-instance_method" title="#to_key (instance method)">- (Object) <strong>to_key</strong> </a>
+      <a href="#to_key-instance_method" title="#to_key (instance method)">#<strong>to_key</strong>  &#x21d2; Object </a>
     
 
     
@@ -1528,7 +1483,7 @@ is not set.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_ldif-instance_method" title="#to_ldif (instance method)">- (Object) <strong>to_ldif</strong> </a>
+      <a href="#to_ldif-instance_method" title="#to_ldif (instance method)">#<strong>to_ldif</strong>  &#x21d2; Object </a>
     
 
     
@@ -1550,7 +1505,7 @@ is not set.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_ldif_record-instance_method" title="#to_ldif_record (instance method)">- (Object) <strong>to_ldif_record</strong> </a>
+      <a href="#to_ldif_record-instance_method" title="#to_ldif_record (instance method)">#<strong>to_ldif_record</strong>  &#x21d2; Object </a>
     
 
     
@@ -1572,7 +1527,7 @@ is not set.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_param-instance_method" title="#to_param (instance method)">- (Object) <strong>to_param</strong> </a>
+      <a href="#to_param-instance_method" title="#to_param (instance method)">#<strong>to_param</strong>  &#x21d2; Object </a>
     
 
     
@@ -1594,7 +1549,7 @@ is not set.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">- (Object) <strong>to_s</strong> </a>
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
     
 
     
@@ -1616,7 +1571,7 @@ is not set.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_xml-instance_method" title="#to_xml (instance method)">- (Object) <strong>to_xml</strong>(options = {}) </a>
+      <a href="#to_xml-instance_method" title="#to_xml (instance method)">#<strong>to_xml</strong>(options = {})  &#x21d2; Object </a>
     
 
     
@@ -1638,7 +1593,7 @@ is not set.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update_attribute-instance_method" title="#update_attribute (instance method)">- (Object) <strong>update_attribute</strong>(name, value) </a>
+      <a href="#update_attribute-instance_method" title="#update_attribute (instance method)">#<strong>update_attribute</strong>(name, value)  &#x21d2; Object </a>
     
 
     
@@ -1662,7 +1617,7 @@ is not set.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update_attributes-instance_method" title="#update_attributes (instance method)">- (Object) <strong>update_attributes</strong>(attrs) </a>
+      <a href="#update_attributes-instance_method" title="#update_attributes (instance method)">#<strong>update_attributes</strong>(attrs)  &#x21d2; Object </a>
     
 
     
@@ -1686,7 +1641,7 @@ is not set.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update_attributes%21-instance_method" title="#update_attributes! (instance method)">- (Object) <strong>update_attributes!</strong>(attrs) </a>
+      <a href="#update_attributes!-instance_method" title="#update_attributes! (instance method)">#<strong>update_attributes!</strong>(attrs)  &#x21d2; Object </a>
     
 
     
@@ -1722,7 +1677,7 @@ is not set.</p>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="ActiveLdap::Base (class)">Base</a></span></tt>) <strong>initialize</strong>(attributes = nil) {|_self| ... }
+    #<strong>initialize</strong>(attributes = nil) {|_self| ... } &#x21d2; <tt><span class='object_link'><a href="" title="ActiveLdap::Base (class)">Base</a></span></tt> 
   
 
   
@@ -1782,32 +1737,32 @@ exist for dn_attribute, the first one put here will be authoritative</p>
       <pre class="lines">
 
 
-666
-667
-668
-669
-670
-671
-672
-673
-674
-675
-676
-677
-678
-679
-680
-681
-682
-683
-684
-685
-686
-687
-688</pre>
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 666</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 690</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_init_base'>init_base</span>
@@ -1816,7 +1771,7 @@ exist for dn_attribute, the first one put here will be authoritative</p>
   <span class='kw'>case</span> <span class='id identifier rubyid_attributes'>attributes</span>
   <span class='kw'>when</span> <span class='kw'>nil</span>
     <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_classes'>classes</span> <span class='op'>=</span> <span class='id identifier rubyid_initial_classes'>initial_classes</span>
-  <span class='kw'>when</span> <span class='const'>String</span><span class='comma'>,</span> <span class='const'>Array</span><span class='comma'>,</span> <span class='const'>DN</span>
+  <span class='kw'>when</span> <span class='const'>String</span><span class='comma'>,</span> <span class='const'>Array</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../ActiveLdap.html#DN-constant" title="ActiveLdap::DN (constant)">DN</a></span></span>
     <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_classes'>classes</span> <span class='op'>=</span> <span class='id identifier rubyid_initial_classes'>initial_classes</span>
     <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_dn'>dn</span> <span class='op'>=</span> <span class='id identifier rubyid_attributes'>attributes</span>
   <span class='kw'>when</span> <span class='const'>Hash</span>
@@ -1847,7 +1802,7 @@ exist for dn_attribute, the first one put here will be authoritative</p>
       <div class="method_details first">
   <h3 class="signature first" id="abstract_class-class_method">
   
-    + (<tt>Object</tt>) <strong>abstract_class</strong> 
+    .<strong>abstract_class</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1870,12 +1825,12 @@ exist for dn_attribute, the first one put here will be authoritative</p>
       <pre class="lines">
 
 
-511
-512
-513</pre>
+514
+515
+516</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 511</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 514</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_abstract_class'>abstract_class</span>
   <span class='ivar'>@abstract_class</span>
@@ -1895,7 +1850,7 @@ exist for dn_attribute, the first one put here will be authoritative</p>
       <div class="method_details first">
   <h3 class="signature first" id="abstract_class?-class_method">
   
-    + (<tt>Boolean</tt>) <strong>abstract_class?</strong> 
+    .<strong>abstract_class?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1929,12 +1884,12 @@ exist for dn_attribute, the first one put here will be authoritative</p>
       <pre class="lines">
 
 
-512
-513
-514</pre>
+515
+516
+517</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 512</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 515</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_abstract_class?'>abstract_class?</span>
   <span class='kw'>defined?</span><span class='lparen'>(</span><span class='ivar'>@abstract_class</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@abstract_class</span>
@@ -1947,7 +1902,7 @@ exist for dn_attribute, the first one put here will be authoritative</p>
       <div class="method_details ">
   <h3 class="signature " id="base-class_method">
   
-    + (<tt>Object</tt>) <strong>base</strong> 
+    .<strong>base</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1978,12 +1933,12 @@ will be concatenated.</p>
       <pre class="lines">
 
 
-439
-440
-441</pre>
+442
+443
+444</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 439</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 442</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base'>base</span>
   <span class='ivar'>@base</span> <span class='op'>||=</span> <span class='id identifier rubyid_compute_base'>compute_base</span>
@@ -1996,7 +1951,7 @@ will be concatenated.</p>
       <div class="method_details ">
   <h3 class="signature " id="base=-class_method">
   
-    + (<tt>Object</tt>) <strong>base=</strong>(value) 
+    .<strong>base=</strong>(value)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2008,13 +1963,13 @@ will be concatenated.</p>
       <pre class="lines">
 
 
-444
-445
-446
-447</pre>
+447
+448
+449
+450</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 444</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 447</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base='>base=</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inheritable_base'>inheritable_base</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
@@ -2028,7 +1983,7 @@ will be concatenated.</p>
       <div class="method_details ">
   <h3 class="signature " id="base_class-class_method">
   
-    + (<tt>Object</tt>) <strong>base_class</strong> 
+    .<strong>base_class</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2040,19 +1995,19 @@ will be concatenated.</p>
       <pre class="lines">
 
 
-472
-473
-474
 475
 476
 477
-478</pre>
+478
+479
+480
+481</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 472</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 475</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base_class'>base_class</span>
-  <span class='kw'>if</span> <span class='kw'>self</span> <span class='op'>==</span> <span class='const'>Base</span> <span class='kw'>or</span> <span class='id identifier rubyid_superclass'>superclass</span> <span class='op'>==</span> <span class='const'>Base</span>
+  <span class='kw'>if</span> <span class='kw'>self</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="" title="ActiveLdap::Base (class)">Base</a></span></span> <span class='kw'>or</span> <span class='id identifier rubyid_superclass'>superclass</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="" title="ActiveLdap::Base (class)">Base</a></span></span>
     <span class='kw'>self</span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_superclass'>superclass</span><span class='period'>.</span><span class='id identifier rubyid_base_class'>base_class</span>
@@ -2066,7 +2021,7 @@ will be concatenated.</p>
       <div class="method_details ">
   <h3 class="signature " id="class_local_attr_accessor-class_method">
   
-    + (<tt>Object</tt>) <strong>class_local_attr_accessor</strong>(search_ancestors, *syms) 
+    .<strong>class_local_attr_accessor</strong>(search_ancestors, *syms)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2078,7 +2033,6 @@ will be concatenated.</p>
       <pre class="lines">
 
 
-303
 304
 305
 306
@@ -2102,10 +2056,11 @@ will be concatenated.</p>
 324
 325
 326
-327</pre>
+327
+328</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 303</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 304</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class_local_attr_accessor'>class_local_attr_accessor</span><span class='lparen'>(</span><span class='id identifier rubyid_search_ancestors'>search_ancestors</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_syms'>syms</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_syms'>syms</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='op'>|</span>
@@ -2140,7 +2095,7 @@ will be concatenated.</p>
       <div class="method_details ">
   <h3 class="signature " id="class_of_active_ldap_descendant-class_method">
   
-    + (<tt>Object</tt>) <strong>class_of_active_ldap_descendant</strong>(klass) 
+    .<strong>class_of_active_ldap_descendant</strong>(klass)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2152,25 +2107,25 @@ will be concatenated.</p>
       <pre class="lines">
 
 
-516
-517
-518
 519
 520
 521
 522
 523
 524
-525</pre>
+525
+526
+527
+528</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 516</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 519</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_class_of_active_ldap_descendant'>class_of_active_ldap_descendant</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span> <span class='op'>==</span> <span class='const'>Base</span> <span class='kw'>or</span> <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span><span class='period'>.</span><span class='id identifier rubyid_abstract_class?'>abstract_class?</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="" title="ActiveLdap::Base (class)">Base</a></span></span> <span class='kw'>or</span> <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span><span class='period'>.</span><span class='id identifier rubyid_abstract_class?'>abstract_class?</span>
     <span class='id identifier rubyid_klass'>klass</span>
   <span class='kw'>elsif</span> <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Error</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s doesn&#39;t belong in a hierarchy descending </span><span class='tstring_end'>&quot;</span></span> \
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="Error.html" title="ActiveLdap::Error (class)">Error</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s doesn&#39;t belong in a hierarchy descending </span><span class='tstring_end'>&quot;</span></span> \
                    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>from ActiveLdap</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span> <span class='op'>||</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_class_of_active_ldap_descendant'>class_of_active_ldap_descendant</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span><span class='rparen'>)</span>
@@ -2184,7 +2139,7 @@ will be concatenated.</p>
       <div class="method_details ">
   <h3 class="signature " id="create-class_method">
   
-    + (<tt>Object</tt>) <strong>create</strong>(attributes = nil, &amp;block) 
+    .<strong>create</strong>(attributes = nil, &amp;block)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2196,18 +2151,18 @@ will be concatenated.</p>
       <pre class="lines">
 
 
-395
-396
-397
 398
 399
 400
 401
 402
-403</pre>
+403
+404
+405
+406</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 395</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 398</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
@@ -2226,7 +2181,7 @@ will be concatenated.</p>
       <div class="method_details ">
   <h3 class="signature " id="default_search_attribute-class_method">
   
-    + (<tt>Object</tt>) <strong>default_search_attribute</strong> 
+    .<strong>default_search_attribute</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2238,12 +2193,12 @@ will be concatenated.</p>
       <pre class="lines">
 
 
-480
-481
-482</pre>
+483
+484
+485</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 480</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 483</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_default_search_attribute'>default_search_attribute</span>
   <span class='id identifier rubyid_dn_attribute'>dn_attribute</span>
@@ -2256,7 +2211,7 @@ will be concatenated.</p>
       <div class="method_details ">
   <h3 class="signature " id="establish_connection-class_method">
   
-    + (<tt>Object</tt>) <strong>establish_connection</strong>(config = nil) 
+    .<strong>establish_connection</strong>(config = nil)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2280,17 +2235,17 @@ setup_connection() instead.</p>
       <pre class="lines">
 
 
-386
-387
-388
 389
 390
 391
 392
-393</pre>
+393
+394
+395
+396</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 386</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 389</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_establish_connection'>establish_connection</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span>
@@ -2308,7 +2263,7 @@ setup_connection() instead.</p>
       <div class="method_details ">
   <h3 class="signature " id="human_name-class_method">
   
-    + (<tt>Object</tt>) <strong>human_name</strong>(options = {}) 
+    .<strong>human_name</strong>(options = {})  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2320,9 +2275,6 @@ setup_connection() instead.</p>
       <pre class="lines">
 
 
-538
-539
-540
 541
 542
 543
@@ -2331,10 +2283,13 @@ setup_connection() instead.</p>
 546
 547
 548
-549</pre>
+549
+550
+551
+552</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 538</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 541</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_human_name'>human_name</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_defaults'>defaults</span> <span class='op'>=</span> <span class='id identifier rubyid_self_and_descendants_from_active_ldap'>self_and_descendants_from_active_ldap</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_klass'>klass</span><span class='op'>|</span>
@@ -2356,7 +2311,7 @@ setup_connection() instead.</p>
       <div class="method_details ">
   <h3 class="signature " id="inspect-class_method">
   
-    + (<tt>Object</tt>) <strong>inspect</strong> 
+    .<strong>inspect</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2368,9 +2323,6 @@ setup_connection() instead.</p>
       <pre class="lines">
 
 
-484
-485
-486
 487
 488
 489
@@ -2393,13 +2345,16 @@ setup_connection() instead.</p>
 506
 507
 508
-509</pre>
+509
+510
+511
+512</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 484</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 487</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
-  <span class='kw'>if</span> <span class='kw'>self</span> <span class='op'>==</span> <span class='const'>Base</span>
+  <span class='kw'>if</span> <span class='kw'>self</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="" title="ActiveLdap::Base (class)">Base</a></span></span>
     <span class='kw'>super</span>
   <span class='kw'>elsif</span> <span class='id identifier rubyid_abstract_class?'>abstract_class?</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>super</span><span class='embexpr_end'>}</span><span class='tstring_content'>(abstract)</span><span class='tstring_end'>&quot;</span></span>
@@ -2416,9 +2371,9 @@ setup_connection() instead.</p>
       <span class='id identifier rubyid_detail'>detail</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>objectClass:&lt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_class_names'>class_names</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
                 <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>must:&lt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_inspect_attributes'>inspect_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_must'>must</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
                 <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>may:&lt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_inspect_attributes'>inspect_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_may'>may</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>, </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-    <span class='kw'>rescue</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>ConnectionNotSetup</span>
+    <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ConnectionNotSetup.html" title="ActiveLdap::ConnectionNotSetup (class)">ConnectionNotSetup</a></span></span>
       <span class='id identifier rubyid_detail'>detail</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>not-connected</span><span class='tstring_end'>&quot;</span></span>
-    <span class='kw'>rescue</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Error</span>
+    <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Error.html" title="ActiveLdap::Error (class)">Error</a></span></span>
       <span class='id identifier rubyid_detail'>detail</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>connection-failure</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>end</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>super</span><span class='embexpr_end'>}</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_detail'>detail</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
@@ -2432,7 +2387,7 @@ setup_connection() instead.</p>
       <div class="method_details ">
   <h3 class="signature " id="ldap_mapping-class_method">
   
-    + (<tt>Object</tt>) <strong>ldap_mapping</strong>(options = {}) 
+    .<strong>ldap_mapping</strong>(options = {})  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2463,9 +2418,6 @@ ldap for use in activeldap</p>
       <pre class="lines">
 
 
-412
-413
-414
 415
 416
 417
@@ -2478,10 +2430,13 @@ ldap for use in activeldap</p>
 424
 425
 426
-427</pre>
+427
+428
+429
+430</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 412</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 415</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_symbolize_keys'>symbolize_keys</span>
@@ -2507,7 +2462,7 @@ ldap for use in activeldap</p>
       <div class="method_details ">
   <h3 class="signature " id="parsed_base-class_method">
   
-    + (<tt>Object</tt>) <strong>parsed_base</strong> 
+    .<strong>parsed_base</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2538,12 +2493,12 @@ will be concatenated. for backward compatibility</p>
       <pre class="lines">
 
 
-442
-443
-444</pre>
+445
+446
+447</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 442</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 445</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base'>base</span>
   <span class='ivar'>@base</span> <span class='op'>||=</span> <span class='id identifier rubyid_compute_base'>compute_base</span>
@@ -2556,7 +2511,7 @@ will be concatenated. for backward compatibility</p>
       <div class="method_details ">
   <h3 class="signature " id="prefix-class_method">
   
-    + (<tt>Object</tt>) <strong>prefix</strong> 
+    .<strong>prefix</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2568,15 +2523,15 @@ will be concatenated. for backward compatibility</p>
       <pre class="lines">
 
 
-449
-450
-451</pre>
+452
+453
+454</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 449</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 452</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prefix'>prefix</span>
-  <span class='ivar'>@prefix</span> <span class='op'>||=</span> <span class='id identifier rubyid_inheritable_prefix'>inheritable_prefix</span> <span class='kw'>and</span> <span class='const'>DN</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_inheritable_prefix'>inheritable_prefix</span><span class='rparen'>)</span>
+  <span class='ivar'>@prefix</span> <span class='op'>||=</span> <span class='id identifier rubyid_inheritable_prefix'>inheritable_prefix</span> <span class='kw'>and</span> <span class='const'><span class='object_link'><a href="../ActiveLdap.html#DN-constant" title="ActiveLdap::DN (constant)">DN</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_inheritable_prefix'>inheritable_prefix</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2586,7 +2541,7 @@ will be concatenated. for backward compatibility</p>
       <div class="method_details ">
   <h3 class="signature " id="prefix=-class_method">
   
-    + (<tt>Object</tt>) <strong>prefix=</strong>(value) 
+    .<strong>prefix=</strong>(value)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2598,14 +2553,14 @@ will be concatenated. for backward compatibility</p>
       <pre class="lines">
 
 
-453
-454
-455
 456
-457</pre>
+457
+458
+459
+460</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 453</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 456</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prefix='>prefix=</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inheritable_prefix'>inheritable_prefix</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
@@ -2620,7 +2575,7 @@ will be concatenated. for backward compatibility</p>
       <div class="method_details ">
   <h3 class="signature " id="scope=-class_method">
   
-    + (<tt>Object</tt>) <strong>scope=</strong>(scope) 
+    .<strong>scope=</strong>(scope)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2632,13 +2587,13 @@ will be concatenated. for backward compatibility</p>
       <pre class="lines">
 
 
-460
-461
-462
-463</pre>
+463
+464
+465
+466</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 460</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 463</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_scope='>scope=</span><span class='lparen'>(</span><span class='id identifier rubyid_scope'>scope</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_validate_scope'>validate_scope</span><span class='lparen'>(</span><span class='id identifier rubyid_scope'>scope</span><span class='rparen'>)</span>
@@ -2652,7 +2607,7 @@ will be concatenated. for backward compatibility</p>
       <div class="method_details ">
   <h3 class="signature " id="scope_without_validation=-class_method">
   
-    + (<tt>Object</tt>) <strong>scope_without_validation=</strong> 
+    .<strong>scope_without_validation=</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2664,10 +2619,10 @@ will be concatenated. for backward compatibility</p>
       <pre class="lines">
 
 
-459</pre>
+462</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 459</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 462</span>
 
 <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='symbol'>:scope_without_validation=</span><span class='comma'>,</span> <span class='symbol'>:scope=</span></pre>
     </td>
@@ -2678,7 +2633,7 @@ will be concatenated. for backward compatibility</p>
       <div class="method_details ">
   <h3 class="signature " id="self_and_descendants_from_active_ldap-class_method">
   
-    + (<tt>Object</tt>) <strong>self_and_descendants_from_active_ldap</strong> 
+    .<strong>self_and_descendants_from_active_ldap</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2690,19 +2645,19 @@ will be concatenated. for backward compatibility</p>
       <pre class="lines">
 
 
-527
-528
-529
 530
 531
 532
 533
 534
 535
-536</pre>
+536
+537
+538
+539</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 527</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 530</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_self_and_descendants_from_active_ldap'>self_and_descendants_from_active_ldap</span>
   <span class='id identifier rubyid_klass'>klass</span> <span class='op'>=</span> <span class='kw'>self</span>
@@ -2722,7 +2677,7 @@ will be concatenated. for backward compatibility</p>
       <div class="method_details ">
   <h3 class="signature " id="setup_connection-class_method">
   
-    + (<tt>Object</tt>) <strong>setup_connection</strong>(config = nil) 
+    .<strong>setup_connection</strong>(config = nil)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2775,7 +2730,8 @@ ONELEVEL by default to</p>
 
 <p>:retry_on_timeout - whether to reconnect when timeouts occur. Defaults</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_to'>to</span> <span class='kw'>true</span></code></pre>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_to'>to</span> <span class='kw'>true</span>
+</code></pre>
 
 <p>See lib/active_ldap/configuration.rb for defaults for each option</p>
 
@@ -2791,14 +2747,14 @@ ONELEVEL by default to</p>
       <pre class="lines">
 
 
-378
-379
-380
 381
-382</pre>
+382
+383
+384
+385</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 378</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 381</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -2813,7 +2769,7 @@ ONELEVEL by default to</p>
       <div class="method_details ">
   <h3 class="signature " id="validate_scope-class_method">
   
-    + (<tt>Object</tt>) <strong>validate_scope</strong>(scope) 
+    .<strong>validate_scope</strong>(scope)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2847,20 +2803,20 @@ ONELEVEL by default to</p>
       <pre class="lines">
 
 
-465
-466
-467
 468
 469
-470</pre>
+470
+471
+472
+473</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 465</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 468</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_scope'>validate_scope</span><span class='lparen'>(</span><span class='id identifier rubyid_scope'>scope</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_scope'>scope</span> <span class='op'>=</span> <span class='id identifier rubyid_scope'>scope</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span> <span class='kw'>if</span> <span class='id identifier rubyid_scope'>scope</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_scope'>scope</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_scope'>scope</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Symbol</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ConfigurationError</span><span class='comma'>,</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ConfigurationError.html" title="ActiveLdap::ConfigurationError (class)">ConfigurationError</a></span></span><span class='comma'>,</span>
           <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>scope &#39;%s&#39; must be a Symbol</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_scope'>scope</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2877,7 +2833,7 @@ ONELEVEL by default to</p>
       <div class="method_details first">
   <h3 class="signature first" id="==-instance_method">
   
-    - (<tt>Object</tt>) <strong>==</strong>(comparison_object) 
+    #<strong>==</strong>(comparison_object)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2901,15 +2857,15 @@ is of the same type and has the same dn.</p>
       <pre class="lines">
 
 
-692
-693
-694
-695
-696
-697</pre>
+716
+717
+718
+719
+720
+721</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 692</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 716</span>
 
 <span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_comparison_object'>comparison_object</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_comparison_object'>comparison_object</span><span class='period'>.</span><span class='id identifier rubyid_equal?'>equal?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>or</span>
@@ -2925,7 +2881,7 @@ is of the same type and has the same dn.</p>
       <div class="method_details ">
   <h3 class="signature " id="[]-instance_method">
   
-    - (<tt>Object</tt>) <strong>[]</strong>(name, force_array = false) 
+    #<strong>[]</strong>(name, force_array = false)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2937,16 +2893,16 @@ is of the same type and has the same dn.</p>
       <pre class="lines">
 
 
-879
-880
-881
-882
-883
-884
-885</pre>
+903
+904
+905
+906
+907
+908
+909</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 879</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 903</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_force_array'>force_array</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dn</span><span class='tstring_end'>&quot;</span></span>
@@ -2963,7 +2919,7 @@ is of the same type and has the same dn.</p>
       <div class="method_details ">
   <h3 class="signature " id="[]=-instance_method">
   
-    - (<tt>Object</tt>) <strong>[]=</strong>(name, value) 
+    #<strong>[]=</strong>(name, value)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2975,12 +2931,12 @@ is of the same type and has the same dn.</p>
       <pre class="lines">
 
 
-887
-888
-889</pre>
+911
+912
+913</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 887</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 911</span>
 
 <span class='kw'>def</span> <span class='op'>[]=</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_set_attribute'>set_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
@@ -2991,21 +2947,9 @@ is of the same type and has the same dn.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="_-instance_method">
-  
-    - (<tt>Object</tt>) <strong>_</strong> 
-  
-
-  
-
-  
-</h3>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="assign_attributes-instance_method">
   
-    - (<tt>Object</tt>) <strong>assign_attributes</strong>(new_attributes) 
+    #<strong>assign_attributes</strong>(new_attributes)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3017,26 +2961,26 @@ is of the same type and has the same dn.</p>
       <pre class="lines">
 
 
-825
-826
-827
-828
-829
-830
-831
-832
-833
-834
-835
-836
-837
-838
-839
-840
-841</pre>
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 825</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 849</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_assign_attributes'>assign_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_new_attributes'>new_attributes</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_new_attributes'>new_attributes</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
@@ -3063,7 +3007,7 @@ is of the same type and has the same dn.</p>
       <div class="method_details ">
   <h3 class="signature " id="attribute_names-instance_method">
   
-    - (<tt>Object</tt>) <strong>attribute_names</strong>(normalize = false) 
+    #<strong>attribute_names</strong>(normalize = false)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3089,12 +3033,12 @@ attributes dynamically without schema awareness</p>
       <pre class="lines">
 
 
-734
-735
-736</pre>
+758
+759
+760</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 734</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 758</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attribute_names'>attribute_names</span><span class='lparen'>(</span><span class='id identifier rubyid_normalize'>normalize</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_entry_attribute'>entry_attribute</span><span class='period'>.</span><span class='id identifier rubyid_names'>names</span><span class='lparen'>(</span><span class='id identifier rubyid_normalize'>normalize</span><span class='rparen'>)</span>
@@ -3107,7 +3051,7 @@ attributes dynamically without schema awareness</p>
       <div class="method_details ">
   <h3 class="signature " id="attribute_present?-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>attribute_present?</strong>(name) 
+    #<strong>attribute_present?</strong>(name)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3141,13 +3085,13 @@ attributes dynamically without schema awareness</p>
       <pre class="lines">
 
 
-738
-739
-740
-741</pre>
+762
+763
+764
+765</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 738</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 762</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attribute_present?'>attribute_present?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='id identifier rubyid_get_attribute'>get_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
@@ -3161,7 +3105,7 @@ attributes dynamically without schema awareness</p>
       <div class="method_details ">
   <h3 class="signature " id="attributes-instance_method">
   
-    - (<tt>Object</tt>) <strong>attributes</strong> 
+    #<strong>attributes</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3184,13 +3128,13 @@ attributes dynamically without schema awareness</p>
       <pre class="lines">
 
 
-809
-810
-811
-812</pre>
+833
+834
+835
+836</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 809</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 833</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attributes'>attributes</span>
   <span class='ivar'>@simplified_data</span> <span class='op'>||=</span> <span class='id identifier rubyid_simplify_data'>simplify_data</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='rparen'>)</span>
@@ -3204,7 +3148,7 @@ attributes dynamically without schema awareness</p>
       <div class="method_details ">
   <h3 class="signature " id="attributes=-instance_method">
   
-    - (<tt>Object</tt>) <strong>attributes=</strong>(new_attributes) 
+    #<strong>attributes=</strong>(new_attributes)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3232,13 +3176,13 @@ supply the keys.</p>
       <pre class="lines">
 
 
-820
-821
-822
-823</pre>
+844
+845
+846
+847</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 820</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 844</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attributes='>attributes=</span><span class='lparen'>(</span><span class='id identifier rubyid_new_attributes'>new_attributes</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_new_attributes'>new_attributes</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
@@ -3252,7 +3196,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="base-instance_method">
   
-    - (<tt>Object</tt>) <strong>base</strong> 
+    #<strong>base</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3264,12 +3208,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-945
-946
-947</pre>
+969
+970
+971</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 945</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 969</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base'>base</span>
   <span class='ivar'>@base</span> <span class='op'>||=</span> <span class='id identifier rubyid_compute_base'>compute_base</span>
@@ -3282,7 +3226,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="base=-instance_method">
   
-    - (<tt>Object</tt>) <strong>base=</strong>(object_local_base) 
+    #<strong>base=</strong>(object_local_base)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3294,15 +3238,15 @@ supply the keys.</p>
       <pre class="lines">
 
 
-949
-950
-951
-952
-953
-954</pre>
+973
+974
+975
+976
+977
+978</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 949</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 973</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base='>base=</span><span class='lparen'>(</span><span class='id identifier rubyid_object_local_base'>object_local_base</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ensure_update_dn'>ensure_update_dn</span>
@@ -3318,7 +3262,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="bind-instance_method">
   
-    - (<tt>Object</tt>) <strong>bind</strong>(config_or_password = {}, config_or_ignore = nil, &amp;block) 
+    #<strong>bind</strong>(config_or_password = {}, config_or_ignore = nil, &amp;block)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3330,33 +3274,33 @@ supply the keys.</p>
       <pre class="lines">
 
 
-891
-892
-893
-894
-895
-896
-897
-898
-899
-900
-901
-902
-903
-904
-905
-906
-907
-908
-909
-910
-911
-912
-913
-914</pre>
+915
+916
+917
+918
+919
+920
+921
+922
+923
+924
+925
+926
+927
+928
+929
+930
+931
+932
+933
+934
+935
+936
+937
+938</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 891</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 915</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bind'>bind</span><span class='lparen'>(</span><span class='id identifier rubyid_config_or_password'>config_or_password</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_config_or_ignore'>config_or_ignore</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_config_or_password'>config_or_password</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
@@ -3375,7 +3319,7 @@ supply the keys.</p>
     <span class='ivar'>@connection</span> <span class='op'>=</span> <span class='id identifier rubyid_connection'>connection</span>
     <span class='id identifier rubyid_clear_connection_based_cache'>clear_connection_based_cache</span>
     <span class='id identifier rubyid_clear_association_cache'>clear_association_cache</span>
-  <span class='kw'>rescue</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Error</span>
+  <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Error.html" title="ActiveLdap::Error (class)">Error</a></span></span>
     <span class='id identifier rubyid_remove_connection'>remove_connection</span>
     <span class='ivar'>@connection</span> <span class='op'>=</span> <span class='id identifier rubyid_before_connection'>before_connection</span>
     <span class='id identifier rubyid_raise'>raise</span>
@@ -3390,7 +3334,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="clear_connection_based_cache-instance_method">
   
-    - (<tt>Object</tt>) <strong>clear_connection_based_cache</strong> 
+    #<strong>clear_connection_based_cache</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3402,14 +3346,14 @@ supply the keys.</p>
       <pre class="lines">
 
 
-916
-917
-918
-919
-920</pre>
+940
+941
+942
+943
+944</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 916</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 940</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_connection_based_cache'>clear_connection_based_cache</span>
   <span class='ivar'>@schema</span> <span class='op'>=</span> <span class='kw'>nil</span>
@@ -3424,7 +3368,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="clear_object_class_based_cache-instance_method">
   
-    - (<tt>Object</tt>) <strong>clear_object_class_based_cache</strong> 
+    #<strong>clear_object_class_based_cache</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3436,16 +3380,16 @@ supply the keys.</p>
       <pre class="lines">
 
 
-922
-923
-924
-925
-926
-927
-928</pre>
+946
+947
+948
+949
+950
+951
+952</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 922</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 946</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_object_class_based_cache'>clear_object_class_based_cache</span>
   <span class='ivar'>@entry_attribute</span> <span class='op'>=</span> <span class='kw'>nil</span>
@@ -3462,7 +3406,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="clear_removed_attributes_data-instance_method">
   
-    - (<tt>Object</tt>) <strong>clear_removed_attributes_data</strong>(removed_attributes) 
+    #<strong>clear_removed_attributes_data</strong>(removed_attributes)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3474,23 +3418,23 @@ supply the keys.</p>
       <pre class="lines">
 
 
-930
-931
-932
-933
-934
-935
-936
-937
-938
-939</pre>
+954
+955
+956
+957
+958
+959
+960
+961
+962
+963</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 930</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 954</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_removed_attributes_data'>clear_removed_attributes_data</span><span class='lparen'>(</span><span class='id identifier rubyid_removed_attributes'>removed_attributes</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_removed_attributes'>removed_attributes</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-  <span class='id identifier rubyid_removed_entry_attribute'>removed_entry_attribute</span> <span class='op'>=</span> <span class='const'>EntryAttribute</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_removed_entry_attribute'>removed_entry_attribute</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="EntryAttribute.html" title="ActiveLdap::EntryAttribute (class)">EntryAttribute</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="EntryAttribute.html#initialize-instance_method" title="ActiveLdap::EntryAttribute#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_removed_attributes'>removed_attributes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_attribute'>attribute</span><span class='op'>|</span>
     <span class='id identifier rubyid_removed_entry_attribute'>removed_entry_attribute</span><span class='period'>.</span><span class='id identifier rubyid_register'>register</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
@@ -3506,7 +3450,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="default_search_attribute-instance_method">
   
-    - (<tt>Object</tt>) <strong>default_search_attribute</strong> 
+    #<strong>default_search_attribute</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3518,12 +3462,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-785
-786
-787</pre>
+809
+810
+811</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 785</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 809</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_default_search_attribute'>default_search_attribute</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_default_search_attribute'>default_search_attribute</span>
@@ -3536,7 +3480,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="delete_all-instance_method">
   
-    - (<tt>Object</tt>) <strong>delete_all</strong>(options = {}) 
+    #<strong>delete_all</strong>(options = {})  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3548,12 +3492,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-966
-967
-968</pre>
+990
+991
+992</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 966</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 990</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_all'>delete_all</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:base</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_dn'>dn</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3566,7 +3510,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="destroy_all-instance_method">
   
-    - (<tt>Object</tt>) <strong>destroy_all</strong>(options = {}) 
+    #<strong>destroy_all</strong>(options = {})  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3578,12 +3522,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-970
-971
-972</pre>
+994
+995
+996</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 970</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 994</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy_all'>destroy_all</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:base</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_dn'>dn</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3596,7 +3540,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="dn-instance_method">
   
-    - (<tt>Object</tt>) <strong>dn</strong> 
+    #<strong>dn</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3621,12 +3565,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-754
-755
-756</pre>
+778
+779
+780</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 754</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 778</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dn'>dn</span>
   <span class='ivar'>@dn</span> <span class='op'>||=</span> <span class='id identifier rubyid_compute_dn'>compute_dn</span>
@@ -3639,7 +3583,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="dn=-instance_method">
   
-    - (<tt>Object</tt>) <strong>dn=</strong>(value) 
+    #<strong>dn=</strong>(value)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3655,12 +3599,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-773
-774
-775</pre>
+797
+798
+799</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 773</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 797</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dn='>dn=</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_set_attribute'>set_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_dn_attribute_with_fallback'>dn_attribute_with_fallback</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
@@ -3673,7 +3617,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="dn_attribute-instance_method">
   
-    - (<tt>Object</tt>) <strong>dn_attribute</strong> 
+    #<strong>dn_attribute</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3685,14 +3629,14 @@ supply the keys.</p>
       <pre class="lines">
 
 
-779
-780
-781
-782
-783</pre>
+803
+804
+805
+806
+807</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 779</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 803</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dn_attribute'>dn_attribute</span>
   <span class='id identifier rubyid_ensure_update_dn'>ensure_update_dn</span>
@@ -3707,7 +3651,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="dn_attribute_of_class-instance_method">
   
-    - (<tt>Object</tt>) <strong>dn_attribute_of_class</strong> 
+    #<strong>dn_attribute_of_class</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3719,10 +3663,10 @@ supply the keys.</p>
       <pre class="lines">
 
 
-778</pre>
+802</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 778</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 802</span>
 
 <span class='id identifier rubyid_alias_method'>alias_method</span><span class='lparen'>(</span><span class='symbol'>:dn_attribute_of_class</span><span class='comma'>,</span> <span class='symbol'>:dn_attribute</span><span class='rparen'>)</span></pre>
     </td>
@@ -3733,7 +3677,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="eql?-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>eql?</strong>(comparison_object) 
+    #<strong>eql?</strong>(comparison_object)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3769,12 +3713,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-700
-701
-702</pre>
+724
+725
+726</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 700</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 724</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_eql?'>eql?</span><span class='lparen'>(</span><span class='id identifier rubyid_comparison_object'>comparison_object</span><span class='rparen'>)</span>
   <span class='kw'>self</span> <span class='op'>==</span> <span class='lparen'>(</span><span class='id identifier rubyid_comparison_object'>comparison_object</span><span class='rparen'>)</span>
@@ -3787,7 +3731,7 @@ supply the keys.</p>
       <div class="method_details ">
   <h3 class="signature " id="exist?-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>exist?</strong> 
+    #<strong>exist?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3829,12 +3773,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-746
-747
-748</pre>
+770
+771
+772</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 746</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 770</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_exist?'>exist?</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='rparen'>)</span>
@@ -3845,21 +3789,9 @@ supply the keys.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="gettext-instance_method">
-  
-    - (<tt>Object</tt>) <strong>gettext</strong> 
-  
-
-  
-
-  
-</h3>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="hash-instance_method">
   
-    - (<tt>Object</tt>) <strong>hash</strong> 
+    #<strong>hash</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3887,22 +3819,22 @@ work with something like:</p>
       <pre class="lines">
 
 
-708
-709
-710
-711
-712
-713
-714
-715
-716
-717
-718
-719
-720</pre>
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 708</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 732</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span>
   <span class='kw'>return</span> <span class='kw'>super</span> <span class='kw'>if</span> <span class='ivar'>@_hashing</span> <span class='comment'># workaround for GetText :&lt;
@@ -3910,7 +3842,7 @@ work with something like:</p>
   <span class='kw'>begin</span>
     <span class='ivar'>@_hashing</span> <span class='op'>=</span> <span class='kw'>true</span>
     <span class='id identifier rubyid__dn'>_dn</span> <span class='op'>=</span> <span class='id identifier rubyid_dn'>dn</span>
-  <span class='kw'>rescue</span> <span class='const'>DistinguishedNameInvalid</span><span class='comma'>,</span> <span class='const'>DistinguishedNameNotSetError</span>
+  <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="DistinguishedNameInvalid.html" title="ActiveLdap::DistinguishedNameInvalid (class)">DistinguishedNameInvalid</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="DistinguishedNameNotSetError.html" title="ActiveLdap::DistinguishedNameNotSetError (class)">DistinguishedNameNotSetError</a></span></span>
     <span class='kw'>return</span> <span class='kw'>super</span>
   <span class='kw'>ensure</span>
     <span class='ivar'>@_hashing</span> <span class='op'>=</span> <span class='kw'>false</span>
@@ -3925,7 +3857,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="have_attribute?-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>have_attribute?</strong>(name, except = []) 
+    #<strong>have_attribute?</strong>(name, except = [])  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3963,13 +3895,13 @@ work with something like:</p>
       <pre class="lines">
 
 
-873
-874
-875
-876</pre>
+897
+898
+899
+900</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 873</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 897</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_have_attribute?'>have_attribute?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_except'>except</span><span class='op'>=</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_real_name'>real_name</span> <span class='op'>=</span> <span class='id identifier rubyid_to_real_attribute_name'>to_real_attribute_name</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -3983,7 +3915,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="id-instance_method">
   
-    - (<tt>Object</tt>) <strong>id</strong> 
+    #<strong>id</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3995,12 +3927,12 @@ work with something like:</p>
       <pre class="lines">
 
 
-758
-759
-760</pre>
+782
+783
+784</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 758</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 782</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='id identifier rubyid_get_attribute'>get_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_dn_attribute_with_fallback'>dn_attribute_with_fallback</span><span class='rparen'>)</span>
@@ -4013,7 +3945,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="inspect-instance_method">
   
-    - (<tt>Object</tt>) <strong>inspect</strong> 
+    #<strong>inspect</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4025,24 +3957,24 @@ work with something like:</p>
       <pre class="lines">
 
 
-974
-975
-976
-977
-978
-979
-980
-981
-982
-983
-984
-985
-986
-987
-988</pre>
+998
+999
+1000
+1001
+1002
+1003
+1004
+1005
+1006
+1007
+1008
+1009
+1010
+1011
+1012</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 974</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 998</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
   <span class='id identifier rubyid_object_classes'>object_classes</span> <span class='op'>=</span> <span class='id identifier rubyid_entry_attribute'>entry_attribute</span><span class='period'>.</span><span class='id identifier rubyid_object_classes'>object_classes</span>
@@ -4067,7 +3999,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="may-instance_method">
   
-    - (<tt>Object</tt>) <strong>may</strong> 
+    #<strong>may</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4079,12 +4011,12 @@ work with something like:</p>
       <pre class="lines">
 
 
-722
-723
-724</pre>
+746
+747
+748</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 722</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 746</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_may'>may</span>
   <span class='id identifier rubyid_entry_attribute'>entry_attribute</span><span class='period'>.</span><span class='id identifier rubyid_may'>may</span>
@@ -4097,7 +4029,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="must-instance_method">
   
-    - (<tt>Object</tt>) <strong>must</strong> 
+    #<strong>must</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4109,12 +4041,12 @@ work with something like:</p>
       <pre class="lines">
 
 
-726
-727
-728</pre>
+750
+751
+752</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 726</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 750</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_must'>must</span>
   <span class='id identifier rubyid_entry_attribute'>entry_attribute</span><span class='period'>.</span><span class='id identifier rubyid_must'>must</span>
@@ -4127,7 +4059,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="schema-instance_method">
   
-    - (<tt>Object</tt>) <strong>schema</strong> 
+    #<strong>schema</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4139,12 +4071,12 @@ work with something like:</p>
       <pre class="lines">
 
 
-941
-942
-943</pre>
+965
+966
+967</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 941</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 965</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_schema'>schema</span>
   <span class='ivar'>@schema</span> <span class='op'>||=</span> <span class='kw'>super</span>
@@ -4157,7 +4089,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="scope-instance_method">
   
-    - (<tt>Object</tt>) <strong>scope</strong> 
+    #<strong>scope</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4169,12 +4101,12 @@ work with something like:</p>
       <pre class="lines">
 
 
-957
-958
-959</pre>
+981
+982
+983</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 957</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 981</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_scope'>scope</span>
   <span class='ivar'>@scope</span> <span class='op'>||</span> <span class='id identifier rubyid_scope_of_class'>scope_of_class</span>
@@ -4187,7 +4119,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="scope=-instance_method">
   
-    - (<tt>Object</tt>) <strong>scope=</strong>(scope) 
+    #<strong>scope=</strong>(scope)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4199,13 +4131,13 @@ work with something like:</p>
       <pre class="lines">
 
 
-961
-962
-963
-964</pre>
+985
+986
+987
+988</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 961</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 985</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_scope='>scope=</span><span class='lparen'>(</span><span class='id identifier rubyid_scope'>scope</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_validate_scope'>validate_scope</span><span class='lparen'>(</span><span class='id identifier rubyid_scope'>scope</span><span class='rparen'>)</span>
@@ -4219,7 +4151,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="scope_of_class-instance_method">
   
-    - (<tt>Object</tt>) <strong>scope_of_class</strong> 
+    #<strong>scope_of_class</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4231,10 +4163,10 @@ work with something like:</p>
       <pre class="lines">
 
 
-956</pre>
+980</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 956</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 980</span>
 
 <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='symbol'>:scope_of_class</span><span class='comma'>,</span> <span class='symbol'>:scope</span></pre>
     </td>
@@ -4245,7 +4177,7 @@ work with something like:</p>
       <div class="method_details ">
   <h3 class="signature " id="to_key-instance_method">
   
-    - (<tt>Object</tt>) <strong>to_key</strong> 
+    #<strong>to_key</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4269,18 +4201,18 @@ is not set.</p>
       <pre class="lines">
 
 
-767
-768
-769
-770
-771</pre>
+791
+792
+793
+794
+795</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 767</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 791</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_key'>to_key</span>
   <span class='lbracket'>[</span><span class='id identifier rubyid_dn'>dn</span><span class='rbracket'>]</span>
-<span class='kw'>rescue</span> <span class='const'>DistinguishedNameNotSetError</span>
+<span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="DistinguishedNameNotSetError.html" title="ActiveLdap::DistinguishedNameNotSetError (class)">DistinguishedNameNotSetError</a></span></span>
   <span class='kw'>nil</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -4291,7 +4223,7 @@ is not set.</p>
       <div class="method_details ">
   <h3 class="signature " id="to_ldif-instance_method">
   
-    - (<tt>Object</tt>) <strong>to_ldif</strong> 
+    #<strong>to_ldif</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4303,15 +4235,15 @@ is not set.</p>
       <pre class="lines">
 
 
-847
-848
-849</pre>
+871
+872
+873</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 847</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 871</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_ldif'>to_ldif</span>
-  <span class='const'>Ldif</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_to_ldif_record'>to_ldif_record</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='const'><span class='object_link'><a href="Ldif.html" title="ActiveLdap::Ldif (class)">Ldif</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Ldif.html#initialize-instance_method" title="ActiveLdap::Ldif#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_to_ldif_record'>to_ldif_record</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'><span class='object_link'><a href="Ldif.html#to_s-instance_method" title="ActiveLdap::Ldif#to_s (method)">to_s</a></span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4321,7 +4253,7 @@ is not set.</p>
       <div class="method_details ">
   <h3 class="signature " id="to_ldif_record-instance_method">
   
-    - (<tt>Object</tt>) <strong>to_ldif_record</strong> 
+    #<strong>to_ldif_record</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4333,12 +4265,12 @@ is not set.</p>
       <pre class="lines">
 
 
-843
-844
-845</pre>
+867
+868
+869</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 843</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 867</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_ldif_record'>to_ldif_record</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_normalize_data'>normalize_data</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -4351,7 +4283,7 @@ is not set.</p>
       <div class="method_details ">
   <h3 class="signature " id="to_param-instance_method">
   
-    - (<tt>Object</tt>) <strong>to_param</strong> 
+    #<strong>to_param</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4363,12 +4295,12 @@ is not set.</p>
       <pre class="lines">
 
 
-762
-763
-764</pre>
+786
+787
+788</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 762</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 786</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_param'>to_param</span>
   <span class='id identifier rubyid_id'>id</span>
@@ -4381,7 +4313,7 @@ is not set.</p>
       <div class="method_details ">
   <h3 class="signature " id="to_s-instance_method">
   
-    - (<tt>Object</tt>) <strong>to_s</strong> 
+    #<strong>to_s</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4393,12 +4325,12 @@ is not set.</p>
       <pre class="lines">
 
 
-869
-870
-871</pre>
+893
+894
+895</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 869</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 893</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='id identifier rubyid_to_ldif'>to_ldif</span>
@@ -4411,7 +4343,7 @@ is not set.</p>
       <div class="method_details ">
   <h3 class="signature " id="to_xml-instance_method">
   
-    - (<tt>Object</tt>) <strong>to_xml</strong>(options = {}) 
+    #<strong>to_xml</strong>(options = {})  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4423,26 +4355,26 @@ is not set.</p>
       <pre class="lines">
 
 
-851
-852
-853
-854
-855
-856
-857
-858
-859
-860
-861
-862
-863
-864
-865
-866
-867</pre>
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884
+885
+886
+887
+888
+889
+890
+891</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 851</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 875</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_xml'>to_xml</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
@@ -4459,7 +4391,7 @@ is not set.</p>
       <span class='kw'>end</span>
     <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span>
   <span class='kw'>end</span>
-  <span class='const'>XML</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_normalize_data'>normalize_data</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../ActiveLdap.html#XML-constant" title="ActiveLdap::XML (constant)">XML</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_normalize_data'>normalize_data</span><span class='lparen'>(</span><span class='ivar'>@data</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4469,7 +4401,7 @@ is not set.</p>
       <div class="method_details ">
   <h3 class="signature " id="update_attribute-instance_method">
   
-    - (<tt>Object</tt>) <strong>update_attribute</strong>(name, value) 
+    #<strong>update_attribute</strong>(name, value)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4492,13 +4424,13 @@ is not set.</p>
       <pre class="lines">
 
 
-790
-791
-792
-793</pre>
+814
+815
+816
+817</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 790</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 814</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_attribute'>update_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
@@ -4512,7 +4444,7 @@ is not set.</p>
       <div class="method_details ">
   <h3 class="signature " id="update_attributes-instance_method">
   
-    - (<tt>Object</tt>) <strong>update_attributes</strong>(attrs) 
+    #<strong>update_attributes</strong>(attrs)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4535,13 +4467,13 @@ is not set.</p>
       <pre class="lines">
 
 
-797
-798
-799
-800</pre>
+821
+822
+823
+824</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 797</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 821</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_attributes'>update_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span>
@@ -4555,7 +4487,7 @@ is not set.</p>
       <div class="method_details ">
   <h3 class="signature " id="update_attributes!-instance_method">
   
-    - (<tt>Object</tt>) <strong>update_attributes!</strong>(attrs) 
+    #<strong>update_attributes!</strong>(attrs)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4567,13 +4499,13 @@ is not set.</p>
       <pre class="lines">
 
 
-802
-803
-804
-805</pre>
+826
+827
+828
+829</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 802</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 826</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_attributes!'>update_attributes!</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span>
@@ -4588,23 +4520,18 @@ is not set.</p>
 
 </div>
 
-    <div id="footer"></div>
-
-  
+      <div id="footer">
       </div>
 
       <div class="sidebar">
         <h2>About Project</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li><a href="http://activeldap.github.io/">Project page</a></li>
 	  <li>
-	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit Mailing List</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit mail</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHub page</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
 	  </li>
 	</ul>
 
@@ -4637,11 +4564,6 @@ is not set.</p>
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="https://github.com/activeldap/">
           <img src="../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
@@ -4659,5 +4581,6 @@ is not set.</p>
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

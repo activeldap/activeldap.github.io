@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../../favicon.ico" />
     <link rel="icon" href="../../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "ActiveLdap::Connection";
   relpath = '../';
-  framesUrl = "../frames.html#!ActiveLdap/Connection.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../../ja/">
@@ -58,61 +63,55 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="../alphabetical_index.html">Index (C)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span>
      &raquo; 
     <span class="title">Connection</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Module: ActiveLdap::Connection
+      <div id="content"><h1>Module: ActiveLdap::Connection
   
   
   
 </h1>
+<div class="box_info">
+  
 
-<dl class="box">
-  
-  
-    
-  
-    
   
   
   
-    <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/active_ldap/connection.rb</dd>
   
-</dl>
-<div class="clear"></div>
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/active_ldap/connection.rb</dd>
+  </dl>
+  
+</div>
 
 <h2>Defined Under Namespace</h2>
 <p class="children">
@@ -134,7 +133,7 @@
   
     <h2>
       Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -142,7 +141,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#connected%3F-instance_method" title="#connected? (instance method)">- (Boolean) <strong>connected?</strong> </a>
+      <a href="#connected%3F-instance_method" title="#connected? (instance method)">#<strong>connected?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -164,7 +163,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#connection-instance_method" title="#connection (instance method)">- (Object) <strong>connection</strong> </a>
+      <a href="#connection-instance_method" title="#connection (instance method)">#<strong>connection</strong>  &#x21d2; Object </a>
     
 
     
@@ -186,7 +185,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#connection%3D-instance_method" title="#connection= (instance method)">- (Object) <strong>connection=</strong>(adapter) </a>
+      <a href="#connection=-instance_method" title="#connection= (instance method)">#<strong>connection=</strong>(adapter)  &#x21d2; Object </a>
     
 
     
@@ -208,7 +207,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#establish_connection-instance_method" title="#establish_connection (instance method)">- (Object) <strong>establish_connection</strong>(config = nil) </a>
+      <a href="#establish_connection-instance_method" title="#establish_connection (instance method)">#<strong>establish_connection</strong>(config = nil)  &#x21d2; Object </a>
     
 
     
@@ -230,7 +229,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_connection-instance_method" title="#remove_connection (instance method)">- (Object) <strong>remove_connection</strong> </a>
+      <a href="#remove_connection-instance_method" title="#remove_connection (instance method)">#<strong>remove_connection</strong>  &#x21d2; Object </a>
     
 
     
@@ -252,7 +251,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#retrieve_connection-instance_method" title="#retrieve_connection (instance method)">- (Object) <strong>retrieve_connection</strong> </a>
+      <a href="#retrieve_connection-instance_method" title="#retrieve_connection (instance method)">#<strong>retrieve_connection</strong>  &#x21d2; Object </a>
     
 
     
@@ -274,7 +273,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#schema-instance_method" title="#schema (instance method)">- (Object) <strong>schema</strong> </a>
+      <a href="#schema-instance_method" title="#schema (instance method)">#<strong>schema</strong>  &#x21d2; Object </a>
     
 
     
@@ -296,7 +295,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#setup_connection-instance_method" title="#setup_connection (instance method)">- (Object) <strong>setup_connection</strong>(config = nil) </a>
+      <a href="#setup_connection-instance_method" title="#setup_connection (instance method)">#<strong>setup_connection</strong>(config = nil)  &#x21d2; Object </a>
     
 
     
@@ -327,7 +326,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="connected?-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>connected?</strong> 
+    #<strong>connected?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -361,12 +360,12 @@
       <pre class="lines">
 
 
-261
-262
-263</pre>
+243
+244
+245</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 261</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 243</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connected?'>connected?</span>
   <span class='id identifier rubyid_connection'>connection</span> <span class='op'>!=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_connection'>connection</span>
@@ -379,7 +378,7 @@
       <div class="method_details ">
   <h3 class="signature " id="connection-instance_method">
   
-    - (<tt>Object</tt>) <strong>connection</strong> 
+    #<strong>connection</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -391,23 +390,23 @@
       <pre class="lines">
 
 
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259</pre>
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 246</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 228</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
   <span class='id identifier rubyid_conn'>conn</span> <span class='op'>=</span> <span class='ivar'>@connection</span>
@@ -417,7 +416,7 @@
   <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_have_dn'>have_dn</span> <span class='kw'>and</span> <span class='id identifier rubyid_attribute_name_resolvable_without_connection?'>attribute_name_resolvable_without_connection?</span>
     <span class='kw'>begin</span>
       <span class='id identifier rubyid_have_dn'>have_dn</span> <span class='op'>=</span> <span class='op'>!</span><span class='id identifier rubyid_get_attribute_before_type_cast'>get_attribute_before_type_cast</span><span class='lparen'>(</span><span class='id identifier rubyid_dn_attribute'>dn_attribute</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='kw'>rescue</span> <span class='const'>DistinguishedNameInvalid</span>
+    <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="DistinguishedNameInvalid.html" title="ActiveLdap::DistinguishedNameInvalid (class)">DistinguishedNameInvalid</a></span></span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
   <span class='id identifier rubyid_conn'>conn</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_active_connections'>active_connections</span><span class='lbracket'>[</span><span class='id identifier rubyid_dn'>dn</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_retrieve_connection'>retrieve_connection</span> <span class='kw'>if</span> <span class='id identifier rubyid_have_dn'>have_dn</span>
@@ -431,7 +430,7 @@
       <div class="method_details ">
   <h3 class="signature " id="connection=-instance_method">
   
-    - (<tt>Object</tt>) <strong>connection=</strong>(adapter) 
+    #<strong>connection=</strong>(adapter)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -443,22 +442,22 @@
       <pre class="lines">
 
 
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274</pre>
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 265</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 247</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection='>connection=</span><span class='lparen'>(</span><span class='id identifier rubyid_adapter'>adapter</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_adapter'>adapter</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_adapter'>adapter</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Adapter</span><span class='op'>::</span><span class='const'>Base</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_adapter'>adapter</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_adapter'>adapter</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Adapter.html" title="ActiveLdap::Adapter (module)">Adapter</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Adapter/Base.html" title="ActiveLdap::Adapter::Base (class)">Base</a></span></span><span class='rparen'>)</span>
     <span class='ivar'>@connection</span> <span class='op'>=</span> <span class='id identifier rubyid_adapter'>adapter</span>
   <span class='kw'>elsif</span> <span class='id identifier rubyid_adapter'>adapter</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='id identifier rubyid_adapter'>adapter</span>
@@ -475,7 +474,7 @@
       <div class="method_details ">
   <h3 class="signature " id="establish_connection-instance_method">
   
-    - (<tt>Object</tt>) <strong>establish_connection</strong>(config = nil) 
+    #<strong>establish_connection</strong>(config = nil)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -487,17 +486,17 @@
       <pre class="lines">
 
 
-232
-233
-234
-235
-236
-237
-238
-239</pre>
+214
+215
+216
+217
+218
+219
+220
+221</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 232</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 214</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_establish_connection'>establish_connection</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span>
@@ -515,7 +514,7 @@
       <div class="method_details ">
   <h3 class="signature " id="remove_connection-instance_method">
   
-    - (<tt>Object</tt>) <strong>remove_connection</strong> 
+    #<strong>remove_connection</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -527,13 +526,13 @@
       <pre class="lines">
 
 
-241
-242
-243
-244</pre>
+223
+224
+225
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 241</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 223</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_connection'>remove_connection</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_remove_connection'>remove_connection</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='rparen'>)</span>
@@ -547,7 +546,7 @@
       <div class="method_details ">
   <h3 class="signature " id="retrieve_connection-instance_method">
   
-    - (<tt>Object</tt>) <strong>retrieve_connection</strong> 
+    #<strong>retrieve_connection</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -559,20 +558,20 @@
       <pre class="lines">
 
 
-276
-277
-278
-279
-280
-281
-282
-283
-284
-285
-286</pre>
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 276</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 258</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_retrieve_connection'>retrieve_connection</span>
   <span class='id identifier rubyid_conn'>conn</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_active_connections'>active_connections</span><span class='lbracket'>[</span><span class='id identifier rubyid_dn'>dn</span><span class='rbracket'>]</span>
@@ -593,7 +592,7 @@
       <div class="method_details ">
   <h3 class="signature " id="schema-instance_method">
   
-    - (<tt>Object</tt>) <strong>schema</strong> 
+    #<strong>schema</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -605,12 +604,12 @@
       <pre class="lines">
 
 
-288
-289
-290</pre>
+270
+271
+272</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 288</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 270</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_schema'>schema</span>
   <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_schema'>schema</span>
@@ -623,7 +622,7 @@
       <div class="method_details ">
   <h3 class="signature " id="setup_connection-instance_method">
   
-    - (<tt>Object</tt>) <strong>setup_connection</strong>(config = nil) 
+    #<strong>setup_connection</strong>(config = nil)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -635,17 +634,17 @@
       <pre class="lines">
 
 
-223
-224
-225
-226
-227
-228
-229
-230</pre>
+205
+206
+207
+208
+209
+210
+211
+212</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 223</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/connection.rb', line 205</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_ensure_configuration'>ensure_configuration</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
@@ -664,27 +663,24 @@
 
 </div>
 
-    <div id="footer">
-  Generated on Sat Oct 11 14:42:25 2014 by
+      <div id="footer">
+  Generated on Mon May  1 10:55:37 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.3).
+  0.9.9 (ruby-2.3.3).
 </div>
 
-  
+    
       </div>
 
       <div class="sidebar">
         <h2>プロジェクトについて</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">プロジェクトページ</a></li>
+	  <li><a href="http://activeldap.github.io/">プロジェクトページ</a></li>
 	  <li>
-	    <a href="http://rubyforge.org/mailman/listinfo/activeldap-discuss-ja">メーリングリスト</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">コミットメール</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHubページ</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCodeページ</a>
 	  </li>
 	</ul>
 
@@ -717,11 +713,6 @@
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdapプロジェクトはRubyForge.orgにホスティングしてもらっています。" />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="http://github.com/activeldap/">
           <img src="../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdapプロジェクトはGitHubにホスティングしてもらっています。" />
@@ -734,5 +725,6 @@
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

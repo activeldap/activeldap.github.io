@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../../favicon.ico" />
     <link rel="icon" href="../../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "ActiveLdap::EntryAttribute";
   relpath = '../';
-  framesUrl = "../frames.html#!ActiveLdap/EntryAttribute.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../../">
@@ -58,51 +63,42 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="../alphabetical_index.html">Index (E)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span>
      &raquo; 
     <span class="title">EntryAttribute</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Class: ActiveLdap::EntryAttribute
+      <div id="content"><h1>Class: ActiveLdap::EntryAttribute
   
   
   
 </h1>
-
-<dl class="box">
+<div class="box_info">
   
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
       <span class="inheritName">Object</span>
       
         <ul class="fullTree">
@@ -113,37 +109,42 @@
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
       
-      </dd>
-    
+    </dd>
+  </dl>
   
-  
-    
-  
-    
-      <dt class="r2">Includes:</dt>
-      <dd class="r2"><span class='object_link'><a href="Attributes/Normalizable.html" title="ActiveLdap::Attributes::Normalizable (module)">Attributes::Normalizable</a></span></dd>
-      
-    
+
   
   
   
-    <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/active_ldap/entry_attribute.rb</dd>
   
-</dl>
-<div class="clear"></div>
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="Attributes/Normalizable.html" title="ActiveLdap::Attributes::Normalizable (module)">Attributes::Normalizable</a></span></dd>
+  </dl>
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/active_ldap/entry_attribute.rb</dd>
+  </dl>
+  
+</div>
 
 
 
 
 
-  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
   <ul class="summary">
     
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#may-instance_method" title="#may (instance method)">- (Object) <strong>may</strong> </a>
+      <a href="#may-instance_method" title="#may (instance method)">#<strong>may</strong>  &#x21d2; Object </a>
     
 
     
@@ -172,7 +173,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#must-instance_method" title="#must (instance method)">- (Object) <strong>must</strong> </a>
+      <a href="#must-instance_method" title="#must (instance method)">#<strong>must</strong>  &#x21d2; Object </a>
     
 
     
@@ -201,7 +202,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#object_classes-instance_method" title="#object_classes (instance method)">- (Object) <strong>object_classes</strong> </a>
+      <a href="#object_classes-instance_method" title="#object_classes (instance method)">#<strong>object_classes</strong>  &#x21d2; Object </a>
     
 
     
@@ -230,7 +231,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#schemata-instance_method" title="#schemata (instance method)">- (Object) <strong>schemata</strong> </a>
+      <a href="#schemata-instance_method" title="#schemata (instance method)">#<strong>schemata</strong>  &#x21d2; Object </a>
     
 
     
@@ -264,7 +265,7 @@
   
     <h2>
       Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -272,7 +273,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#all_names-instance_method" title="#all_names (instance method)">- (Object) <strong>all_names</strong> </a>
+      <a href="#all_names-instance_method" title="#all_names (instance method)">#<strong>all_names</strong>  &#x21d2; Object </a>
     
 
     
@@ -294,7 +295,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#exist%3F-instance_method" title="#exist? (instance method)">- (Boolean) <strong>exist?</strong>(name) </a>
+      <a href="#exist%3F-instance_method" title="#exist? (instance method)">#<strong>exist?</strong>(name)  &#x21d2; Boolean </a>
     
 
     
@@ -316,7 +317,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (EntryAttribute) <strong>initialize</strong>(schema, object_classes) </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(schema, object_classes)  &#x21d2; EntryAttribute </a>
     
 
     
@@ -342,7 +343,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#names-instance_method" title="#names (instance method)">- (Object) <strong>names</strong>(normalize = false) </a>
+      <a href="#names-instance_method" title="#names (instance method)">#<strong>names</strong>(normalize = false)  &#x21d2; Object </a>
     
 
     
@@ -364,7 +365,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#normalize-instance_method" title="#normalize (instance method)">- (Object) <strong>normalize</strong>(name, allow_normalized_name = false) </a>
+      <a href="#normalize-instance_method" title="#normalize (instance method)">#<strong>normalize</strong>(name, allow_normalized_name = false)  &#x21d2; Object </a>
     
 
     
@@ -386,7 +387,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register-instance_method" title="#register (instance method)">- (Object) <strong>register</strong>(attribute) </a>
+      <a href="#register-instance_method" title="#register (instance method)">#<strong>register</strong>(attribute)  &#x21d2; Object </a>
     
 
     
@@ -427,7 +428,7 @@
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="ActiveLdap::EntryAttribute (class)">EntryAttribute</a></span></tt>) <strong>initialize</strong>(schema, object_classes) 
+    #<strong>initialize</strong>(schema, object_classes)  &#x21d2; <tt><span class='object_link'><a href="" title="ActiveLdap::EntryAttribute (class)">EntryAttribute</a></span></tt> 
   
 
   
@@ -515,7 +516,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="may-instance_method">
   
-    - (<tt>Object</tt>) <strong>may</strong>  <span class="extras">(readonly)</span>
+    #<strong>may</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -558,7 +559,7 @@
       <div class="method_details ">
   <h3 class="signature " id="must-instance_method">
   
-    - (<tt>Object</tt>) <strong>must</strong>  <span class="extras">(readonly)</span>
+    #<strong>must</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -601,7 +602,7 @@
       <div class="method_details ">
   <h3 class="signature " id="object_classes-instance_method">
   
-    - (<tt>Object</tt>) <strong>object_classes</strong>  <span class="extras">(readonly)</span>
+    #<strong>object_classes</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -644,7 +645,7 @@
       <div class="method_details ">
   <h3 class="signature " id="schemata-instance_method">
   
-    - (<tt>Object</tt>) <strong>schemata</strong>  <span class="extras">(readonly)</span>
+    #<strong>schemata</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -692,7 +693,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="all_names-instance_method">
   
-    - (<tt>Object</tt>) <strong>all_names</strong> 
+    #<strong>all_names</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -722,7 +723,7 @@
       <div class="method_details ">
   <h3 class="signature " id="exist?-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>exist?</strong>(name) 
+    #<strong>exist?</strong>(name)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -774,7 +775,7 @@
       <div class="method_details ">
   <h3 class="signature " id="names-instance_method">
   
-    - (<tt>Object</tt>) <strong>names</strong>(normalize = false) 
+    #<strong>names</strong>(normalize = false)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -818,7 +819,7 @@
       <div class="method_details ">
   <h3 class="signature " id="normalize-instance_method">
   
-    - (<tt>Object</tt>) <strong>normalize</strong>(name, allow_normalized_name = false) 
+    #<strong>normalize</strong>(name, allow_normalized_name = false)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -872,7 +873,7 @@
       <div class="method_details ">
   <h3 class="signature " id="register-instance_method">
   
-    - (<tt>Object</tt>) <strong>register</strong>(attribute) 
+    #<strong>register</strong>(attribute)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -931,23 +932,18 @@ it onto the first attribute passed in.</p>
 
 </div>
 
-    <div id="footer"></div>
-
-  
+      <div id="footer">
       </div>
 
       <div class="sidebar">
         <h2>About Project</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li><a href="http://activeldap.github.io/">Project page</a></li>
 	  <li>
-	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit Mailing List</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit mail</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHub page</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
 	  </li>
 	</ul>
 
@@ -980,11 +976,6 @@ it onto the first attribute passed in.</p>
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="https://github.com/activeldap/">
           <img src="../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
@@ -1002,5 +993,6 @@ it onto the first attribute passed in.</p>
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

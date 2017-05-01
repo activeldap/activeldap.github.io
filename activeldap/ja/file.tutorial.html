@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../favicon.ico" />
     <link rel="icon" href="../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "tutorial";
   relpath = '';
-  framesUrl = "frames.html#!file.tutorial.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../ja/">
@@ -58,40 +63,31 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="alphabetical_index.html">Index</a> &raquo; 
     <span class="title">File: tutorial</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><div id='filecontents'><h1>Tutorial</h1>
+      <div id="content"><div id='filecontents'><h1>Tutorial</h1>
 <h2>Introduction</h2>
 <p>ActiveLdap is a novel way of interacting with <span class="caps">LDAP</span>.  Most interaction with
 <span class="caps">LDAP</span> is done using clunky LDIFs, web interfaces, or with painful APIs that
@@ -137,6 +133,10 @@ problems!</p>
 </code></pre>
 <p>インストールされたか確認するには、irb を利用できます。以下のように require して、true が返ってくればインストール成功です。</p>
 <pre class="code ruby"><code class="ruby">
+$ irb -rubygems
+irb&gt; require &#39;active_ldap&#39;
+=&gt; true
+irb&gt; exit
 </code></pre>
 <p>If the require returns false or an exception is raised, there has been a
 problem with the installation.  You may need to customize what setup.rb does on
@@ -197,7 +197,7 @@ inside the Group class. More than likely, you will want to more than that.</p>
 with ActiveLdap. It must be called inside of a subclass as shown above.</p>
 <p>以下は ldap_mapping を更に詳細に記述した Group クラスです</p>
 <pre class="code ruby"><code class="ruby">
-<span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+<span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Base.html" title="ActiveLdap::Base (class)">Base</a></span></span>
   <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cn</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
                <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ou=Groups</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>top</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>posixGroup</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
                <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='symbol'>:one</span>
@@ -330,7 +330,7 @@ other parts of the <span class="caps">LDAP</span> tree to see if you belong to t
 objects from other trees listed in your object. To show this, we can just
 invert the example from above:</p>
 <pre class="code ruby"><code class="ruby">
-<span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+<span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Base.html" title="ActiveLdap::Base (class)">Base</a></span></span>
   <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cn</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ou=Groups</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>top</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>posixGroup</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
 
   <span class='comment'># Associate with primary belonged users
@@ -560,14 +560,14 @@ above.</p>
 <pre class="code ruby"><code class="ruby">
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>objects/group</span><span class='tstring_end'>&#39;</span></span>
 
-<span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+<span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Base.html" title="ActiveLdap::Base (class)">Base</a></span></span>
   <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>uid</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ou=People</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>person</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>posixAccount</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:groups</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Group</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:many</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>&#39;</span></span>
 <span class='kw'>end</span>
 </code></pre>
 <p>同様に、ldapadmin/objects/group.rb を作成します。</p>
 <pre class="code ruby"><code class="ruby">
-<span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+<span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Base.html" title="ActiveLdap::Base (class)">Base</a></span></span>
   <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>top</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>posixGroup</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ou=Groups</span><span class='tstring_end'>&#39;</span></span>
   <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:wrap</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:primary_members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>User</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:foreign_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:primary_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&#39;</span></span>
@@ -588,7 +588,7 @@ above.</p>
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>objects/user</span><span class='tstring_end'>&#39;</span></span>
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>objects/group</span><span class='tstring_end'>&#39;</span></span>
 
-<span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_parse_options'>parse_options</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>|</span>
+<span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Command.html" title="ActiveLdap::Command (module)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse_options'><span class='object_link'><a href="ActiveLdap/Command.html#parse_options-class_method" title="ActiveLdap::Command.parse_options (method)">parse_options</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>|</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> USER_NAME CN UID</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 
@@ -600,10 +600,10 @@ above.</p>
 <span class='kw'>end</span>
 
 <span class='id identifier rubyid_pwb'>pwb</span> <span class='op'>=</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span>
-  <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_read_password'>read_password</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='embexpr_end'>}</span><span class='tstring_content'>] Password: </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Command.html" title="ActiveLdap::Command (module)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_read_password'><span class='object_link'><a href="ActiveLdap/Command.html#read_password-class_method" title="ActiveLdap::Command.read_password (method)">read_password</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='embexpr_end'>}</span><span class='tstring_content'>] Password: </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span>
 
-<span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span><span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pwb'>pwb</span><span class='comma'>,</span>
+<span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Base.html" title="ActiveLdap::Base (class)">Base</a></span></span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'><span class='object_link'><a href="ActiveLdap/Base.html#setup_connection-class_method" title="ActiveLdap::Base.setup_connection (method)">setup_connection</a></span></span><span class='lparen'>(</span><span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pwb'>pwb</span><span class='comma'>,</span>
                                   <span class='symbol'>:allow_anonymous</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
 
 <span class='kw'>if</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -638,7 +638,7 @@ above.</p>
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>objects/user</span><span class='tstring_end'>&#39;</span></span>
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>objects/group</span><span class='tstring_end'>&#39;</span></span>
 
-<span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_parse_options'>parse_options</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>|</span>
+<span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Command.html" title="ActiveLdap::Command (module)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse_options'><span class='object_link'><a href="ActiveLdap/Command.html#parse_options-class_method" title="ActiveLdap::Command.parse_options (method)">parse_options</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>|</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> USER_NAME CN UID</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 
@@ -650,10 +650,10 @@ above.</p>
 <span class='kw'>end</span>
 
 <span class='id identifier rubyid_pwb'>pwb</span> <span class='op'>=</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span>
-  <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_read_password'>read_password</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='embexpr_end'>}</span><span class='tstring_content'>] Password: </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Command.html" title="ActiveLdap::Command (module)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_read_password'><span class='object_link'><a href="ActiveLdap/Command.html#read_password-class_method" title="ActiveLdap::Command.read_password (method)">read_password</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='embexpr_end'>}</span><span class='tstring_content'>] Password: </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span>
 
-<span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span><span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pwb'>pwb</span><span class='comma'>,</span>
+<span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Base.html" title="ActiveLdap::Base (class)">Base</a></span></span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'><span class='object_link'><a href="ActiveLdap/Base.html#setup_connection-class_method" title="ActiveLdap::Base.setup_connection (method)">setup_connection</a></span></span><span class='lparen'>(</span><span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pwb'>pwb</span><span class='comma'>,</span>
                                   <span class='symbol'>:allow_anonymous</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
 
 <span class='kw'>unless</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -685,7 +685,7 @@ above.</p>
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>objects/user</span><span class='tstring_end'>&#39;</span></span>
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>objects/group</span><span class='tstring_end'>&#39;</span></span>
 
-<span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_parse_options'>parse_options</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>|</span>
+<span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Command.html" title="ActiveLdap::Command (module)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse_options'><span class='object_link'><a href="ActiveLdap/Command.html#parse_options-class_method" title="ActiveLdap::Command.parse_options (method)">parse_options</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>|</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> USER_NAME</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 
@@ -697,10 +697,10 @@ above.</p>
 <span class='kw'>end</span>
 
 <span class='id identifier rubyid_pwb'>pwb</span> <span class='op'>=</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span>
-  <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_read_password'>read_password</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='embexpr_end'>}</span><span class='tstring_content'>] Password: </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Command.html" title="ActiveLdap::Command (module)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_read_password'><span class='object_link'><a href="ActiveLdap/Command.html#read_password-class_method" title="ActiveLdap::Command.read_password (method)">read_password</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='embexpr_end'>}</span><span class='tstring_content'>] Password: </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span>
 
-<span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'>setup_connection</span><span class='lparen'>(</span><span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pwb'>pwb</span><span class='comma'>,</span>
+<span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Base.html" title="ActiveLdap::Base (class)">Base</a></span></span><span class='period'>.</span><span class='id identifier rubyid_setup_connection'><span class='object_link'><a href="ActiveLdap/Base.html#setup_connection-class_method" title="ActiveLdap::Base.setup_connection (method)">setup_connection</a></span></span><span class='lparen'>(</span><span class='symbol'>:password_block</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pwb'>pwb</span><span class='comma'>,</span>
                                   <span class='symbol'>:allow_anonymous</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
 
 <span class='kw'>unless</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -771,7 +771,7 @@ you should put your extension classes inside a custom module.</p>
 <p>./myldap/user.rb:</p>
 <pre class="code ruby"><code class="ruby">
 <span class='kw'>module</span> <span class='const'>MyLDAP</span>
-  <span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Base.html" title="ActiveLdap::Base (class)">Base</a></span></span>
     <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:dn_attribute</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>uid</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ou=People</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>top</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>account</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>posixAccount</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:groups</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MyLDAP::Group</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:many</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>&#39;</span></span>
   <span class='kw'>end</span>
@@ -780,7 +780,7 @@ you should put your extension classes inside a custom module.</p>
 <p>./myldap/group.rb:</p>
 <pre class="code ruby"><code class="ruby">
 <span class='kw'>module</span> <span class='const'>MyLDAP</span>
-  <span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'>ActiveLdap</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='kw'>class</span> <span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveLdap/Base.html" title="ActiveLdap::Base (class)">Base</a></span></span>
     <span class='id identifier rubyid_ldap_mapping'>ldap_mapping</span> <span class='symbol'>:classes</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>top</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>posixGroup</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ou=Groups</span><span class='tstring_end'>&#39;</span></span>
     <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MyLDAP::User</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:wrap</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>memberUid</span><span class='tstring_end'>&#39;</span></span>
     <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:primary_members</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MyLDAP::User</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:foreign_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='symbol'>:primary_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>gidNumber</span><span class='tstring_end'>&#39;</span></span>
@@ -896,27 +896,24 @@ slowness.</p>
 <p>Any and all feedback and patches are welcome. I am very excited about this
 package, and I&#8217;d like to see it prove helpful to more people than just myself.</p></div></div>
 
-    <div id="footer">
-  Generated on Sat Oct 11 14:42:24 2014 by
+      <div id="footer">
+  Generated on Mon May  1 10:55:37 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.3).
+  0.9.9 (ruby-2.3.3).
 </div>
 
-  
+    
       </div>
 
       <div class="sidebar">
         <h2>プロジェクトについて</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">プロジェクトページ</a></li>
+	  <li><a href="http://activeldap.github.io/">プロジェクトページ</a></li>
 	  <li>
-	    <a href="http://rubyforge.org/mailman/listinfo/activeldap-discuss-ja">メーリングリスト</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">コミットメール</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHubページ</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCodeページ</a>
 	  </li>
 	</ul>
 
@@ -949,11 +946,6 @@ package, and I&#8217;d like to see it prove helpful to more people than just mys
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdapプロジェクトはRubyForge.orgにホスティングしてもらっています。" />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="http://github.com/activeldap/">
           <img src="../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdapプロジェクトはGitHubにホスティングしてもらっています。" />
@@ -966,5 +958,6 @@ package, and I&#8217;d like to see it prove helpful to more people than just mys
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

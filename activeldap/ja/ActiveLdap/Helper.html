@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../../favicon.ico" />
     <link rel="icon" href="../../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "ActiveLdap::Helper";
   relpath = '../';
-  framesUrl = "../frames.html#!ActiveLdap/Helper.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../../ja/">
@@ -58,61 +63,55 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="../alphabetical_index.html">Index (H)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span>
      &raquo; 
     <span class="title">Helper</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Module: ActiveLdap::Helper
+      <div id="content"><h1>Module: ActiveLdap::Helper
   
   
   
 </h1>
+<div class="box_info">
+  
 
-<dl class="box">
-  
-  
-    
-  
-    
   
   
   
-    <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/active_ldap/helper.rb</dd>
   
-</dl>
-<div class="clear"></div>
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/active_ldap/helper.rb</dd>
+  </dl>
+  
+</div>
 
 
 
@@ -124,7 +123,7 @@
   
     <h2>
       Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -132,7 +131,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldap_attribute_description_gettext-instance_method" title="#ldap_attribute_description_gettext (instance method)">- (Object) <strong>ldap_attribute_description_gettext</strong>(attribute) </a>
+      <a href="#ldap_attribute_description_gettext-instance_method" title="#ldap_attribute_description_gettext (instance method)">#<strong>ldap_attribute_description_gettext</strong>(attribute)  &#x21d2; Object </a>
     
 
     
@@ -156,7 +155,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldap_attribute_name_gettext-instance_method" title="#ldap_attribute_name_gettext (instance method)">- (Object) <strong>ldap_attribute_name_gettext</strong>(attribute) </a>
+      <a href="#ldap_attribute_name_gettext-instance_method" title="#ldap_attribute_name_gettext (instance method)">#<strong>ldap_attribute_name_gettext</strong>(attribute)  &#x21d2; Object </a>
     
 
     
@@ -180,7 +179,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldap_field-instance_method" title="#ldap_field (instance method)">- (Object) <strong>ldap_field</strong>(type, object_name, method, options = {}) </a>
+      <a href="#ldap_field-instance_method" title="#ldap_field (instance method)">#<strong>ldap_field</strong>(type, object_name, method, options = {})  &#x21d2; Object </a>
     
 
     
@@ -202,7 +201,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldap_object_class_description_gettext-instance_method" title="#ldap_object_class_description_gettext (instance method)">- (Object) <strong>ldap_object_class_description_gettext</strong>(object_class) </a>
+      <a href="#ldap_object_class_description_gettext-instance_method" title="#ldap_object_class_description_gettext (instance method)">#<strong>ldap_object_class_description_gettext</strong>(object_class)  &#x21d2; Object </a>
     
 
     
@@ -226,7 +225,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldap_object_class_name_gettext-instance_method" title="#ldap_object_class_name_gettext (instance method)">- (Object) <strong>ldap_object_class_name_gettext</strong>(object_class) </a>
+      <a href="#ldap_object_class_name_gettext-instance_method" title="#ldap_object_class_name_gettext (instance method)">#<strong>ldap_object_class_name_gettext</strong>(object_class)  &#x21d2; Object </a>
     
 
     
@@ -250,7 +249,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldap_syntax_description_gettext-instance_method" title="#ldap_syntax_description_gettext (instance method)">- (Object) <strong>ldap_syntax_description_gettext</strong>(syntax) </a>
+      <a href="#ldap_syntax_description_gettext-instance_method" title="#ldap_syntax_description_gettext (instance method)">#<strong>ldap_syntax_description_gettext</strong>(syntax)  &#x21d2; Object </a>
     
 
     
@@ -274,7 +273,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldap_syntax_name_gettext-instance_method" title="#ldap_syntax_name_gettext (instance method)">- (Object) <strong>ldap_syntax_name_gettext</strong>(syntax) </a>
+      <a href="#ldap_syntax_name_gettext-instance_method" title="#ldap_syntax_name_gettext (instance method)">#<strong>ldap_syntax_name_gettext</strong>(syntax)  &#x21d2; Object </a>
     
 
     
@@ -307,7 +306,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="ldap_attribute_description_gettext-instance_method">
   
-    - (<tt>Object</tt>) <strong>ldap_attribute_description_gettext</strong>(attribute) 
+    #<strong>ldap_attribute_description_gettext</strong>(attribute)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -331,7 +330,7 @@
       <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ldap_attribute_description_gettext'>ldap_attribute_description_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
-  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_attribute_description'>human_attribute_description</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Base.html" title="ActiveLdap::Base (class)">Base</a></span></span><span class='period'>.</span><span class='id identifier rubyid_human_attribute_description'>human_attribute_description</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -341,7 +340,7 @@
       <div class="method_details ">
   <h3 class="signature " id="ldap_attribute_name_gettext-instance_method">
   
-    - (<tt>Object</tt>) <strong>ldap_attribute_name_gettext</strong>(attribute) 
+    #<strong>ldap_attribute_name_gettext</strong>(attribute)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -365,7 +364,7 @@
       <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ldap_attribute_name_gettext'>ldap_attribute_name_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
-  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_attribute_name'>human_attribute_name</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Base.html" title="ActiveLdap::Base (class)">Base</a></span></span><span class='period'>.</span><span class='id identifier rubyid_human_attribute_name'>human_attribute_name</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -375,7 +374,7 @@
       <div class="method_details ">
   <h3 class="signature " id="ldap_field-instance_method">
   
-    - (<tt>Object</tt>) <strong>ldap_field</strong>(type, object_name, method, options = {}) 
+    #<strong>ldap_field</strong>(type, object_name, method, options = {})  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -515,7 +514,7 @@
       <div class="method_details ">
   <h3 class="signature " id="ldap_object_class_description_gettext-instance_method">
   
-    - (<tt>Object</tt>) <strong>ldap_object_class_description_gettext</strong>(object_class) 
+    #<strong>ldap_object_class_description_gettext</strong>(object_class)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -539,7 +538,7 @@
       <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ldap_object_class_description_gettext'>ldap_object_class_description_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
-  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_object_class_description'>human_object_class_description</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Base.html" title="ActiveLdap::Base (class)">Base</a></span></span><span class='period'>.</span><span class='id identifier rubyid_human_object_class_description'>human_object_class_description</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -549,7 +548,7 @@
       <div class="method_details ">
   <h3 class="signature " id="ldap_object_class_name_gettext-instance_method">
   
-    - (<tt>Object</tt>) <strong>ldap_object_class_name_gettext</strong>(object_class) 
+    #<strong>ldap_object_class_name_gettext</strong>(object_class)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -573,7 +572,7 @@
       <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ldap_object_class_name_gettext'>ldap_object_class_name_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
-  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_object_class_name'>human_object_class_name</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Base.html" title="ActiveLdap::Base (class)">Base</a></span></span><span class='period'>.</span><span class='id identifier rubyid_human_object_class_name'>human_object_class_name</span><span class='lparen'>(</span><span class='id identifier rubyid_object_class'>object_class</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -583,7 +582,7 @@
       <div class="method_details ">
   <h3 class="signature " id="ldap_syntax_description_gettext-instance_method">
   
-    - (<tt>Object</tt>) <strong>ldap_syntax_description_gettext</strong>(syntax) 
+    #<strong>ldap_syntax_description_gettext</strong>(syntax)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -607,7 +606,7 @@
       <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ldap_syntax_description_gettext'>ldap_syntax_description_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
-  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_syntax_description'>human_syntax_description</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Base.html" title="ActiveLdap::Base (class)">Base</a></span></span><span class='period'>.</span><span class='id identifier rubyid_human_syntax_description'>human_syntax_description</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -617,7 +616,7 @@
       <div class="method_details ">
   <h3 class="signature " id="ldap_syntax_name_gettext-instance_method">
   
-    - (<tt>Object</tt>) <strong>ldap_syntax_name_gettext</strong>(syntax) 
+    #<strong>ldap_syntax_name_gettext</strong>(syntax)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -641,7 +640,7 @@
       <pre class="code"><span class="info file"># File 'lib/active_ldap/helper.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ldap_syntax_name_gettext'>ldap_syntax_name_gettext</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
-  <span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_human_syntax_name'>human_syntax_name</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Base.html" title="ActiveLdap::Base (class)">Base</a></span></span><span class='period'>.</span><span class='id identifier rubyid_human_syntax_name'>human_syntax_name</span><span class='lparen'>(</span><span class='id identifier rubyid_syntax'>syntax</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -652,27 +651,24 @@
 
 </div>
 
-    <div id="footer">
-  Generated on Sat Oct 11 14:42:25 2014 by
+      <div id="footer">
+  Generated on Mon May  1 10:55:37 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.3).
+  0.9.9 (ruby-2.3.3).
 </div>
 
-  
+    
       </div>
 
       <div class="sidebar">
         <h2>プロジェクトについて</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">プロジェクトページ</a></li>
+	  <li><a href="http://activeldap.github.io/">プロジェクトページ</a></li>
 	  <li>
-	    <a href="http://rubyforge.org/mailman/listinfo/activeldap-discuss-ja">メーリングリスト</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">コミットメール</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHubページ</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCodeページ</a>
 	  </li>
 	</ul>
 
@@ -705,11 +701,6 @@
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdapプロジェクトはRubyForge.orgにホスティングしてもらっています。" />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="http://github.com/activeldap/">
           <img src="../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdapプロジェクトはGitHubにホスティングしてもらっています。" />
@@ -722,5 +713,6 @@
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

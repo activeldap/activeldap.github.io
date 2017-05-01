@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../favicon.ico" />
     <link rel="icon" href="../../favicon.png" />
@@ -17,9 +17,8 @@
   <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = null;
   relpath = '';
-  framesUrl = "frames.html#!alphabetical_index.html";
 </script>
 
 
@@ -30,6 +29,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../">
@@ -54,37 +59,28 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1 class="noborder title">activeldap</h1>
+      <div id="content"><h1 class="noborder title">activeldap</h1>
 <div id="listing">
   <h1 class="alphaindex">Alphabetic Index</h1>
   
@@ -98,10 +94,10 @@
     <li class="r2"><a href="file.news.html" title="news">news</a></li>
     
   
-    <li class="r1"><a href="file.rails.html" title="rails">rails</a></li>
+    <li class="r1"><a href="file.development.html" title="development">development</a></li>
     
   
-    <li class="r2"><a href="file.development.html" title="development">development</a></li>
+    <li class="r2"><a href="file.rails.html" title="rails">rails</a></li>
     
   
     <li class="r1"><a href="file.tutorial.html" title="tutorial">tutorial</a></li>
@@ -200,16 +196,16 @@
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/Ldif/Attribute.html" title="ActiveLdap::Ldif::Attribute (module)">Attribute</a></span>
+                <span class='object_link'><a href="ActiveLdap/Schema/Attribute.html" title="ActiveLdap::Schema::Attribute (class)">Attribute</a></span>
                 
-                  <small>(ActiveLdap::Ldif)</small>
+                  <small>(ActiveLdap::Schema)</small>
                 
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/Schema/Attribute.html" title="ActiveLdap::Schema::Attribute (class)">Attribute</a></span>
+                <span class='object_link'><a href="ActiveLdap/Ldif/Attribute.html" title="ActiveLdap::Ldif::Attribute (module)">Attribute</a></span>
                 
-                  <small>(ActiveLdap::Schema)</small>
+                  <small>(ActiveLdap::Ldif)</small>
                 
               </li>
             
@@ -264,6 +260,13 @@
           <ul>
             
               <li>
+                <span class='object_link'><a href="ActiveLdap/Adapter/Base.html" title="ActiveLdap::Adapter::Base (class)">Base</a></span>
+                
+                  <small>(ActiveLdap::Adapter)</small>
+                
+              </li>
+            
+              <li>
                 <span class='object_link'><a href="ActiveLdap/Adapter/Ldap/Method/Base.html" title="ActiveLdap::Adapter::Ldap::Method::Base (class)">Base</a></span>
                 
                   <small>(ActiveLdap::Adapter::Ldap::Method)</small>
@@ -281,13 +284,6 @@
                 <span class='object_link'><a href="ActiveLdap/Schema/Syntaxes/Base.html" title="ActiveLdap::Schema::Syntaxes::Base (class)">Base</a></span>
                 
                   <small>(ActiveLdap::Schema::Syntaxes)</small>
-                
-              </li>
-            
-              <li>
-                <span class='object_link'><a href="ActiveLdap/Adapter/Base.html" title="ActiveLdap::Adapter::Base (class)">Base</a></span>
-                
-                  <small>(ActiveLdap::Adapter)</small>
                 
               </li>
             
@@ -335,6 +331,13 @@
           <ul>
             
               <li>
+                <span class='object_link'><a href="ActiveLdap/Callbacks/CallbackedInstantiatable.html" title="ActiveLdap::Callbacks::CallbackedInstantiatable (module)">CallbackedInstantiatable</a></span>
+                
+                  <small>(ActiveLdap::Callbacks)</small>
+                
+              </li>
+            
+              <li>
                 <span class='object_link'><a href="ActiveLdap/Callbacks.html" title="ActiveLdap::Callbacks (module)">Callbacks</a></span>
                 
                   <small>(ActiveLdap)</small>
@@ -356,9 +359,23 @@
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/Connection/ClassMethods.html" title="ActiveLdap::Connection::ClassMethods (module)">ClassMethods</a></span>
+                <span class='object_link'><a href="ActiveLdap/Acts/Tree/ClassMethods.html" title="ActiveLdap::Acts::Tree::ClassMethods (module)">ClassMethods</a></span>
                 
-                  <small>(ActiveLdap::Connection)</small>
+                  <small>(ActiveLdap::Acts::Tree)</small>
+                
+              </li>
+            
+              <li>
+                <span class='object_link'><a href="ActiveLdap/Associations/ClassMethods.html" title="ActiveLdap::Associations::ClassMethods (module)">ClassMethods</a></span>
+                
+                  <small>(ActiveLdap::Associations)</small>
+                
+              </li>
+            
+              <li>
+                <span class='object_link'><a href="ActiveLdap/Attributes/ClassMethods.html" title="ActiveLdap::Attributes::ClassMethods (module)">ClassMethods</a></span>
+                
+                  <small>(ActiveLdap::Attributes)</small>
                 
               </li>
             
@@ -377,16 +394,9 @@
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/Acts/Tree/ClassMethods.html" title="ActiveLdap::Acts::Tree::ClassMethods (module)">ClassMethods</a></span>
+                <span class='object_link'><a href="ActiveLdap/Connection/ClassMethods.html" title="ActiveLdap::Connection::ClassMethods (module)">ClassMethods</a></span>
                 
-                  <small>(ActiveLdap::Acts::Tree)</small>
-                
-              </li>
-            
-              <li>
-                <span class='object_link'><a href="ActiveLdap/Associations/ClassMethods.html" title="ActiveLdap::Associations::ClassMethods (module)">ClassMethods</a></span>
-                
-                  <small>(ActiveLdap::Associations)</small>
+                  <small>(ActiveLdap::Connection)</small>
                 
               </li>
             
@@ -398,16 +408,9 @@
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/Attributes/ClassMethods.html" title="ActiveLdap::Attributes::ClassMethods (module)">ClassMethods</a></span>
+                <span class='object_link'><a href="ActiveLdap/ObjectClass/ClassMethods.html" title="ActiveLdap::ObjectClass::ClassMethods (module)">ClassMethods</a></span>
                 
-                  <small>(ActiveLdap::Attributes)</small>
-                
-              </li>
-            
-              <li>
-                <span class='object_link'><a href="ActiveLdap/Validations/ClassMethods.html" title="ActiveLdap::Validations::ClassMethods (module)">ClassMethods</a></span>
-                
-                  <small>(ActiveLdap::Validations)</small>
+                  <small>(ActiveLdap::ObjectClass)</small>
                 
               </li>
             
@@ -419,9 +422,9 @@
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/ObjectClass/ClassMethods.html" title="ActiveLdap::ObjectClass::ClassMethods (module)">ClassMethods</a></span>
+                <span class='object_link'><a href="ActiveLdap/Validations/ClassMethods.html" title="ActiveLdap::Validations::ClassMethods (module)">ClassMethods</a></span>
                 
-                  <small>(ActiveLdap::ObjectClass)</small>
+                  <small>(ActiveLdap::Validations)</small>
                 
               </li>
             
@@ -609,16 +612,16 @@
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/Schema/Syntaxes/DistinguishedName.html" title="ActiveLdap::Schema::Syntaxes::DistinguishedName (class)">DistinguishedName</a></span>
+                <span class='object_link'><a href="ActiveLdap/DistinguishedName.html" title="ActiveLdap::DistinguishedName (class)">DistinguishedName</a></span>
                 
-                  <small>(ActiveLdap::Schema::Syntaxes)</small>
+                  <small>(ActiveLdap)</small>
                 
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/DistinguishedName.html" title="ActiveLdap::DistinguishedName (class)">DistinguishedName</a></span>
+                <span class='object_link'><a href="ActiveLdap/Schema/Syntaxes/DistinguishedName.html" title="ActiveLdap::Schema::Syntaxes::DistinguishedName (class)">DistinguishedName</a></span>
                 
-                  <small>(ActiveLdap)</small>
+                  <small>(ActiveLdap::Schema::Syntaxes)</small>
                 
               </li>
             
@@ -652,6 +655,13 @@
           <ul>
             
               <li>
+                <span class='object_link'><a href="Net/LDAP/Entry.html" title="Net::LDAP::Entry (class)">Entry</a></span>
+                
+                  <small>(Net::LDAP)</small>
+                
+              </li>
+            
+              <li>
                 <span class='object_link'><a href="ActiveLdap/Entry.html" title="ActiveLdap::Entry (class)">Entry</a></span>
                 
                   <small>(ActiveLdap)</small>
@@ -662,13 +672,6 @@
                 <span class='object_link'><a href="ActiveLdap/Schema/Entry.html" title="ActiveLdap::Schema::Entry (class)">Entry</a></span>
                 
                   <small>(ActiveLdap::Schema)</small>
-                
-              </li>
-            
-              <li>
-                <span class='object_link'><a href="Net/LDAP/Entry.html" title="Net::LDAP::Entry (class)">Entry</a></span>
-                
-                  <small>(Net::LDAP)</small>
                 
               </li>
             
@@ -989,16 +992,16 @@
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/Ldif/ModifyRecord.html" title="ActiveLdap::Ldif::ModifyRecord (class)">ModifyRecord</a></span>
+                <span class='object_link'><a href="ActiveLdap/Adapter/JndiConnection/ModifyRecord.html" title="ActiveLdap::Adapter::JndiConnection::ModifyRecord (class)">ModifyRecord</a></span>
                 
-                  <small>(ActiveLdap::Ldif)</small>
+                  <small>(ActiveLdap::Adapter::JndiConnection)</small>
                 
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/Adapter/JndiConnection/ModifyRecord.html" title="ActiveLdap::Adapter::JndiConnection::ModifyRecord (class)">ModifyRecord</a></span>
+                <span class='object_link'><a href="ActiveLdap/Ldif/ModifyRecord.html" title="ActiveLdap::Ldif::ModifyRecord (class)">ModifyRecord</a></span>
                 
-                  <small>(ActiveLdap::Adapter::JndiConnection)</small>
+                  <small>(ActiveLdap::Ldif)</small>
                 
               </li>
             
@@ -1144,9 +1147,9 @@
           <ul>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/Ldif/Parser.html" title="ActiveLdap::Ldif::Parser (class)">Parser</a></span>
+                <span class='object_link'><a href="ActiveLdap/DistinguishedName/Parser.html" title="ActiveLdap::DistinguishedName::Parser (class)">Parser</a></span>
                 
-                  <small>(ActiveLdap::Ldif)</small>
+                  <small>(ActiveLdap::DistinguishedName)</small>
                 
               </li>
             
@@ -1158,9 +1161,9 @@
               </li>
             
               <li>
-                <span class='object_link'><a href="ActiveLdap/DistinguishedName/Parser.html" title="ActiveLdap::DistinguishedName::Parser (class)">Parser</a></span>
+                <span class='object_link'><a href="ActiveLdap/Ldif/Parser.html" title="ActiveLdap::Ldif::Parser (class)">Parser</a></span>
                 
-                  <small>(ActiveLdap::DistinguishedName)</small>
+                  <small>(ActiveLdap::Ldif)</small>
                 
               </li>
             
@@ -1403,11 +1406,6 @@
               </li>
             
               <li>
-                <span class='object_link'><a href="Timeout.html" title="Timeout (module)">Timeout</a></span>
-                
-              </li>
-            
-              <li>
                 <span class='object_link'><a href="ActiveLdap/TimeoutError.html" title="ActiveLdap::TimeoutError (class)">TimeoutError</a></span>
                 
                   <small>(ActiveLdap)</small>
@@ -1433,6 +1431,13 @@
                 <span class='object_link'><a href="ActiveLdap/Configuration/ClassMethods/URIConfigurationMerger.html" title="ActiveLdap::Configuration::ClassMethods::URIConfigurationMerger (class)">URIConfigurationMerger</a></span>
                 
                   <small>(ActiveLdap::Configuration::ClassMethods)</small>
+                
+              </li>
+            
+              <li>
+                <span class='object_link'><a href="ActiveLdap/Schema/Syntaxes/UnicodePwd.html" title="ActiveLdap::Schema::Syntaxes::UnicodePwd (class)">UnicodePwd</a></span>
+                
+                  <small>(ActiveLdap::Schema::Syntaxes)</small>
                 
               </li>
             
@@ -1513,23 +1518,18 @@
 
 </div>
 
-    <div id="footer"></div>
-
-  
+      <div id="footer">
       </div>
 
       <div class="sidebar">
         <h2>About Project</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li><a href="http://activeldap.github.io/">Project page</a></li>
 	  <li>
-	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit Mailing List</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit mail</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHub page</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
 	  </li>
 	</ul>
 
@@ -1562,11 +1562,6 @@
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="https://github.com/activeldap/">
           <img src="../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
@@ -1584,5 +1579,6 @@
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

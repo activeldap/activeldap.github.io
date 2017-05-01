@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../../favicon.ico" />
     <link rel="icon" href="../../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "ActiveLdap::GetTextSupport";
   relpath = '../';
-  framesUrl = "../frames.html#!ActiveLdap/GetTextSupport.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../../">
@@ -58,65 +63,60 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="../alphabetical_index.html">Index (G)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span>
      &raquo; 
     <span class="title">GetTextSupport</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Module: ActiveLdap::GetTextSupport
+      <div id="content"><h1>Module: ActiveLdap::GetTextSupport
   
   
   
 </h1>
+<div class="box_info">
+  
 
-<dl class="box">
   
   
-    
-  
-    
   
   
-    <dt class="r1">Included in:</dt>
-    <dd class="r1"><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span>, <span class='object_link'><a href="Adapter/Base.html" title="ActiveLdap::Adapter::Base (class)">Adapter::Base</a></span>, <span class='object_link'><a href="Base.html" title="ActiveLdap::Base (class)">Base</a></span>, <span class='object_link'><a href="Command.html" title="ActiveLdap::Command (module)">Command</a></span>, <span class='object_link'><a href="DistinguishedName.html" title="ActiveLdap::DistinguishedName (class)">DistinguishedName</a></span>, <span class='object_link'><a href="DistinguishedName/Parser.html" title="ActiveLdap::DistinguishedName::Parser (class)">DistinguishedName::Parser</a></span>, <span class='object_link'><a href="Error.html" title="ActiveLdap::Error (class)">Error</a></span>, <span class='object_link'><a href="Generators/ModelGenerator.html" title="ActiveLdap::Generators::ModelGenerator (class)">ActiveLdap::Generators::ModelGenerator</a></span>, <span class='object_link'><a href="Ldif/Parser.html" title="ActiveLdap::Ldif::Parser (class)">Ldif::Parser</a></span>, <span class='object_link'><a href="Ldif/Record.html" title="ActiveLdap::Ldif::Record (class)">Ldif::Record</a></span>, <span class='object_link'><a href="Schema.html" title="ActiveLdap::Schema (class)">Schema</a></span>, <span class='object_link'><a href="Schema/Attribute.html" title="ActiveLdap::Schema::Attribute (class)">Schema::Attribute</a></span>, <span class='object_link'><a href="Schema/Syntaxes/Base.html" title="ActiveLdap::Schema::Syntaxes::Base (class)">Schema::Syntaxes::Base</a></span></dd>
-    
   
+
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/active_ldap/get_text.rb</dd>
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span>, <span class='object_link'><a href="Adapter/Base.html" title="ActiveLdap::Adapter::Base (class)">Adapter::Base</a></span>, <span class='object_link'><a href="Base.html" title="ActiveLdap::Base (class)">Base</a></span>, <span class='object_link'><a href="Command.html" title="ActiveLdap::Command (module)">Command</a></span>, <span class='object_link'><a href="DistinguishedName.html" title="ActiveLdap::DistinguishedName (class)">DistinguishedName</a></span>, <span class='object_link'><a href="DistinguishedName/Parser.html" title="ActiveLdap::DistinguishedName::Parser (class)">DistinguishedName::Parser</a></span>, <span class='object_link'><a href="Error.html" title="ActiveLdap::Error (class)">Error</a></span>, <span class='object_link'><a href="Generators/ModelGenerator.html" title="ActiveLdap::Generators::ModelGenerator (class)">ActiveLdap::Generators::ModelGenerator</a></span>, <span class='object_link'><a href="Ldif/Parser.html" title="ActiveLdap::Ldif::Parser (class)">Ldif::Parser</a></span>, <span class='object_link'><a href="Ldif/Record.html" title="ActiveLdap::Ldif::Record (class)">Ldif::Record</a></span>, <span class='object_link'><a href="Schema.html" title="ActiveLdap::Schema (class)">Schema</a></span>, <span class='object_link'><a href="Schema/Attribute.html" title="ActiveLdap::Schema::Attribute (class)">Schema::Attribute</a></span>, <span class='object_link'><a href="Schema/Syntaxes/Base.html" title="ActiveLdap::Schema::Syntaxes::Base (class)">Schema::Syntaxes::Base</a></span></dd>
+  </dl>
   
-</dl>
-<div class="clear"></div>
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/active_ldap/get_text.rb</dd>
+  </dl>
+  
+</div>
 
 
 
@@ -129,23 +129,18 @@
 
 </div>
 
-    <div id="footer"></div>
-
-  
+      <div id="footer">
       </div>
 
       <div class="sidebar">
         <h2>About Project</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li><a href="http://activeldap.github.io/">Project page</a></li>
 	  <li>
-	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit Mailing List</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit mail</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHub page</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
 	  </li>
 	</ul>
 
@@ -178,11 +173,6 @@
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="https://github.com/activeldap/">
           <img src="../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
@@ -200,5 +190,6 @@
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

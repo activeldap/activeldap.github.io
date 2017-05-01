@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../../../favicon.ico" />
     <link rel="icon" href="../../../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "ActiveLdap::Adapter::JndiConnection";
   relpath = '../../';
-  framesUrl = "../../frames.html#!ActiveLdap/Adapter/JndiConnection.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../../../">
@@ -58,51 +63,42 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="../../alphabetical_index.html">Index (J)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Adapter.html" title="ActiveLdap::Adapter (module)">Adapter</a></span></span>
      &raquo; 
     <span class="title">JndiConnection</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Class: ActiveLdap::Adapter::JndiConnection
+      <div id="content"><h1>Class: ActiveLdap::Adapter::JndiConnection
   
   
   
 </h1>
-
-<dl class="box">
+<div class="box_info">
   
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
       <span class="inheritName">Object</span>
       
         <ul class="fullTree">
@@ -113,21 +109,25 @@
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
       
-      </dd>
-    
+    </dd>
+  </dl>
   
-  
-    
-  
-    
+
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/active_ldap/adapter/jndi_connection.rb</dd>
   
-</dl>
-<div class="clear"></div>
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/active_ldap/adapter/jndi_connection.rb</dd>
+  </dl>
+  
+</div>
 
 <h2>Defined Under Namespace</h2>
 <p class="children">
@@ -143,76 +143,74 @@
 </p>
 
   <h2>Constant Summary</h2>
-  
-    <dl class="constants">
-      
-        <dt id="HashTable-constant" class="">HashTable =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_util'>util</span><span class='period'>.</span><span class='const'>Hashtable</span></pre></dd>
-      
-        <dt id="InitialDirContext-constant" class="">InitialDirContext =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>InitialDirContext</span></pre></dd>
-      
-        <dt id="InitialLdapContext-constant" class="">InitialLdapContext =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_ldap'>ldap</span><span class='period'>.</span><span class='const'>InitialLdapContext</span></pre></dd>
-      
-        <dt id="SearchControls-constant" class="">SearchControls =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>SearchControls</span></pre></dd>
-      
-        <dt id="ModificationItem-constant" class="">ModificationItem =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>ModificationItem</span></pre></dd>
-      
-        <dt id="BasicAttributes-constant" class="">BasicAttributes =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>BasicAttributes</span></pre></dd>
-      
-        <dt id="Context-constant" class="">Context =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>Context</span></pre></dd>
-      
-        <dt id="StartTlsRequest-constant" class="">StartTlsRequest =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_ldap'>ldap</span><span class='period'>.</span><span class='const'>StartTlsRequest</span></pre></dd>
-      
-        <dt id="Control-constant" class="">Control =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_ldap'>ldap</span><span class='period'>.</span><span class='const'>Control</span></pre></dd>
-      
-        <dt id="CommunicationException-constant" class="">CommunicationException =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>CommunicationException</span></pre></dd>
-      
-        <dt id="ServiceUnavailableException-constant" class="">ServiceUnavailableException =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>ServiceUnavailableException</span></pre></dd>
-      
-        <dt id="NamingException-constant" class="">NamingException =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>NamingException</span></pre></dd>
-      
-        <dt id="NameNotFoundException-constant" class="">NameNotFoundException =
-          
-        </dt>
-        <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>NameNotFoundException</span></pre></dd>
-      
-    </dl>
-  
+  <dl class="constants">
+    
+      <dt id="HashTable-constant" class="">HashTable =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_util'>util</span><span class='period'>.</span><span class='const'>Hashtable</span></pre></dd>
+    
+      <dt id="InitialDirContext-constant" class="">InitialDirContext =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>InitialDirContext</span></pre></dd>
+    
+      <dt id="InitialLdapContext-constant" class="">InitialLdapContext =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_ldap'>ldap</span><span class='period'>.</span><span class='const'>InitialLdapContext</span></pre></dd>
+    
+      <dt id="SearchControls-constant" class="">SearchControls =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>SearchControls</span></pre></dd>
+    
+      <dt id="ModificationItem-constant" class="">ModificationItem =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>ModificationItem</span></pre></dd>
+    
+      <dt id="BasicAttributes-constant" class="">BasicAttributes =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_directory'>directory</span><span class='period'>.</span><span class='const'>BasicAttributes</span></pre></dd>
+    
+      <dt id="Context-constant" class="">Context =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>Context</span></pre></dd>
+    
+      <dt id="StartTlsRequest-constant" class="">StartTlsRequest =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_ldap'>ldap</span><span class='period'>.</span><span class='const'>StartTlsRequest</span></pre></dd>
+    
+      <dt id="Control-constant" class="">Control =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_ldap'>ldap</span><span class='period'>.</span><span class='const'>Control</span></pre></dd>
+    
+      <dt id="CommunicationException-constant" class="">CommunicationException =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>CommunicationException</span></pre></dd>
+    
+      <dt id="ServiceUnavailableException-constant" class="">ServiceUnavailableException =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>ServiceUnavailableException</span></pre></dd>
+    
+      <dt id="NamingException-constant" class="">NamingException =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>NamingException</span></pre></dd>
+    
+      <dt id="NameNotFoundException-constant" class="">NameNotFoundException =
+        
+      </dt>
+      <dd><pre class="code"><span class='id identifier rubyid_naming'>naming</span><span class='period'>.</span><span class='const'>NameNotFoundException</span></pre></dd>
+    
+  </dl>
 
 
 
@@ -223,7 +221,7 @@
   
     <h2>
       Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -231,7 +229,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add-instance_method" title="#add (instance method)">- (Object) <strong>add</strong>(dn, records) </a>
+      <a href="#add-instance_method" title="#add (instance method)">#<strong>add</strong>(dn, records)  &#x21d2; Object </a>
     
 
     
@@ -253,7 +251,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#bind_as_anonymous-instance_method" title="#bind_as_anonymous (instance method)">- (Object) <strong>bind_as_anonymous</strong> </a>
+      <a href="#bind_as_anonymous-instance_method" title="#bind_as_anonymous (instance method)">#<strong>bind_as_anonymous</strong>  &#x21d2; Object </a>
     
 
     
@@ -275,7 +273,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#bound%3F-instance_method" title="#bound? (instance method)">- (Boolean) <strong>bound?</strong> </a>
+      <a href="#bound%3F-instance_method" title="#bound? (instance method)">#<strong>bound?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -297,7 +295,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong>(dn) </a>
+      <a href="#delete-instance_method" title="#delete (instance method)">#<strong>delete</strong>(dn)  &#x21d2; Object </a>
     
 
     
@@ -319,7 +317,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (JndiConnection) <strong>initialize</strong>(host, port, method, timeout) </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(host, port, method, timeout)  &#x21d2; JndiConnection </a>
     
 
     
@@ -345,7 +343,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#modify-instance_method" title="#modify (instance method)">- (Object) <strong>modify</strong>(dn, records) </a>
+      <a href="#modify-instance_method" title="#modify (instance method)">#<strong>modify</strong>(dn, records)  &#x21d2; Object </a>
     
 
     
@@ -367,7 +365,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#modify_rdn-instance_method" title="#modify_rdn (instance method)">- (Object) <strong>modify_rdn</strong>(dn, new_rdn, delete_old_rdn) </a>
+      <a href="#modify_rdn-instance_method" title="#modify_rdn (instance method)">#<strong>modify_rdn</strong>(dn, new_rdn, delete_old_rdn)  &#x21d2; Object </a>
     
 
     
@@ -389,7 +387,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#sasl_bind-instance_method" title="#sasl_bind (instance method)">- (Object) <strong>sasl_bind</strong>(bind_dn, mechanism, quiet) </a>
+      <a href="#sasl_bind-instance_method" title="#sasl_bind (instance method)">#<strong>sasl_bind</strong>(bind_dn, mechanism, quiet)  &#x21d2; Object </a>
     
 
     
@@ -411,7 +409,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#search-instance_method" title="#search (instance method)">- (Object) <strong>search</strong>(base, scope, filter, attrs, limit) </a>
+      <a href="#search-instance_method" title="#search (instance method)">#<strong>search</strong>(base, scope, filter, attrs, limit)  &#x21d2; Object </a>
     
 
     
@@ -433,7 +431,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#simple_bind-instance_method" title="#simple_bind (instance method)">- (Object) <strong>simple_bind</strong>(bind_dn, password) </a>
+      <a href="#simple_bind-instance_method" title="#simple_bind (instance method)">#<strong>simple_bind</strong>(bind_dn, password)  &#x21d2; Object </a>
     
 
     
@@ -455,7 +453,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#unbind-instance_method" title="#unbind (instance method)">- (Object) <strong>unbind</strong> </a>
+      <a href="#unbind-instance_method" title="#unbind (instance method)">#<strong>unbind</strong>  &#x21d2; Object </a>
     
 
     
@@ -483,7 +481,7 @@
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="ActiveLdap::Adapter::JndiConnection (class)">JndiConnection</a></span></tt>) <strong>initialize</strong>(host, port, method, timeout) 
+    #<strong>initialize</strong>(host, port, method, timeout)  &#x21d2; <tt><span class='object_link'><a href="" title="ActiveLdap::Adapter::JndiConnection (class)">JndiConnection</a></span></tt> 
   
 
   
@@ -541,7 +539,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="add-instance_method">
   
-    - (<tt>Object</tt>) <strong>add</strong>(dn, records) 
+    #<strong>add</strong>(dn, records)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -565,7 +563,7 @@
       <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 131</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_records'>records</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='const'>BasicAttributes</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#BasicAttributes-constant" title="ActiveLdap::Adapter::JndiConnection::BasicAttributes (constant)">BasicAttributes</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="ActiveLdap::Adapter::JndiConnection#initialize (method)">new</a></span></span>
   <span class='id identifier rubyid_records'>records</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_record'>record</span><span class='op'>|</span>
     <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_to_java_attribute'>to_java_attribute</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
@@ -579,7 +577,7 @@
       <div class="method_details ">
   <h3 class="signature " id="bind_as_anonymous-instance_method">
   
-    - (<tt>Object</tt>) <strong>bind_as_anonymous</strong> 
+    #<strong>bind_as_anonymous</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -611,7 +609,7 @@
       <div class="method_details ">
   <h3 class="signature " id="bound?-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>bound?</strong> 
+    #<strong>bound?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -663,7 +661,7 @@
       <div class="method_details ">
   <h3 class="signature " id="delete-instance_method">
   
-    - (<tt>Object</tt>) <strong>delete</strong>(dn) 
+    #<strong>delete</strong>(dn)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -693,7 +691,7 @@
       <div class="method_details ">
   <h3 class="signature " id="modify-instance_method">
   
-    - (<tt>Object</tt>) <strong>modify</strong>(dn, records) 
+    #<strong>modify</strong>(dn, records)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -715,7 +713,7 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_modify'>modify</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_records'>records</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_items'>items</span> <span class='op'>=</span> <span class='id identifier rubyid_records'>records</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_java_modification_item</span><span class='rparen'>)</span>
-  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_modify_attributes'>modify_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='lparen'>(</span><span class='const'>ModificationItem</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='ivar'>@context</span><span class='period'>.</span><span class='id identifier rubyid_modify_attributes'>modify_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ModificationItem-constant" title="ActiveLdap::Adapter::JndiConnection::ModificationItem (constant)">ModificationItem</a></span></span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -725,7 +723,7 @@
       <div class="method_details ">
   <h3 class="signature " id="modify_rdn-instance_method">
   
-    - (<tt>Object</tt>) <strong>modify_rdn</strong>(dn, new_rdn, delete_old_rdn) 
+    #<strong>modify_rdn</strong>(dn, new_rdn, delete_old_rdn)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -765,7 +763,7 @@
       <div class="method_details ">
   <h3 class="signature " id="sasl_bind-instance_method">
   
-    - (<tt>Object</tt>) <strong>sasl_bind</strong>(bind_dn, mechanism, quiet) 
+    #<strong>sasl_bind</strong>(bind_dn, mechanism, quiet)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -797,7 +795,7 @@
       <div class="method_details ">
   <h3 class="signature " id="search-instance_method">
   
-    - (<tt>Object</tt>) <strong>search</strong>(base, scope, filter, attrs, limit) 
+    #<strong>search</strong>(base, scope, filter, attrs, limit)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -833,7 +831,7 @@
       <pre class="code"><span class="info file"># File 'lib/active_ldap/adapter/jndi_connection.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='comma'>,</span> <span class='id identifier rubyid_scope'>scope</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='comma'>,</span> <span class='id identifier rubyid_limit'>limit</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_controls'>controls</span> <span class='op'>=</span> <span class='const'>SearchControls</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_controls'>controls</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#SearchControls-constant" title="ActiveLdap::Adapter::JndiConnection::SearchControls (constant)">SearchControls</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="ActiveLdap::Adapter::JndiConnection#initialize (method)">new</a></span></span>
   <span class='id identifier rubyid_controls'>controls</span><span class='period'>.</span><span class='id identifier rubyid_search_scope'>search_scope</span> <span class='op'>=</span> <span class='id identifier rubyid_scope'>scope</span>
 
   <span class='id identifier rubyid_controls'>controls</span><span class='period'>.</span><span class='id identifier rubyid_count_limit'>count_limit</span> <span class='op'>=</span> <span class='id identifier rubyid_limit'>limit</span> <span class='kw'>if</span> <span class='id identifier rubyid_limit'>limit</span>
@@ -859,7 +857,7 @@
       <div class="method_details ">
   <h3 class="signature " id="simple_bind-instance_method">
   
-    - (<tt>Object</tt>) <strong>simple_bind</strong>(bind_dn, password) 
+    #<strong>simple_bind</strong>(bind_dn, password)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -891,7 +889,7 @@
       <div class="method_details ">
   <h3 class="signature " id="unbind-instance_method">
   
-    - (<tt>Object</tt>) <strong>unbind</strong> 
+    #<strong>unbind</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -928,23 +926,18 @@
 
 </div>
 
-    <div id="footer"></div>
-
-  
+      <div id="footer">
       </div>
 
       <div class="sidebar">
         <h2>About Project</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li><a href="http://activeldap.github.io/">Project page</a></li>
 	  <li>
-	    <a href="http://rubyforge.org/mailman/listinfo/ruby-activeldap-discuss">Mailinglist</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit mail</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHub page</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
 	  </li>
 	</ul>
 
@@ -977,11 +970,6 @@
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="https://github.com/activeldap/">
           <img src="../../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
@@ -999,5 +987,6 @@
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

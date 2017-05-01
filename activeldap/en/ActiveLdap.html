@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../favicon.ico" />
     <link rel="icon" href="../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "ActiveLdap";
   relpath = '';
-  framesUrl = "frames.html#!ActiveLdap.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../">
@@ -58,67 +63,62 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="alphabetical_index.html">Index (A)</a> &raquo;
     
     
     <span class="title">ActiveLdap</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Module: ActiveLdap
+      <div id="content"><h1>Module: ActiveLdap
   
   
   
 </h1>
+<div class="box_info">
+  
 
-<dl class="box">
   
   
-    
-      <dt class="r1">Extended by:</dt>
-      <dd class="r1"><span class='object_link'><a href="ActiveLdap/GetTextSupport.html" title="ActiveLdap::GetTextSupport (module)">GetTextSupport</a></span></dd>
-      
-    
-  
-    
+  <dl>
+      <dt>Extended by:</dt>
+      <dd><span class='object_link'><a href="ActiveLdap/GetTextSupport.html" title="ActiveLdap::GetTextSupport (module)">GetTextSupport</a></span></dd>
+  </dl>
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/active_ldap.rb<span class="defines">,<br />
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/active_ldap.rb<span class="defines">,<br />
   lib/active_ldap/acts/tree.rb,<br /> lib/active_ldap/adapter/base.rb,<br /> lib/active_ldap/adapter/jndi.rb,<br /> lib/active_ldap/adapter/jndi_connection.rb,<br /> lib/active_ldap/adapter/ldap.rb,<br /> lib/active_ldap/adapter/net_ldap.rb,<br /> lib/active_ldap/association/belongs_to.rb,<br /> lib/active_ldap/association/belongs_to_many.rb,<br /> lib/active_ldap/association/children.rb,<br /> lib/active_ldap/association/collection.rb,<br /> lib/active_ldap/association/has_many.rb,<br /> lib/active_ldap/association/has_many_utils.rb,<br /> lib/active_ldap/association/has_many_wrap.rb,<br /> lib/active_ldap/association/proxy.rb,<br /> lib/active_ldap/associations.rb,<br /> lib/active_ldap/attribute_methods.rb,<br /> lib/active_ldap/attribute_methods/before_type_cast.rb,<br /> lib/active_ldap/attribute_methods/dirty.rb,<br /> lib/active_ldap/attribute_methods/query.rb,<br /> lib/active_ldap/attribute_methods/read.rb,<br /> lib/active_ldap/attribute_methods/write.rb,<br /> lib/active_ldap/attributes.rb,<br /> lib/active_ldap/base.rb,<br /> lib/active_ldap/callbacks.rb,<br /> lib/active_ldap/command.rb,<br /> lib/active_ldap/compatible.rb,<br /> lib/active_ldap/configuration.rb,<br /> lib/active_ldap/connection.rb,<br /> lib/active_ldap/distinguished_name.rb,<br /> lib/active_ldap/entry.rb,<br /> lib/active_ldap/entry_attribute.rb,<br /> lib/active_ldap/escape.rb,<br /> lib/active_ldap/get_text.rb,<br /> lib/active_ldap/get_text/parser.rb,<br /> lib/active_ldap/helper.rb,<br /> lib/active_ldap/human_readable.rb,<br /> lib/active_ldap/ldap_controls.rb,<br /> lib/active_ldap/ldap_error.rb,<br /> lib/active_ldap/ldif.rb,<br /> lib/active_ldap/log_subscriber.rb,<br /> lib/active_ldap/object_class.rb,<br /> lib/active_ldap/operations.rb,<br /> lib/active_ldap/persistence.rb,<br /> lib/active_ldap/populate.rb,<br /> lib/active_ldap/railtie.rb,<br /> lib/active_ldap/railties/controller_runtime.rb,<br /> lib/active_ldap/schema.rb,<br /> lib/active_ldap/schema/syntaxes.rb,<br /> lib/active_ldap/supported_control.rb,<br /> lib/active_ldap/user_password.rb,<br /> lib/active_ldap/validations.rb,<br /> lib/active_ldap/version.rb,<br /> lib/active_ldap/xml.rb,<br /> lib/rails/generators/active_ldap/model/model_generator.rb,<br /> lib/rails/generators/active_ldap/scaffold/scaffold_generator.rb</span>
 </dd>
+  </dl>
   
-</dl>
-<div class="clear"></div>
+</div>
 
 <h2>Defined Under Namespace</h2>
 <p class="children">
@@ -134,31 +134,29 @@
 </p>
 
   <h2>Constant Summary</h2>
-  
-    <dl class="constants">
-      
-        <dt id="DN-constant" class="">DN =
-          
-        </dt>
-        <dd><pre class="code"><span class='const'>DistinguishedName</span></pre></dd>
-      
-        <dt id="LDIF-constant" class="">LDIF =
-          
-        </dt>
-        <dd><pre class="code"><span class='const'>Ldif</span></pre></dd>
-      
-        <dt id="VERSION-constant" class="">VERSION =
-          
-        </dt>
-        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>4.0.4</span><span class='tstring_end'>&quot;</span></span></pre></dd>
-      
-        <dt id="XML-constant" class="">XML =
-          
-        </dt>
-        <dd><pre class="code"><span class='const'>Xml</span></pre></dd>
-      
-    </dl>
-  
+  <dl class="constants">
+    
+      <dt id="DN-constant" class="">DN =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="ActiveLdap/DistinguishedName.html" title="ActiveLdap::DistinguishedName (class)">DistinguishedName</a></span></span></pre></dd>
+    
+      <dt id="LDIF-constant" class="">LDIF =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="ActiveLdap/Ldif.html" title="ActiveLdap::Ldif (class)">Ldif</a></span></span></pre></dd>
+    
+      <dt id="VERSION-constant" class="">VERSION =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>5.1.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+    
+      <dt id="XML-constant" class="">XML =
+        
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="ActiveLdap/Xml.html" title="ActiveLdap::Xml (class)">Xml</a></span></span></pre></dd>
+    
+  </dl>
 
 
 
@@ -169,7 +167,7 @@
   
     <h2>
       Class Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -177,7 +175,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#const_missing-class_method" title="const_missing (class method)">+ (Object) <strong>const_missing</strong>(id) </a>
+      <a href="#const_missing-class_method" title="const_missing (class method)">.<strong>const_missing</strong>(id)  &#x21d2; Object </a>
     
 
     
@@ -199,7 +197,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_text_supported%3F-class_method" title="get_text_supported? (class method)">+ (Boolean) <strong>get_text_supported?</strong> </a>
+      <a href="#get_text_supported%3F-class_method" title="get_text_supported? (class method)">.<strong>get_text_supported?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -236,7 +234,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="const_missing-class_method">
   
-    + (<tt>Object</tt>) <strong>const_missing</strong>(id) 
+    .<strong>const_missing</strong>(id)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -248,7 +246,6 @@
       <pre class="lines">
 
 
-50
 51
 52
 53
@@ -261,10 +258,11 @@
 60
 61
 62
-63</pre>
+63
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_const_missing'>const_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_id'>id</span>
@@ -274,7 +272,7 @@
         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>since 1.1.0. </span><span class='tstring_end'>&quot;</span></span> \
         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Please use ActiveLdap::ConnectionNotSetup instead.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='const'>ActiveSupport</span><span class='op'>::</span><span class='const'>Deprecation</span><span class='period'>.</span><span class='id identifier rubyid_warn'>warn</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_const_set'>const_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ConnectionNotEstablished</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>ConnectionNotSetup</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_const_set'>const_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ConnectionNotEstablished</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="ActiveLdap/ConnectionNotSetup.html" title="ActiveLdap::ConnectionNotSetup (class)">ConnectionNotSetup</a></span></span><span class='rparen'>)</span>
     <span class='const'>ConnectionNotEstablished</span>
   <span class='kw'>else</span>
     <span class='kw'>super</span>
@@ -288,7 +286,7 @@
       <div class="method_details ">
   <h3 class="signature " id="get_text_supported?-class_method">
   
-    + (<tt>Boolean</tt>) <strong>get_text_supported?</strong> 
+    .<strong>get_text_supported?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -341,23 +339,18 @@
 
 </div>
 
-    <div id="footer"></div>
-
-  
+      <div id="footer">
       </div>
 
       <div class="sidebar">
         <h2>About Project</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li><a href="http://activeldap.github.io/">Project page</a></li>
 	  <li>
-	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit Mailing List</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit mail</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHub page</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
 	  </li>
 	</ul>
 
@@ -390,11 +383,6 @@
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="https://github.com/activeldap/">
           <img src="../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
@@ -412,5 +400,6 @@
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>

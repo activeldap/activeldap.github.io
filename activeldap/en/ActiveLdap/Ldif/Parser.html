@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../../activeldap.css" type="text/css" />
     <link rel="shortcut icon" href="../../../../favicon.ico" />
     <link rel="icon" href="../../../../favicon.png" />
@@ -19,9 +19,8 @@
   <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "ActiveLdap::Ldif::Parser";
   relpath = '../../';
-  framesUrl = "../../frames.html#!ActiveLdap/Ldif/Parser.html";
 </script>
 
 
@@ -32,6 +31,12 @@
 
   </head>
   <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
 <div class="header">
   <div class="title">
     <a href="../../../../">
@@ -58,51 +63,42 @@
   <div class="main">
 
 
-    <div id="header">
-      <div id="menu">
+      <div id="header">
+        <div id="menu">
   
     <a href="../../alphabetical_index.html">Index (P)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../ActiveLdap.html" title="ActiveLdap (module)">ActiveLdap</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Ldif.html" title="ActiveLdap::Ldif (class)">Ldif</a></span></span>
      &raquo; 
     <span class="title">Parser</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Class: ActiveLdap::Ldif::Parser
+      <div id="content"><h1>Class: ActiveLdap::Ldif::Parser
   
   
   
 </h1>
-
-<dl class="box">
+<div class="box_info">
   
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
       <span class="inheritName">Object</span>
       
         <ul class="fullTree">
@@ -113,69 +109,72 @@
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
       
-      </dd>
-    
+    </dd>
+  </dl>
   
-  
-    
-  
-    
-      <dt class="r2">Includes:</dt>
-      <dd class="r2"><span class='object_link'><a href="../GetTextSupport.html" title="ActiveLdap::GetTextSupport (module)">GetTextSupport</a></span></dd>
-      
-    
+
   
   
   
-    <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/active_ldap/ldif.rb</dd>
   
-</dl>
-<div class="clear"></div>
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="../GetTextSupport.html" title="ActiveLdap::GetTextSupport (module)">GetTextSupport</a></span></dd>
+  </dl>
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/active_ldap/ldif.rb</dd>
+  </dl>
+  
+</div>
 
 
   <h2>Constant Summary</h2>
-  
-    <dl class="constants">
-      
-        <dt id="ATTRIBUTE_TYPE_CHARS-constant" class="">ATTRIBUTE_TYPE_CHARS =
-          
-        </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[a-zA-Z][a-zA-Z0-9\-]*</span><span class='regexp_end'>/</span></span></pre></dd>
-      
-        <dt id="SAFE_CHAR-constant" class="">SAFE_CHAR =
-          
-        </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[\x01-\x09\x0B-\x0C\x0E-\x7F]</span><span class='regexp_end'>/</span></span></pre></dd>
-      
-        <dt id="SAFE_INIT_CHAR-constant" class="">SAFE_INIT_CHAR =
-          
-        </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[\x01-\x09\x0B-\x0C\x0E-\x1F\x21-\x39\x3B\x3D-\x7F]</span><span class='regexp_end'>/</span></span></pre></dd>
-      
-        <dt id="SAFE_STRING-constant" class="">SAFE_STRING =
-          
-        </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='embexpr_beg'>#{</span><span class='const'>SAFE_INIT_CHAR</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='const'>SAFE_CHAR</span><span class='embexpr_end'>}</span><span class='tstring_content'>*</span><span class='regexp_end'>/</span></span></pre></dd>
-      
-        <dt id="FILL-constant" class="">FILL =
-          
-        </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'> *</span><span class='regexp_end'>/</span></span></pre></dd>
-      
-    </dl>
-  
+  <dl class="constants">
+    
+      <dt id="ATTRIBUTE_TYPE_CHARS-constant" class="">ATTRIBUTE_TYPE_CHARS =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[a-zA-Z][a-zA-Z0-9\-]*</span><span class='regexp_end'>/</span></span></pre></dd>
+    
+      <dt id="SAFE_CHAR-constant" class="">SAFE_CHAR =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[\x01-\x09\x0B-\x0C\x0E-\x7F]</span><span class='regexp_end'>/</span></span></pre></dd>
+    
+      <dt id="SAFE_INIT_CHAR-constant" class="">SAFE_INIT_CHAR =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[\x01-\x09\x0B-\x0C\x0E-\x1F\x21-\x39\x3B\x3D-\x7F]</span><span class='regexp_end'>/</span></span></pre></dd>
+    
+      <dt id="SAFE_STRING-constant" class="">SAFE_STRING =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SAFE_INIT_CHAR-constant" title="ActiveLdap::Ldif::Parser::SAFE_INIT_CHAR (constant)">SAFE_INIT_CHAR</a></span></span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SAFE_CHAR-constant" title="ActiveLdap::Ldif::Parser::SAFE_CHAR (constant)">SAFE_CHAR</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>*</span><span class='regexp_end'>/</span></span></pre></dd>
+    
+      <dt id="FILL-constant" class="">FILL =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'> *</span><span class='regexp_end'>/</span></span></pre></dd>
+    
+  </dl>
 
 
 
 
-  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
   <ul class="summary">
     
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ldif-instance_method" title="#ldif (instance method)">- (Object) <strong>ldif</strong> </a>
+      <a href="#ldif-instance_method" title="#ldif (instance method)">#<strong>ldif</strong>  &#x21d2; Object </a>
     
 
     
@@ -209,7 +208,7 @@
   
     <h2>
       Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -217,7 +216,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Parser) <strong>initialize</strong>(source) </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(source)  &#x21d2; Parser </a>
     
 
     
@@ -243,7 +242,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#parse-instance_method" title="#parse (instance method)">- (Object) <strong>parse</strong> </a>
+      <a href="#parse-instance_method" title="#parse (instance method)">#<strong>parse</strong>  &#x21d2; Object </a>
     
 
     
@@ -277,7 +276,7 @@
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="ActiveLdap::Ldif::Parser (class)">Parser</a></span></tt>) <strong>initialize</strong>(source) 
+    #<strong>initialize</strong>(source)  &#x21d2; <tt><span class='object_link'><a href="" title="ActiveLdap::Ldif::Parser (class)">Parser</a></span></tt> 
   
 
   
@@ -311,7 +310,7 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_source'>source</span><span class='rparen'>)</span>
   <span class='ivar'>@ldif</span> <span class='op'>=</span> <span class='kw'>nil</span>
-  <span class='id identifier rubyid_source'>source</span> <span class='op'>=</span> <span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='kw'>if</span> <span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>LDIF</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_source'>source</span> <span class='op'>=</span> <span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='kw'>if</span> <span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../../ActiveLdap.html#LDIF-constant" title="ActiveLdap::LDIF (constant)">LDIF</a></span></span><span class='rparen'>)</span>
   <span class='ivar'>@source</span> <span class='op'>=</span> <span class='id identifier rubyid_source'>source</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -329,7 +328,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="ldif-instance_method">
   
-    - (<tt>Object</tt>) <strong>ldif</strong>  <span class="extras">(readonly)</span>
+    #<strong>ldif</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -377,7 +376,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="parse-instance_method">
   
-    - (<tt>Object</tt>) <strong>parse</strong> 
+    #<strong>parse</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -415,9 +414,9 @@
 <span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span>
   <span class='kw'>return</span> <span class='ivar'>@ldif</span> <span class='kw'>if</span> <span class='ivar'>@ldif</span>
 
-  <span class='ivar'>@scanner</span> <span class='op'>=</span> <span class='const'>Scanner</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@source</span><span class='rparen'>)</span>
+  <span class='ivar'>@scanner</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Scanner.html" title="ActiveLdap::Ldif::Scanner (class)">Scanner</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Scanner.html#initialize-instance_method" title="ActiveLdap::Ldif::Scanner#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@source</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_version_spec_is_missing'>version_spec_is_missing</span> <span class='kw'>unless</span> <span class='ivar'>@scanner</span><span class='period'>.</span><span class='id identifier rubyid_scan'>scan</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>version:</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
-  <span class='ivar'>@scanner</span><span class='period'>.</span><span class='id identifier rubyid_scan'>scan</span><span class='lparen'>(</span><span class='const'>FILL</span><span class='rparen'>)</span>
+  <span class='ivar'>@scanner</span><span class='period'>.</span><span class='id identifier rubyid_scan'>scan</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#FILL-constant" title="ActiveLdap::Ldif::Parser::FILL (constant)">FILL</a></span></span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='ivar'>@scanner</span><span class='period'>.</span><span class='id identifier rubyid_scan'>scan</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\d+</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_version_number_is_missing'>version_number_is_missing</span> <span class='kw'>if</span> <span class='id identifier rubyid_version'>version</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -429,7 +428,7 @@
 
   <span class='id identifier rubyid_records'>records</span> <span class='op'>=</span> <span class='id identifier rubyid_parse_records'>parse_records</span>
 
-  <span class='ivar'>@ldif</span> <span class='op'>=</span> <span class='const'>LDIF</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_records'>records</span><span class='rparen'>)</span>
+  <span class='ivar'>@ldif</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../ActiveLdap.html#LDIF-constant" title="ActiveLdap::LDIF (constant)">LDIF</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_records'>records</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -440,23 +439,18 @@
 
 </div>
 
-    <div id="footer"></div>
-
-  
+      <div id="footer">
       </div>
 
       <div class="sidebar">
         <h2>About Project</h2>
 	<ul>
-	  <li><a href="http://rubyforge.org/projects/ruby-activeldap/">Project page</a></li>
+	  <li><a href="http://activeldap.github.io/">Project page</a></li>
 	  <li>
-	    <a href="http://rubyforge.org/mailman/listinfo/ruby-activeldap-discuss">Mailinglist</a>
+	    <a href="https://groups.google.com/d/forum/activeldap-commit">Commit mail</a>
 	  </li>
 	  <li>
 	    <a href="http://github.com/activeldap/">GitHub page</a>
-	  </li>
-	  <li>
-	    <a href="http://code.google.com/p/ruby-activeldap/">GoogleCode page</a>
 	  </li>
 	</ul>
 
@@ -489,11 +483,6 @@
     </div>
 
     <div class="sponsors">
-      <p id="sponsor-rubyforge">
-        <a href="http://rubyforge.org/projects/ruby-activeldap/">
-          <img src="../../../../rubyforge.png" width="120" height="24" border="0" alt="ActiveLdap is hosted on RubyForge.org." />
-        </a>
-      </p>
       <p id="sponsor-github">
         <a href="https://github.com/activeldap/">
           <img src="../../../../github-logo.png" width="100" height="45" border="0" alt="ActiveLdap uses GitHub's git repositories." />
@@ -511,5 +500,6 @@
       </p>
     </div>
 
-</body>
+</div>
+  </body>
 </html>
