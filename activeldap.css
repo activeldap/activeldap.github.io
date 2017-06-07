@@ -165,7 +165,7 @@ div.main h2,
 div.day h3
 {
   margin-left: -45px;
-  text-indent: 45px;
+  padding-left: 45px;
   height: 36px;
   background: url(heading-mark.png) no-repeat;
   clear: both;
@@ -188,7 +188,6 @@ div.sidebar h2
 {
   font-size: small;
   margin: 0px;
-  padding: 0px;
   padding-bottom: 5px;
   border-style: none;
 }
