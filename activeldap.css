@@ -17,12 +17,6 @@ a:visited
   color: #ce5c00;
 }
 
-/* for YARD */
-div#header
-{
-  position: relative;
-}
-
 div.header
 {
   position: relative;
