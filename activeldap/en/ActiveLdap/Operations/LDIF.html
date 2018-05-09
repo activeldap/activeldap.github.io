@@ -250,19 +250,19 @@
       <pre class="lines">
 
 
-388
-389
-390
 391
 392
 393
 394
 395
 396
-397</pre>
+397
+398
+399
+400</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 388</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 391</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ldif'>ldif</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Ldif.html" title="ActiveLdap::Ldif (class)">Ldif</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Ldif.html#initialize-instance_method" title="ActiveLdap::Ldif#initialize (method)">new</a></span></span>
@@ -294,15 +294,15 @@
       <pre class="lines">
 
 
-407
-408
-409
 410
 411
-412</pre>
+412
+413
+414
+415</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 407</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 410</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_ldif'>ldif</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_ldif'>ldif</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
@@ -330,12 +330,12 @@
       <pre class="lines">
 
 
-403
-404
-405</pre>
+406
+407
+408</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 403</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 406</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_ldif'>to_ldif</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Ldif.html" title="ActiveLdap::Ldif (class)">Ldif</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Ldif.html#initialize-instance_method" title="ActiveLdap::Ldif#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_to_ldif_record'>to_ldif_record</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'><span class='object_link'><a href="../Ldif.html#to_s-instance_method" title="ActiveLdap::Ldif#to_s (method)">to_s</a></span></span>
@@ -360,12 +360,12 @@
       <pre class="lines">
 
 
-399
-400
-401</pre>
+402
+403
+404</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 399</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 402</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_ldif_record'>to_ldif_record</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Ldif.html" title="ActiveLdap::Ldif (class)">Ldif</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Ldif/Record.html" title="ActiveLdap::Ldif::Record (class)">Record</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Ldif/Record.html#initialize-instance_method" title="ActiveLdap::Ldif::Record#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>

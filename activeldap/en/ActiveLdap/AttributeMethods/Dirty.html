@@ -249,20 +249,18 @@ successful.</p>
       <pre class="lines">
 
 
+25
+26
 27
 28
-29
-30
-31
-32</pre>
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/attribute_methods/dirty.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/attribute_methods/dirty.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reload'>reload</span><span class='lparen'>(</span><span class='op'>*</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
 </span>  <span class='kw'>super</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span>
-    <span class='ivar'>@previously_changed</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
-    <span class='ivar'>@changed_attributes</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+    <span class='id identifier rubyid_clear_changes_information'>clear_changes_information</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -303,8 +301,7 @@ successful.</p>
 12
 13
 14
-15
-16</pre>
+15</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/active_ldap/attribute_methods/dirty.rb', line 9</span>
@@ -312,8 +309,7 @@ successful.</p>
 <span class='kw'>def</span> <span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='op'>*</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
 </span>  <span class='id identifier rubyid_succeeded'>succeeded</span> <span class='op'>=</span> <span class='kw'>super</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_succeeded'>succeeded</span>
-    <span class='ivar'>@previously_changed</span> <span class='op'>=</span> <span class='id identifier rubyid_changes'>changes</span>
-    <span class='ivar'>@changed_attributes</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+    <span class='id identifier rubyid_changes_applied'>changes_applied</span>
   <span class='kw'>end</span>
   <span class='id identifier rubyid_succeeded'>succeeded</span>
 <span class='kw'>end</span></pre>
@@ -349,20 +345,18 @@ successful.</p>
       <pre class="lines">
 
 
+18
 19
 20
 21
-22
-23
-24</pre>
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/attribute_methods/dirty.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/attribute_methods/dirty.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_save!'>save!</span><span class='lparen'>(</span><span class='op'>*</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
 </span>  <span class='kw'>super</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span>
-    <span class='ivar'>@previously_changed</span> <span class='op'>=</span> <span class='id identifier rubyid_changes'>changes</span>
-    <span class='ivar'>@changed_attributes</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+    <span class='id identifier rubyid_changes_applied'>changes_applied</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>

@@ -240,16 +240,16 @@
       <pre class="lines">
 
 
-558
-559
-560
 561
 562
 563
-564</pre>
+564
+565
+566
+567</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 558</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 561</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_entry'>add_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_unnormalized_attributes'>unnormalized_attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
@@ -278,17 +278,17 @@
       <pre class="lines">
 
 
-566
-567
-568
 569
 570
 571
 572
-573</pre>
+573
+574
+575
+576</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 566</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 569</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_modify_entry'>modify_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -318,14 +318,14 @@
       <pre class="lines">
 
 
-575
-576
-577
 578
-579</pre>
+579
+580
+581
+582</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 575</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 578</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_modify_rdn_entry'>modify_rdn_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_dn'>dn</span><span class='comma'>,</span> <span class='id identifier rubyid_new_rdn'>new_rdn</span><span class='comma'>,</span> <span class='id identifier rubyid_delete_old_rdn'>delete_old_rdn</span><span class='comma'>,</span> <span class='id identifier rubyid_new_superior'>new_superior</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:connection</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='id identifier rubyid_connection'>connection</span>
@@ -352,9 +352,6 @@
       <pre class="lines">
 
 
-581
-582
-583
 584
 585
 586
@@ -375,10 +372,13 @@
 601
 602
 603
-604</pre>
+604
+605
+606
+607</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 581</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/operations.rb', line 584</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_all'>update_all</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_search_options'>search_options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
@@ -414,9 +414,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  7 08:56:07 2017 by
+  Generated on Wed May  9 09:19:58 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.3.3).
+  0.9.12 (ruby-2.6.0).
 </div>
 
     

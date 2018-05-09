@@ -2696,37 +2696,44 @@ fields: :password_block, :logger, :host, :port, :base, :bind_dn, :try_sasl,
 :allow_anonymous :bind_dn specifies the DN to bind with. :password_block
 specifies a Proc object that will yield a String to</p>
 
-<pre class="code ruby"><code class="ruby">be used as the password when called.</code></pre>
+<pre class="code ruby"><code class="ruby">be used as the password when called.
+</code></pre>
 
 <p>:logger specifies a logger object (Logger, Log4r::Logger and s on) :host
 sets the LDAP server hostname :port sets the LDAP server port :base
 overwrites Base.base - this affects EVERYTHING :try_sasl indicates that a
 SASL bind should be attempted when binding</p>
 
-<pre class="code ruby"><code class="ruby">to the server (default: false)</code></pre>
+<pre class="code ruby"><code class="ruby">to the server (default: false)
+</code></pre>
 
 <p>:sasl_mechanisms is an array of SASL mechanism to try</p>
 
-<pre class="code ruby"><code class="ruby">(default: [&quot;GSSAPI&quot;, &quot;CRAM-MD5&quot;, &quot;EXTERNAL&quot;])</code></pre>
+<pre class="code ruby"><code class="ruby">(default: [&quot;GSSAPI&quot;, &quot;CRAM-MD5&quot;, &quot;EXTERNAL&quot;])
+</code></pre>
 
 <p>:allow_anonymous indicates that a true anonymous bind is allowed when</p>
 
-<pre class="code ruby"><code class="ruby">trying to bind to the server (default: true)</code></pre>
+<pre class="code ruby"><code class="ruby">trying to bind to the server (default: true)
+</code></pre>
 
 <p>:retries - indicates the number of attempts to reconnect that will be</p>
 
-<pre class="code ruby"><code class="ruby">undertaken when a stale connection occurs. -1 means infinite.</code></pre>
+<pre class="code ruby"><code class="ruby">undertaken when a stale connection occurs. -1 means infinite.
+</code></pre>
 
 <p>:sasl_quiet - if true, sets @sasl_quiet on the Ruby/LDAP connection :method
 - whether to use :ssl, :tls, or :plain (unencrypted) :retry_wait - seconds
 to wait before retrying a connection :scope - dictates how to find objects.
 ONELEVEL by default to</p>
 
-<pre class="code ruby"><code class="ruby">avoid dn_attr collisions across OUs. Think before changing.</code></pre>
+<pre class="code ruby"><code class="ruby">avoid dn_attr collisions across OUs. Think before changing.
+</code></pre>
 
 <p>:timeout - time in seconds - defaults to disabled. This CAN interrupt</p>
 
-<pre class="code ruby"><code class="ruby">search() requests. Be warned.</code></pre>
+<pre class="code ruby"><code class="ruby">search() requests. Be warned.
+</code></pre>
 
 <p>:retry_on_timeout - whether to reconnect when timeouts occur. Defaults</p>
 
@@ -3208,12 +3215,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-969
-970
-971</pre>
+967
+968
+969</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 969</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 967</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base'>base</span>
   <span class='ivar'>@base</span> <span class='op'>||=</span> <span class='id identifier rubyid_compute_base'>compute_base</span>
@@ -3238,15 +3245,15 @@ supply the keys.</p>
       <pre class="lines">
 
 
+971
+972
 973
 974
 975
-976
-977
-978</pre>
+976</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 973</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 971</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base='>base=</span><span class='lparen'>(</span><span class='id identifier rubyid_object_local_base'>object_local_base</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ensure_update_dn'>ensure_update_dn</span>
@@ -3384,9 +3391,7 @@ supply the keys.</p>
 947
 948
 949
-950
-951
-952</pre>
+950</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 946</span>
@@ -3394,9 +3399,7 @@ supply the keys.</p>
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_object_class_based_cache'>clear_object_class_based_cache</span>
   <span class='ivar'>@entry_attribute</span> <span class='op'>=</span> <span class='kw'>nil</span>
   <span class='ivar'>@real_names</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-  <span class='ivar'>@changed_attributes</span><span class='period'>.</span><span class='id identifier rubyid_reject!'>reject!</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='op'>|</span>
-    <span class='kw'>not</span> <span class='id identifier rubyid_attribute_method?'>attribute_method?</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
+  <span class='id identifier rubyid_clear_changes_information'>clear_changes_information</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -3418,6 +3421,8 @@ supply the keys.</p>
       <pre class="lines">
 
 
+952
+953
 954
 955
 956
@@ -3425,12 +3430,10 @@ supply the keys.</p>
 958
 959
 960
-961
-962
-963</pre>
+961</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 954</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 952</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_removed_attributes_data'>clear_removed_attributes_data</span><span class='lparen'>(</span><span class='id identifier rubyid_removed_attributes'>removed_attributes</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_removed_attributes'>removed_attributes</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -3492,12 +3495,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-990
-991
-992</pre>
+988
+989
+990</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 990</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 988</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_all'>delete_all</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:base</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_dn'>dn</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3522,12 +3525,12 @@ supply the keys.</p>
       <pre class="lines">
 
 
-994
-995
-996</pre>
+992
+993
+994</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 994</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 992</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy_all'>destroy_all</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:base</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_dn'>dn</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3957,6 +3960,8 @@ work with something like:</p>
       <pre class="lines">
 
 
+996
+997
 998
 999
 1000
@@ -3969,12 +3974,10 @@ work with something like:</p>
 1007
 1008
 1009
-1010
-1011
-1012</pre>
+1010</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 998</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 996</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
   <span class='id identifier rubyid_object_classes'>object_classes</span> <span class='op'>=</span> <span class='id identifier rubyid_entry_attribute'>entry_attribute</span><span class='period'>.</span><span class='id identifier rubyid_object_classes'>object_classes</span>
@@ -4071,12 +4074,12 @@ work with something like:</p>
       <pre class="lines">
 
 
-965
-966
-967</pre>
+963
+964
+965</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 965</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 963</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_schema'>schema</span>
   <span class='ivar'>@schema</span> <span class='op'>||=</span> <span class='kw'>super</span>
@@ -4101,12 +4104,12 @@ work with something like:</p>
       <pre class="lines">
 
 
-981
-982
-983</pre>
+979
+980
+981</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 981</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 979</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_scope'>scope</span>
   <span class='ivar'>@scope</span> <span class='op'>||</span> <span class='id identifier rubyid_scope_of_class'>scope_of_class</span>
@@ -4131,13 +4134,13 @@ work with something like:</p>
       <pre class="lines">
 
 
+983
+984
 985
-986
-987
-988</pre>
+986</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 985</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 983</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_scope='>scope=</span><span class='lparen'>(</span><span class='id identifier rubyid_scope'>scope</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_validate_scope'>validate_scope</span><span class='lparen'>(</span><span class='id identifier rubyid_scope'>scope</span><span class='rparen'>)</span>
@@ -4163,10 +4166,10 @@ work with something like:</p>
       <pre class="lines">
 
 
-980</pre>
+978</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 980</span>
+      <pre class="code"><span class="info file"># File 'lib/active_ldap/base.rb', line 978</span>
 
 <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='symbol'>:scope_of_class</span><span class='comma'>,</span> <span class='symbol'>:scope</span></pre>
     </td>

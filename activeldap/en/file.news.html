@@ -88,6 +88,36 @@
       </div>
 
       <div id="content"><div id='filecontents'><h1>News</h1>
+<h2 id="release-5-2-0">5.2.0: 2018-05-09</h2>
+<h3>Improvements</h3>
+<ul>
+	<li>Added <code>:dc_base_class</code> and <code>:ou_base_class</code> options to
+  <code>ActiveLdap::Populate.ensure_base</code>.
+  [GitHub#153][Patch by hide_24]</li>
+</ul>
+<ul>
+	<li>Added Active Model 5.2.0 support.</li>
+</ul>
+<ul>
+	<li>Improved connection error handling for net-ldap.</li>
+</ul>
+<h3>Thanks</h3>
+<ul>
+	<li>hide_24</li>
+</ul>
+<h2 id="release-5-1-1">5.1.1: 2018-01-17</h2>
+<h3>Improvements</h3>
+<ul>
+	<li>Added <code>:include_operational_attributes</code> convenient option to
+  <code>ActiveLdap::Base.find</code>. <code>ActiveLdap::Base.find(...,
+  :include_operational_attributes =&gt; true)</code> equals to
+  <code>ActiveLdap::Base.find(..., :attributes =&gt; ["*", "+"])</code>.
+  [GitHub#150][Reported by jas01]</li>
+</ul>
+<h3>Thanks</h3>
+<ul>
+	<li>jas01</li>
+</ul>
 <h2 id="release-5-1-0">5.1.0: 2017-05-01</h2>
 <h3>Improvements</h3>
 <ul>
